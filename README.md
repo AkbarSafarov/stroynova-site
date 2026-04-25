@@ -71,6 +71,7 @@ npm run preview
 - Node.js ≥ 18
 - npm ≥ 9
 
+**Demo:** https://akbarsafarov.github.io/stroynova-site/dist
 
 ## Страницы
 
