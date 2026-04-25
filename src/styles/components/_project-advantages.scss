@@ -1,0 +1,296 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Project advantages
+// ========================================
+
+.section--project-advantages {
+    padding-block: 0;
+    margin-bottom: 41px;
+
+    @media all and (max-width: 767px) {
+        margin-bottom: 32px;
+    }
+}
+
+.project-advantages {
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+
+        @include respond-below('md') {
+            gap: 8px;
+        }
+
+        @include respond-below('sm') {
+            align-items: flex-start;
+        }
+
+        &-icon {
+            font-size: 0;
+            line-height: normal;
+
+            @include respond-below('sm') {
+                margin-top: -3px;
+            }
+
+            svg {
+                color: var(--stroinova-primary-2);
+            }
+
+            .desktop-icon {
+                @include respond-below('md') {
+                    display: none;
+                }
+            }
+
+            .mobile-icon {
+                display: none;
+
+                @include respond-below('md') {
+                    display: block;
+                }
+            }
+        }
+
+        h2 {
+            @include respond-below('md') {
+                font-size: 18px;
+                line-height: 133%;
+            }
+        }
+    }
+
+    &__tabs {
+
+        &-titles {
+            display: flex;
+            gap: 16px;
+            overflow: auto;
+            margin-bottom: 29px;
+            padding-bottom: 10px;
+
+            @include respond-below('sm') {
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: var(--stroinova-gray-2);
+                border-radius: 15px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--stroinova-primary-1);;    /* цвет бегунка */
+                border-radius: 10px;       /* округлось бегунка */
+            }
+        }
+
+        &-title {
+
+            a {
+                display: inline-block;
+                padding: 12.5px 59.5px;
+                border-radius: 250px;
+                text-decoration: none;
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 143%;
+                text-align: center;
+                color: var(--stroinova-black);
+                transition: all 0.3s ease;
+                background: var(--stroinova-backgroung);
+                white-space: nowrap;
+
+                @include respond-below('xl') {
+                    padding: 12.5px 55.5px;
+                }
+
+                @include respond-below('sm') {
+                    padding: 7.5px 27.5px;
+                }
+
+                &:hover {
+                    color: var(--stroinova-primary-1);
+                }
+
+                &.active {
+                    color: var(--stroinova-primary-1);
+                    background: none;
+                    box-shadow: inset 0 0 0 2px var(--stroinova-primary-1);
+                }
+            }
+        }
+
+        &-body {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .tab-body-inner {
+        display: flex;
+        border-radius: 20px;
+        background: var(--stroinova-backgroung);
+
+        @include respond-below('xl') {
+            flex-direction: column-reverse;
+        }
+
+        &__left {
+            padding: 25px 40px 40px;
+            padding-right: 20px;
+            width: 33.7%;
+
+            @include respond-below('xl') {
+                width: 100%;
+                padding: 20px 28px 20px;
+                padding-right: 18px;
+            }
+
+            @include respond-below('sm') {
+                padding: 16px 16px 35px;
+            }
+        }
+
+        &__text {
+            max-height: 437px;
+            overflow: auto;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 163%;
+            padding-right: 20px;
+            color: var(--stroinova-black);
+
+            @include respond-below('xl') {
+                max-height: 323px;
+                padding-right: 80px;
+                letter-spacing: 1.4px;
+            }
+
+            @include respond-below('sm') {
+                max-height: 100%;
+                padding: 0;
+                font-size: 14px;
+                line-height: 171%;
+                letter-spacing: normal;
+                max-height: 281px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            &.show-all {
+                max-height: 1500px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: var(--stroinova-gray-2);
+                border-radius: 15px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--stroinova-primary-1);   /* цвет бегунка */
+                border-radius: 10px;       /* округлось бегунка */
+            }
+
+            b {
+                font-weight: 600;
+            }
+
+            p {
+                & + p, & + ul {
+                    margin-top: 20px;
+                }
+            }
+            ul + p {
+                margin-top: 20px;
+            }
+
+            ul {
+                list-style: inside;
+                list-style-type: disc;
+                padding-left: 10px;
+            }
+
+        }
+
+        &__right {
+            width: 66.3%;
+
+            @include respond-below('xl') {
+                width: 100%;
+            }
+        }
+
+        &__slider {
+            margin-top: -15px;
+            margin-bottom: 17px;
+            border-radius: 0 20px 20px 0;
+            overflow: hidden;
+
+            @include respond-below('xl') {
+                margin: 0;
+                border-radius: 20px 20px 0 0;
+            }
+
+            img {
+                @include respond-below('sm') {
+                    border-radius: 20px;
+                }
+            }
+
+            .swiper-pagination-custom {
+                position: absolute;
+                bottom: 30px !important;
+                right: 40px !important;
+                left: 40px !important;
+                width: auto !important;
+                z-index: 1;
+                justify-content: flex-end;
+
+                @include respond-below('sm') {
+                    position: static;
+                    width: 100% !important;
+                    justify-content: center;
+                    margin-top: 16px;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    &__more-text {
+        display: none;
+        margin-top: 10px;
+        @include respond-below('sm') {
+            display: block;
+        }
+
+        a {
+            display: inline-block;
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: var(--stroinova-gray-gray-3);
+            transition: all 0.3s ease;
+        }
+    }
+}

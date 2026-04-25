@@ -1,0 +1,101 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Button
+// ========================================
+.btn__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    padding: 16px 30px;
+    border: 1px solid transparent;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 163%;
+    color: var(--stroinova-white);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+    border-radius: 60px;
+
+    @media all and (max-width: 1024px) {
+        padding: 11px 29px;
+    }
+
+    &.btn_border {
+
+    }
+
+    &.border_orange {
+        border: 1px solid var(--stroinova-primary-1);
+        color: var(--stroinova-primary-1);
+        background: transparent;
+
+        &:hover {
+            color: #ffffff;
+            background: var(--stroinova-primary-1);
+        }
+    }
+
+    &.border_green {
+        border: 1px solid var(--stroinova-primary-2);
+        color: var(--stroinova-primary-2);
+        background: transparent;
+
+        &:hover {
+            color: #ffffff;
+            background: var(--stroinova-primary-2);
+        }
+    }
+
+    &.border_white {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        background: transparent;
+
+        &:hover {
+            color: var(--stroinova-primary-1);
+            background: #fff;
+        }
+    }
+
+    &.border_black {
+        border: 1px solid var(--stroinova-black);
+        color: var(--stroinova-black);
+        background: transparent;
+
+        &:hover {
+            color: #fff;
+            background: var(--stroinova-black);
+        }
+    }
+
+    &.btn_orange {
+        background: linear-gradient(139deg, #e18411 0%, #e13b11 100%);
+
+        &:hover {
+            background: linear-gradient(139deg, #e18411 0%, #e18411 100%);
+            color: #ffffff;
+        }
+    }
+
+    &.btn_green {
+        background: var(--stroinova-primary-2);
+
+        &:hover {
+            background: var(--stroinova-hover-color);
+            color: #ffffff;
+        }
+    }
+
+    &.btn_black {
+        background: var(--stroinova-black);
+
+        &:hover {
+            background: var(--stroinova-hover-color);
+            color: #ffffff;
+        }
+    }
+}

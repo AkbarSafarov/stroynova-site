@@ -1,0 +1,17 @@
+<!-- СОРТИРОВКА -->
+<div class="container">
+    <div class="catalog-sort">
+        <span class="catalog-sort__label">Сортировать по :</span>
+        <div class="catalog-sort__dropdown" id="catalog-sort-dropdown">
+            <button class="catalog-sort__trigger" type="button" aria-expanded="false" aria-haspopup="listbox">
+                <span class="catalog-sort__current">Все объекты</span>
+                <svg class="catalog-sort__chevron" width="12" height="12" aria-hidden="true"><use href="#arrow-down-icon"/></svg>
+            </button>
+            <ul class="catalog-sort__panel" role="listbox" aria-label="Сортировка">
+                <li class="catalog-sort__option is-active" data-value="all" role="option" aria-selected="true">Все объекты</li>
+                <li class="catalog-sort__option" data-value="built" role="option" aria-selected="false">Объекты в стадии строительства</li>
+                <li class="catalog-sort__option" data-value="building" role="option" aria-selected="false">Объекты введенные в эксплуатацию</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,325 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Sales office
+// ========================================
+
+.section--sales-office {
+    padding-top: 44px;
+    margin-bottom: 41px;
+
+    @media all and (max-width: 767px) {
+        margin-bottom: 32px;
+    }
+}
+
+.sales-office {
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 24px;
+
+        @include respond-below('md') {
+            gap: 8px;
+        }
+
+        @include respond-below('sm') {
+            align-items: flex-start;
+        }
+
+        &-icon {
+            font-size: 0;
+            line-height: normal;
+
+            svg {
+                color:  var(--stroinova-primary-2);
+            }
+
+            @include respond-below('sm') {
+                margin-top: -3px;
+            }
+
+            .desktop-icon {
+                @include respond-below('md') {
+                    display: none;
+                }
+            }
+
+            .mobile-icon {
+                display: none;
+
+                @include respond-below('md') {
+                    display: block;
+                }
+            }
+        }
+
+        h2 {
+            @include respond-below('md') {
+                font-size: 18px;
+                line-height: 133%;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        @include respond-below('xl') {
+            gap: 18px 12px;
+        }
+    }
+
+    &__image {
+        width: 20%;
+        font-size: 0;
+        position: relative;
+        padding-top: 19%;
+
+        @include respond-below('xl') {
+            width: 40%;
+            padding-top: 29%;
+        }
+
+        @include respond-below('sm') {
+            width: 100%;
+            padding-top: 69%;
+            order: -2;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__map {
+        border-radius: 20px;
+        overflow: hidden;
+        width: 37%;
+
+        @include respond-below('xl') {
+            width: calc(60% - 12px);
+        }
+
+        @include respond-below('sm') {
+            width: 100%;
+            min-height: 220px;
+        }
+    }
+
+    &__contacts {
+        width: calc(43% - 20px);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        @include respond-below('xl') {
+            order: -1;
+            width: 100%;
+        }
+
+        &-item {
+            width: calc(47% - 4px);
+
+            @include respond-below('xl') {
+                width: 28%;
+            }
+
+            @include respond-below('lg') {
+                width: 100%;
+            }
+
+            & + & {
+                width: calc(53% - 4px);
+
+                @include respond-below('xl') {
+                    width: 31%;
+                }
+
+                @include respond-below('lg') {
+                    width: 100%;
+                }
+            }
+
+            &:last-child {
+                width: 100%;
+
+                @include respond-below('xl') {
+                    width: calc(41% - 20px);
+                }
+
+                @include respond-below('lg') {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-icon {
+            width: 39px;
+            min-width: 39px;
+            height: 39px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100%;
+
+            svg {
+                fill: none;
+            }
+        }
+
+        &-body {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 171%;
+            color: var(--stroinova-black);
+        }
+
+        &-phones {
+            border-radius: 20px;
+            padding: 12px;
+            background: var(--stroinova-backgroung);
+            display: flex;
+            gap: 10px;
+            height: 100%;
+
+            @include respond-below('sm') {
+                padding: 10px;
+            }
+
+            .sales-office__contacts-icon {
+                background: var(--stroinova-white);
+            }
+        }
+
+        &-schedule {
+            border-radius: 20px;
+            padding: 12px;
+            background: var(--stroinova-backgroung);
+            display: flex;
+            gap: 10px;
+            height: 100%;
+
+            @include respond-below('sm') {
+                padding: 10px;
+            }
+
+            svg {
+                color: var(--stroinova-gray-gray-3);
+            }
+
+            .sales-office__contacts-body {
+                padding-top: 10px;
+                color: var(--stroinova-black);
+
+                @include respond-below('sm') {
+                    line-height: 143%;
+                }
+
+                p {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        &-address {
+            border-radius: 20px;
+            padding: 12px;
+            background: var(--stroinova-backgroung);
+            display: flex;
+            gap: 10px;
+
+            @include respond-below('sm') {
+                padding: 10px;
+                align-items: center;
+            }
+
+            .sales-office__contacts-body {
+                padding-top: 7px;
+
+                @include respond-below('sm') {
+                    padding-top: 0;
+                }
+            }
+
+            .sales-office__contacts-icon {
+                background: var(--stroinova-white);
+            }
+        }
+
+        &-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 21px;
+            font-size: 0;
+
+            @include respond-below('sm') {
+                margin-top: 8px;
+            }
+
+            a {
+                transition: all 0.3s ease;
+                text-decoration: none;
+                will-change: transform;
+                display: inline-block;
+                border-radius: 50%;
+                background: var(--stroinova-backgroung);
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__phones {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 8px;
+
+        a {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 130%;
+            color: var(--stroinova-black);
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: var(--stroinova-primary-2);
+            }
+        }
+    }
+
+    &__mail {
+        margin-top: 5px;
+
+        a {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 171%;
+            color: var(--stroinova-primary-2);
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

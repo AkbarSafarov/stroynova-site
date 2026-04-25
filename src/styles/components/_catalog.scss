@@ -1,0 +1,127 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Catalog page
+// ========================================
+
+
+// ---- Map section ----
+.catalog-map-section {
+    margin-bottom: 46px;
+
+    @media all and (max-width: 767px) {
+        margin-bottom: 27px;
+    }
+}
+
+.catalog-map-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &.is-collapsed .catalog-map__container {
+        height: 100px;
+    }
+}
+
+.catalog-map__legend {
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    z-index: 10;
+    display: flex;
+    gap: 20px;
+    backdrop-filter: blur(9px);
+    background: rgba(229, 229, 229, 0.55);
+    border-radius: 15px;
+    padding: 6.5px 15px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--stroinova-black);
+
+    @media all and (max-width: 767px) {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+.catalog-map__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    &--built::before    { background: var(--stroinova-primary-1); }
+    &--building::before { background: var(--stroinova-primary-2); }
+}
+
+.catalog-map__toggle {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 10;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 163%;
+    color: var(--stroinova-white);
+    padding: 7px 39px;
+    background: rgba(65, 66, 66, 0.51);
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    @media all and (max-width: 767px) {
+        top: auto;
+        left: 15px;
+        right: 15px;
+        bottom: 12px;
+        padding: 2px 30px;
+    }
+}
+
+.catalog-map__container {
+    width: 100%;
+    height: 574px;
+    transition: height 0.4s ease;
+    background: #e8e8e8;
+
+    @media (max-width: 1024px) { height: 350px; }
+
+    @media (max-width: 767px) { height: 280px; }
+}
+
+// ---- Project card ----
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 20px;
+    margin-bottom: 32px;
+
+    @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 560px) { grid-template-columns: 1fr; }
+}
+
+
+@media all and (max-width: 767px ){
+    .catalog-map-section {
+        margin-bottom: 27px;
+    }
+
+    .catalog-grid {
+        margin-bottom: 16px;
+    }
+}

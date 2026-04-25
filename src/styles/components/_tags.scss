@@ -1,0 +1,48 @@
+
+// ---- Tags bar ----
+.catalog-tags {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.catalog-tags__inner {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.catalog-tag {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    background: var(--stroinova-backgroung);
+    border-radius: 20px;
+    padding: 12.5px 23px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    color: var(--stroinova-black);
+    text-decoration: none;
+    border: none;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+
+    &--active,
+    &:hover {
+        background: var(--stroinova-primary-2);
+        color: #fff;
+    }
+}
+
+@media all and (max-width: 767px ){
+
+    .catalog-tag {
+        padding: 7px 24px;
+    }
+
+    .catalog-tags {
+        margin-bottom: 6px;
+    }
+}

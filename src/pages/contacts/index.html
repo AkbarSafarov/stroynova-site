@@ -1,0 +1,348 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Контакты — Строй Нова" %}
+{% set description = "Контакты строительной компании Строй Нова: адрес, телефон, email, реквизиты и форма обратной связи." %}
+{% set canonical = "https://stroynova.ru/contacts/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Контакты</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">Контакты</h1>
+</div>
+
+<!-- КОНТАКТНЫЕ КАРТОЧКИ -->
+<section class="section section--contacts-info" aria-label="Контактная информация"
+    itemscope itemtype="https://schema.org/Organization">
+    <div class="container">
+        <div class="contacts-info">
+
+            <!-- Телефоны -->
+            <div class="contacts-info__card">
+                <div class="contacts-info__icon-wrap">
+                    <img src="/assets/images/contact1.png" alt="" aria-hidden="true">
+                </div>
+                <div class="contacts-info__body">
+                    <div class="contacts-info__phones">
+                        <a href="tel:+74942300600" class="contacts-info__phone" itemprop="telephone">+7 (4942) 300-600</a>
+                        <a href="tel:+74942542222" class="contacts-info__phone" itemprop="telephone">+7 (4942) 54-22-22</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Режим работы -->
+            <div class="contacts-info__card">
+                <div class="contacts-info__icon-wrap">
+                    <img src="/assets/images/contact2.png" alt="" aria-hidden="true">
+                </div>
+                <div class="contacts-info__body">
+                    <p class="contacts-info__text">9:00 - 18:00 обед с 13:00 - 14:00, </p>
+                    <p class="contacts-info__subtext">Выходные: суббота, воскресенье</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contacts-info__card">
+                <div class="contacts-info__icon-wrap">
+                    <img src="/assets/images/contact3.png" alt="" aria-hidden="true">
+                </div>
+                <div class="contacts-info__body contacts-info__body-row">
+                    <div class="contacts-info__body-item">
+                        <p class="contacts-info__label">Корпоративная почта:</p>
+                        <a href="mailto:info@stroynova.ru" class="contacts-info__email" itemprop="email">info@stroynova.ru</a>
+                    </div>
+                    <div class="contacts-info__body-item">
+                        <p class="contacts-info__label">Офис продаж:</p>
+                        <a href="mailto:office@stroynova.ru" class="contacts-info__email">office@stroynova.ru</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__socials">
+                <a href="https://t.me/stroynova" class="contacts__social" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+                    <svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#telegram" /></svg>
+                </a>
+                <a href="https://vk.com/stroynova" class="contacts__social" aria-label="ВКонтакте" target="_blank" rel="noopener noreferrer">
+                    <svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#vk_ico" /></svg>
+                </a>
+                <a href="https://ok.ru/stroynova" class="contacts__social" aria-label="Max" target="_blank" rel="noopener noreferrer">
+                    <svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#max" /></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- КАРТА -->
+<section class="section section--contacts-map" aria-label="Карта офиса">
+    <div class="container">
+        <div class="contacts-map">
+            <iframe
+                class="contacts-map__frame"
+                src="https://yandex.ru/map-widget/v1/?ll=40.931229%2C57.767961&z=16&pt=40.931229,57.767961,pm2rdm"
+                width="100%"
+                height="480"
+                frameborder="0"
+                allowfullscreen="true"
+                title="Офис Строй Нова на карте"
+                loading="lazy"
+            ></iframe>
+            <div class="contacts-map__address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <svg width="24" height="24" aria-hidden="true" focusable="false">
+                    <use href="#location-small" />
+                </svg>
+                <span itemprop="streetAddress">г. Кострома, ул. Свердлова, д. 41б, помещ. 3, ком. 9</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ФОТО ОФИСА -->
+<section class="section section--contacts-gallery" aria-label="Фотографии офиса">
+    <div class="container">
+        <div class="contacts-gallery">
+            <div class="contacts-gallery__item">
+                <img
+                    src="/assets/images/c-img1.jpg"
+                    alt="" aria-hidden="true"
+                    class="contacts-gallery__img"
+                    loading="lazy"
+                    width="460"
+                    height="430"
+                />
+            </div>
+            <div class="contacts-gallery__item">
+                <img
+                    src="/assets/images/c-img2.jpg"
+                    alt="" aria-hidden="true"
+                    class="contacts-gallery__img"
+                    loading="lazy"
+                    width="460"
+                    height="430"
+                />
+            </div>
+            <div class="contacts-gallery__item">
+                <img
+                    src="/assets/images/c-img3.jpg"
+                    alt="" aria-hidden="true"
+                    class="contacts-gallery__img"
+                    loading="lazy"
+                    width="460"
+                    height="430"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- РЕКВИЗИТЫ -->
+<section class="section section--requisites" aria-labelledby="requisites-heading">
+    <div class="container">
+
+        <div class="about-section-title">
+            <span class="about-section-title__icon" aria-hidden="true">
+                <svg class="desktop-icon" width="14" height="46" focusable="false">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg class="mobile-icon" width="6" height="30" focusable="false">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </span>
+            <h2 id="requisites-heading" class="about-section-title__text">Реквизиты</h2>
+        </div>
+
+        <div class="requisites-grid">
+            <div class="requisites-card-col">
+                <div class="requisites-card">
+                    <h3 class="requisites-card__name">ООО «Строй Нова»</h3>
+                    <ul class="requisites-card__list">
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">ИНН/КПП </span>
+                            <span class="requisites-card__val">4401174160/440101001</span>
+                        </li>
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">ОГРН</span>
+                            <span class="requisites-card__val">1164401057512</span>
+                        </li>
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">Адрес:</span>
+                            <span class="requisites-card__val">156000, Костромская обл, г.о. город Кострома, г Кострома, ул Свердлова, дом 41Б, пом 3, ком 12</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="requisites-card">
+                    <h3 class="requisites-card__name">ООО "Специализированный застройщик "Стройплощадка"</h3>
+                    <ul class="requisites-card__list">
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">ИНН/КПП </span>
+                            <span class="requisites-card__val">4401162790/4401010011</span>
+                        </li>
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">ОГРН</span>
+                            <span class="requisites-card__val">1154401004922</span>
+                        </li>
+                        <li class="requisites-card__item">
+                            <span class="requisites-card__key">Адрес:</span>
+                            <span class="requisites-card__val">156000, Костромская обл, г.о. город Кострома, г Кострома, ул Свердлова, дом 41Б, пом 3, ком 8</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="requisites-card">
+                <h3 class="requisites-card__name">Общество с ограниченной ответственностью</h3>
+                <ul class="requisites-card__list">
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">«Специализированный застройщик «Лучший дом»</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">ИНН</span>
+                        <span class="requisites-card__val">4401195442 КПП 440101001</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">ОГРН</span>
+                        <span class="requisites-card__val">1204400001520</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Расчетный счет:</span>
+                        <span class="requisites-card__val">40702810129000000834</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Банк</span>
+                        <span class="requisites-card__val">ЦЕНТРАЛЬНО-ЧЕРНОЗЕМНЫЙ</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">БАНК ПАО СБЕРБАНК</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">БИК</span>
+                        <span class="requisites-card__val">042007681</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Корр. счет:</span>
+                        <span class="requisites-card__val">30101810600000000681</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Юридический адрес:</span>
+                        <span class="requisites-card__val"> 156000, г. Кострома, ул. Свердлова, д.41Б, помещ.3, ком.14</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Телефоны:</span>
+                        <span class="requisites-card__val">
+                            <a href="tel:+7(930)-320-22-22">+7(930)-320-22-22</a>
+                            <a href="tel:+7(4942)-54-22-22">+7(4942)-54-22-22</a>
+                            <a href="tel:+7(4942)-47-09-99">+7(4942)-47-09-99</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="requisites-card">
+                <h3 class="requisites-card__name">ООО «Специализированный застройщик «Стройнова»</h3>
+                <ul class="requisites-card__list">
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">ИНН</span>
+                        <span class="requisites-card__val">4401157126</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">КПП</span>
+                        <span class="requisites-card__val">4401011001</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">ОГРН</span>
+                        <span class="requisites-card__val">1144401010577</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">ОКПО:</span>
+                        <span class="requisites-card__val">24992801</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">р/счет:</span>
+                        <span class="requisites-card__val">40702810329000001251</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Банк</span>
+                        <span class="requisites-card__val">ЦЕНТРАЛЬНО-ЧЕРНОЗЕМНЫЙ</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">БАНК ПАО СБЕРБАНК</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">БИК</span>
+                        <span class="requisites-card__val">042007681</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Корр. счет:</span>
+                        <span class="requisites-card__val">30101810600000000681</span>
+                    </li>
+                    <li class="requisites-card__item">
+                        <span class="requisites-card__key">Юридический адрес:</span>
+                        <span class="requisites-card__val">156000, г. Кострома, ул. Свердлова, дом 41Б, пом.3, ком.24</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
+<!-- ОСТАЛИСЬ ВОПРОСЫ -->
+<section class="section section--contact-cta" aria-labelledby="contact-cta-heading">
+    <div class="container">
+        <div class="contact-cta">
+            <img class="contact-cta__bg" src="/assets/images/form-bottom.jpg" alt="" aria-hidden="true" loading="lazy" />
+            <div class="contact-cta__layout">
+                <div class="contact-cta__left">
+                    <h2 id="contact-cta-heading" class="contact-cta__title">Остались<br>вопросы?</h2>
+                    <p class="contact-cta__subtitle">Оставьте ваши контакты и мы свяжемся с вами</p>
+                </div>
+
+                <form class="contact-cta__form" novalidate>
+                    <div class="contact-cta__inputs">
+                        <div class="contact-cta__field">
+                            <div class="contact-cta__input-wrap">
+                                <label class="contact-cta__label" for="contacts-cta-name">Ваше имя</label>
+                                <input class="contact-cta__input" type="text" id="contacts-cta-name" name="name" placeholder="Имя" autocomplete="given-name" />
+                            </div>
+                        </div>
+                        <div class="contact-cta__field">
+                            <div class="contact-cta__input-wrap">
+                                <label class="contact-cta__label" for="contacts-cta-phone">Номер телефона</label>
+                                <input class="contact-cta__input" type="tel" id="contacts-cta-phone" name="phone" placeholder="+7(___)-___-__-__" autocomplete="tel" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-cta__row">
+                        <label class="contact-cta__checkbox-wrap">
+                            <input class="contact-cta__checkbox" type="checkbox" name="consent" required />
+                            <i></i>
+                            <span class="contact-cta__checkbox-text">
+                                Я согласен условиями предоставления услуг и обработкой моих персональных данных при нажатии «Отправить»
+                            </span>
+                        </label>
+                        <div class="contact-cta__socials">
+                            <a href="https://t.me/stroynova" class="contact-cta__social-btn" aria-label="Написать в Telegram" target="_blank" rel="noopener noreferrer">
+                                <svg width="30" height="30" aria-hidden="true" focusable="false"><use href="#telegram-icon" /></svg>
+                            </a>
+                            <a href="https://ok.ru/stroynova" class="contact-cta__social-btn" aria-label="Написать в Одноклассники" target="_blank" rel="noopener noreferrer">
+                                <svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#mx-icon" /></svg>
+                            </a>
+                        </div>
+                        <button class="btn__button btn_orange contact-cta__submit" type="submit">Отправить</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

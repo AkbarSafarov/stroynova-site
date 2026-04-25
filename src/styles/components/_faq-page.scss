@@ -1,0 +1,165 @@
+// ========================================
+// Component — FAQ Page layout
+// ========================================
+
+.faq-page {
+    padding-bottom: 60px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 40px;
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: 457px 1fr;
+        gap: 16px;
+        align-items: start;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 320px 1fr;
+        }
+
+        @media (max-width: 990px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__sidebar {
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+        padding: 15px;
+
+        @media (max-width: 990px) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__nav-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 16px 27px;
+        border-radius: 20px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--stroinova-black);
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            color: var(--stroinova-primary-2);
+        }
+
+        &--active {
+            background: var(--stroinova-white);
+            color: var(--stroinova-primary-2);
+        }
+    }
+
+    &__content {
+        min-width: 0;
+    }
+
+    &__group {
+        &--active {
+            display: block;
+        }
+    }
+}
+
+// ---- Мобильный дропдаун категорий (по паттерну catalog-sort) ----
+.faq-sort {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 0 0 24px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--stroinova-gray-1);
+
+    @media (max-width: 990px){
+        display: flex;
+        padding-bottom: 18px;
+    }
+
+    &__dropdown {
+        position: relative;
+    }
+
+    &__trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+        color: var(--stroinova-black);
+        cursor: pointer;
+        padding: 0;
+    }
+
+    &__chevron {
+        fill: none;
+        color: var(--stroinova-black);
+        transition: transform 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    &__dropdown.is-open &__chevron {
+        transform: rotate(180deg);
+    }
+
+    &__panel {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: -16px;
+        border-radius: 12px;
+        box-shadow: 0 5px 7px 2px rgba(0, 0, 0, 0.15);
+        background: var(--stroinova-white);
+        list-style: none;
+        padding: 7px 0 10px;
+        margin: 0;
+        min-width: 260px;
+        z-index: 100;
+        display: none;
+    }
+
+    &__dropdown.is-open &__panel {
+        display: block;
+    }
+
+    &__option {
+        padding: 8px 20px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-black);
+        cursor: pointer;
+        transition: color 0.15s;
+
+        &:hover { color: var(--stroinova-hover-color); }
+
+        &.is-active {
+            color: var(--stroinova-hover-color);
+        }
+    }
+}

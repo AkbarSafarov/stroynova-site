@@ -1,0 +1,441 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Способы покупки — Строй Нова" %}
+{% set description = "Ипотека, рассрочка, материнский капитал, военная ипотека — выберите удобный способ приобретения квартиры в Костроме." %}
+{% set canonical = "https://stroynova.ru/purchase/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Способы покупки</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">Способы покупки</h1>
+</div>
+
+<section class="section section--docs-intro" aria-label="Информация о документах">
+    <div class="container">
+        <div class="docs-intro js-docs-intro">
+            <div class="docs-intro__text">
+                <p>Удобство расположения и инфраструктура</p>
+                <p>ЖК «Патриот» выгодно расположен в городе Кострома, с отличной транспортной доступностью и развитой городской инфраструктурой. Рядом с комплексом находятся школы, детские сады, магазины и зоны для отдыха. До центра города можно добраться всего за несколько минут.</p>
+                <p>Стоимость и сроки сдачи</p>
+                <p>Квартиры в ЖК «Патриот» представлены по конкурентным ценам от официального застройщика. Срок сдачи объекта — 4 квартал 2026 года, что делает его привлекательным вариантом для инвестиций и комфортного проживания.</p>
+                <p>Жилой комплекс сочетает в себе высокое качество строительства, современные технические решения и комфорт для жизни. Это идеальный выбор как для молодой семьи, так и для тех, кто планирует переехать в уютное и перспективное место.</p>
+            </div>
+            <div class="docs-intro__list">
+                <ul>
+                    <li>Современные квартиры — 1-, 2- и 3-комнатные варианты с продуманными планировками.</li>
+                    <li>Дом из керамического кирпича — высокая энергоэффективность и долговечность.</li>
+                    <li>Автономное отопление и собственная котельная — комфортный микроклимат круглый год.</li>
+                    <li>Огороженная территория с автоматическими воротами — безопасность и приватность.</li>
+                    <li>Панорамные окна и большие застеклённые лоджии — много света и уют.</li>
+                    <li>Большая парковка и кладовые помещения — удобство для жителей.</li>
+                    <li>Высокоскоростной интернет и видеодомофон — современная техническая оснастка.</li>
+                </ul>
+            </div>
+        </div>
+        <button class="docs-intro__more-btn js-docs-intro-btn" aria-expanded="false" type="button">Читать больше</button>
+    </div>
+</section>
+
+<!-- ГЛАВНЫЕ ТАБЫ -->
+<div class="container">
+    <div class="pp-tabs-wrapper">
+        <div class="pp-tabs" role="tablist" aria-label="Способы покупки">
+            <button class="pp-tabs__btn pp-tabs__btn--active" type="button" role="tab"
+                    data-main-tab="ipoteka" aria-selected="true" aria-controls="main-ipoteka">Ипотека</button>
+            <button class="pp-tabs__btn" type="button" role="tab"
+                    data-main-tab="rassrochka" aria-selected="false" aria-controls="main-rassrochka">Рассрочка</button>
+            <button class="pp-tabs__btn" type="button" role="tab"
+                    data-main-tab="certs" aria-selected="false" aria-controls="main-certs">Сертификаты</button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== ИПОТЕКА ==================== -->
+<section class="pp-panel pp-panel--active" id="main-ipoteka" role="tabpanel" aria-label="Ипотека">
+    <div class="container">
+        <div class="pp-card">
+
+            <div class="promo-projects__header">
+                <h2 class="promo-projects__title">
+                    <div class="project-plans__title-icon">
+                        <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                            <use href="#heading-icon" />
+                        </svg>
+                        <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                            <use href="#heading-icon-mobile" />
+                        </svg>
+                    </div>
+                    Виды ипотечных программ
+                </h2>
+            </div>
+
+            <div class="pp-sub-tabs" role="tablist" aria-label="Виды ипотеки">
+                <button class="pp-sub-tabs__btn pp-sub-tabs__btn--active" type="button"
+                        data-sub-tab="ipoteka-base" aria-selected="true">Без первоначального взноса</button>
+                <button class="pp-sub-tabs__btn" type="button"
+                        data-sub-tab="ipoteka-family" aria-selected="false">Семейная</button>
+                <button class="pp-sub-tabs__btn" type="button"
+                        data-sub-tab="ipoteka-it" aria-selected="false">IT</button>
+            </div>
+
+            <!-- Без первоначального взноса: desc слева, шаги справа -->
+            <div class="pp-sub-panel pp-sub-panel--active" id="ipoteka-base">
+                <div class="pp-ipoteka-layout">
+                    <div class="pp-ipoteka-desc">
+                        <p class="pp-text">Возможность приобретения квартиры здесь и сейчас, без откладывания покупки из-за отсутствия накоплений (полностью или частично) на первоначальный взнос</p>
+                        <button class="btn__button btn_orange" type="button" data-modal-open="consult">Получить консультацию</button>
+                    </div>
+                    <div class="pp-steps-grid">
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-1.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">01</span><p class="pp-step__title">Выбор и бронирование квартиры мечты</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-2.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">02</span><p class="pp-step__title">Выбор программы кредитования и получение решения Банка</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-3.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">03</span><p class="pp-step__title">Подготовка договора ДДУ/ДКП</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-4.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">04</span><p class="pp-step__title">Запись на сделку</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-5.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">05</span><p class="pp-step__title">Регистрация сделки</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/ta1-1.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">06</span><p class="pp-step__title">Оплата договора</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Семейная: desc + статы, шаги ниже -->
+            <div class="pp-sub-panel" id="ipoteka-family">
+                <div class="pp-ipoteka-layout">
+                    <div class="pp-ipoteka-desc">
+                        <p class="pp-text">Возможность приобретения квартиры здесь и сейчас, без откладывания покупки из-за отсутствия накоплений (полностью или частично) на первоначальный взнос</p>
+                        <button class="btn__button btn_orange" type="button" data-modal-open="consult">Получить консультацию</button>
+                    </div>
+                    <div class="pp-stats-grid">
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/sem1.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Размер ставки</span>
+                                <span class="pp-stat__val">6%</span>
+                                <p class="pp-stat__desc">Госпрограмма, где российские семьи с детьми могут получить кредит на покупку жилья по ставке 6% действует до конца 2030 года.</p>
+                            </div>
+                        </div>
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/sem2.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Первоначальный взнос</span>
+                                <span class="pp-stat__val">от 20,1%</span>
+                                <p class="pp-stat__desc">При условии, что клиент является зарплатным клиентом ПАО ВТБ. Банковские услуги осуществляет ПАО ВТБ (лицензия банка №1000).</p>
+                            </div>
+                        </div>
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/sem3.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Срок кредита</span>
+                                <span class="pp-stat__val">от 20 до 30 лет</span>
+                            </div>
+                        </div>
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/sem4.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Максимальная сумма кредита</span>
+                                <span class="pp-stat__val">6 млн. ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pp-steps-section">
+                    <p class="pp-steps-label">Этапы оформления сделок</p>
+                    <div class="pp-steps-grid">
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem5.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">01</span><p class="pp-step__title">Выбор и бронирование квартиры мечты</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem6.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">02</span><p class="pp-step__title">Выбор программы кредитования и получение решения Банка</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem7.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">03</span><p class="pp-step__title">Подготовка договора ДДУ/ДКП</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem8.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">04</span><p class="pp-step__title">Запись на сделку</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem9.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">05</span><p class="pp-step__title">Регистрация сделки</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/sem10.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">06</span><p class="pp-step__title">Оплата договора</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT: desc + статы, шаги ниже -->
+            <div class="pp-sub-panel" id="ipoteka-it">
+                <div class="pp-ipoteka-layout">
+                    <div class="pp-ipoteka-desc">
+                        <p class="pp-text">Госпрограмма, которой могут воспользоваться сотрудники IT-организаций*, граждане РФ в возрасте до 50 лет, оформив ипотечный кредит по ставке до 6% годовых.</p>
+                        <button class="btn__button btn_orange" type="button" data-modal-open="consult">Получить консультацию</button>
+                    </div>
+                    <div class="pp-stats-grid pp-stats-grid--2col">
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/itip1.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Максимальная сумма кредита</span>
+                                <span class="pp-stat__val">9 млн.</span>
+                                <p class="pp-stat__desc">Можно оформить сумму до 18 млн по средневзвешенной ставке.</p>
+                            </div>
+                        </div>
+                        <div class="pp-stat">
+                            <div class="pp-stat__img-wrap"><img src="/assets/images/itip2.png" alt="" aria-hidden="true" class="pp-stat__img" loading="lazy" /></div>
+                            <div class="pp-stat__body">
+                                <span class="pp-stat__label">Минимальный первоначальный взнос</span>
+                                <span class="pp-stat__val">от 20%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pp-steps-section">
+                    <p class="pp-steps-label">Этапы оформления сделок</p>
+                    <div class="pp-steps-grid">
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip3.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">01</span><p class="pp-step__title">Выбор и бронирование квартиры мечты</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip4.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">02</span><p class="pp-step__title">Выбор программы кредитования и получение решения Банка</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip5.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">03</span><p class="pp-step__title">Подготовка договора ДДУ/ДКП</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip6.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">04</span><p class="pp-step__title">Запись на сделку</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip7.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">05</span><p class="pp-step__title">Регистрация сделки</p></div>
+                        </div>
+                        <div class="pp-step">
+                            <div class="pp-step__img-wrap"><img src="/assets/images/itip8.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                            <div class="pp-step__body"><span class="pp-step__num">06</span><p class="pp-step__title">Оплата договора</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== РАССРОЧКА ==================== -->
+<section class="pp-panel" id="main-rassrochka" role="tabpanel" aria-label="Рассрочка">
+    <div class="container">
+        <div class="pp-card">
+
+            <div class="promo-projects__header">
+                <h2 class="promo-projects__title">
+                    <div class="project-plans__title-icon">
+                        <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                            <use href="#heading-icon" />
+                        </svg>
+                        <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                            <use href="#heading-icon-mobile" />
+                        </svg>
+                    </div>
+                    Виды ипотечных программ
+                </h2>
+            </div>
+
+            <div class="pp-ipoteka-layout">
+                <div class="pp-ipoteka-desc">
+                    <p class="pp-text">В ГК "Стройнова" индивидуальные условия рассрочки для каждого покупателя</p>
+                    <button class="btn__button btn_orange" type="button" data-modal-open="consult">Получить консультацию</button>
+                </div>
+                <div class="pp-steps-grid">
+                    <div class="pp-step">
+                        <div class="pp-step__img-wrap"><img src="/assets/images/ras1.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                        <div class="pp-step__body"><span class="pp-step__num">01</span><p class="pp-step__title">Выбор и бронирование квартиры мечты</p></div>
+                    </div>
+                    <div class="pp-step">
+                        <div class="pp-step__img-wrap"><img src="/assets/images/ras2.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                        <div class="pp-step__body"><span class="pp-step__num">02</span><p class="pp-step__title">Подготовка договора ДДУ/ДКП</p></div>
+                    </div>
+                    <div class="pp-step">
+                        <div class="pp-step__img-wrap"><img src="/assets/images/ras3.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                        <div class="pp-step__body"><span class="pp-step__num">03</span><p class="pp-step__title">Запись на сделку</p></div>
+                    </div>
+                    <div class="pp-step">
+                        <div class="pp-step__img-wrap"><img src="/assets/images/ras4.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                        <div class="pp-step__body"><span class="pp-step__num">04</span><p class="pp-step__title">Регистрация сделки</p></div>
+                    </div>
+                    <div class="pp-step">
+                        <div class="pp-step__img-wrap"><img src="/assets/images/ras5.png" alt="" aria-hidden="true" class="pp-step__img" loading="lazy" /></div>
+                        <div class="pp-step__body"><span class="pp-step__num">05</span><p class="pp-step__title">Оплата договора</p></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== СЕРТИФИКАТЫ ==================== -->
+<section class="pp-panel" id="main-certs" role="tabpanel" aria-label="Сертификаты">
+    <div class="container">
+        <div class="pp-card">
+
+            <div class="promo-projects__header">
+                <h2 class="promo-projects__title">
+                    <div class="project-plans__title-icon">
+                        <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                            <use href="#heading-icon" />
+                        </svg>
+                        <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                            <use href="#heading-icon-mobile" />
+                        </svg>
+                    </div>
+                    Виды ипотечных программ
+                </h2>
+            </div>
+
+            <div class="pp-sub-tabs" role="tablist" aria-label="Виды сертификатов">
+                <button class="pp-sub-tabs__btn pp-sub-tabs__btn--active" type="button"
+                        data-sub-tab="cert-mat" aria-selected="true">Материнский капитал</button>
+                <button class="pp-sub-tabs__btn" type="button"
+                        data-sub-tab="cert-mil" aria-selected="false">Военная ипотека</button>
+                <button class="pp-sub-tabs__btn" type="button"
+                        data-sub-tab="cert-zhil" aria-selected="false">Жилищный сертификат</button>
+            </div>
+
+            <!-- Материнский капитал -->
+            <div class="pp-sub-panel pp-sub-panel--active" id="cert-mat">
+                <div class="pp-cert-layout">
+                    <div class="pp-cert-media">
+                        <img src="/assets/images/sert.png" alt="" aria-hidden="true" class="pp-cert-media__img" loading="lazy" />
+                        <p class="pp-cert-media__title">Реализуйте материнский капитал на расширение вашей жилплощади или покупку квартиры для ребёнка</p>
+                    </div>
+                    <div class="pp-cert-content">
+                        <h3 class="pp-cert-subtitle">Размер материнского капитала</h3>
+                        <p class="pp-text pp-text--muted">Зависит от даты рождения ребёнка и от того, получал ли родитель выплату при рождении первого малыша:</p>
+                        <div class="pp-cert-amounts">
+                            <div class="pp-cert-amount">
+                                <span class="pp-cert-amount__val">833 тыс. рублей</span>
+                                <p class="pp-cert-amount__desc">материнский капитал на второго ребёнка, который родился 1 января 2020 года или позже, если родители не получали выплату на первенца</p>
+                            </div>
+                            <div class="pp-cert-amount">
+                                <span class="pp-cert-amount__val">630,4 тыс. рублей</span>
+                                <p class="pp-cert-amount__desc">размер маткапитала на второго ребёнка, который родился или был усыновлён с 2007 до 2019 года включительно</p>
+                            </div>
+                            <div class="pp-cert-amount">
+                                <span class="pp-cert-amount__val">202,6 тыс. рублей</span>
+                                <p class="pp-cert-amount__desc">материнский капитал на второго ребёнка с 2020 года, если родители уже получали выплату на первенца</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pp-cert-how">
+                    <span class="pp-cert-how__label">Как получить сертификат</span>
+                    <p class="pp-cert-how__text">С 15 апреля 2020 года материнский капитал начисляется автоматически. Сертификат на выплату вы сможете найти в своём аккаунте на Госуслугах или на сайте Пенсионного фонда.</p>
+                </div>
+            </div>
+
+            <!-- Военная ипотека -->
+            <div class="pp-sub-panel" id="cert-mil">
+                <div class="pp-cert-layout">
+                    <div class="pp-cert-media">
+                        <img src="/assets/images/ser2.png" alt="" aria-hidden="true" class="pp-cert-media__img" loading="lazy" />
+                        <p class="pp-cert-media__title">Для военнослужащих предусмотрена специальная льготная программа, которая помогает приобрести недвижимость в рамках Накопительно-ипотечной системы (НИС)</p>
+                    </div>
+                    <div class="pp-cert-content">
+                        <h3 class="pp-cert-subtitle">Основные условия</h3>
+                        <div class="pp-mil-conditions">
+                            <div class="pp-mil-cond">
+                                <p class="pp-mil-cond__text">Для участников накопительно-ипотечной системы согласно №117-ФЗ</p>
+                            </div>
+                            <div class="pp-mil-cond">
+                                <p class="pp-mil-cond__text">Возраст на момент получения ипотечного кредита должен быть не менее 21 года</p>
+                            </div>
+                            <div class="pp-mil-cond">
+                                <p class="pp-mil-cond__text">Деньги с накопительного счёта могут быть использованы для первого взноса при ипотечном кредитовании либо для полной оплаты квартиры</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pp-cert-how">
+                    <span class="pp-cert-how__label">Особые условия</span>
+                    <p class="pp-cert-how__text">Платежи по военной ипотеке рассчитываются, исходя из суммы взноса за текущий год, а срок кредита — исходя из возраста заёмщика.</p>
+                </div>
+            </div>
+
+            <!-- Жилищный сертификат -->
+            <div class="pp-sub-panel" id="cert-zhil">
+                <div class="pp-cert-layout">
+                    <div class="pp-cert-media">
+                        <img src="/assets/images/ser3.png" alt="" aria-hidden="true" class="pp-cert-media__img" loading="lazy" />
+                        <p class="pp-cert-media__title">Государственный жилищный сертификат — сертификат на получение выплаты, на приобретение или строительство жилья.</p>
+                        <p class="pp-text pp-text--sm">Такой сертификат выдаётся в рамках сразу нескольких федеральных программ, однако, получить его можно только один раз. Сумма жилищного сертификата рассчитывается как произведение полагаемой семье площади и рыночной стоимости 1 кв. метра жилой площади, которая устанавливается каждое полугодие приказом Министра России.</p>
+                    </div>
+                    <div class="pp-cert-content">
+                        <h3 class="pp-cert-subtitle">Нормы жилой площади на семью не может быть меньше:</h3>
+                        <div class="pp-zhil-norms">
+                            <div class="pp-zhil-norm">
+                                <span class="pp-zhil-norm__val">33 кв. метра</span>
+                                <p class="pp-zhil-norm__desc">на одного человека</p>
+                            </div>
+                            <div class="pp-zhil-norm">
+                                <span class="pp-zhil-norm__val">42 кв. метра</span>
+                                <p class="pp-zhil-norm__desc">на двух человек</p>
+                            </div>
+                            <div class="pp-zhil-norm">
+                                <span class="pp-zhil-norm__val">По 18 кв. метров</span>
+                                <p class="pp-zhil-norm__desc">на человека для семей с тремя и более членами</p>
+                            </div>
+                        </div>
+                        <div class="pp-cert-how pp-cert-how-top">
+                            <span class="pp-cert-how__label">Срок действия сертификата — 7 месяцев</span>
+                            <p class="pp-cert-how__text">За это время нужно найти жильё и отправить документы на проверку в банк, в котором будет открыт счёт и переведены средства жилищного сертификата.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% include "blocks/calc.njk" %}
+
+{% include "blocks/faq-form.njk" %}
+
+{% include "blocks/tags.njk" %} <br><br>
+{% endblock %}

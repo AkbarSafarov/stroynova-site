@@ -1,0 +1,66 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — 404
+// ========================================
+
+.section-page__error {
+    padding: 100px 0;
+    text-align: center;
+
+    @media all and (max-width: 800px) {
+        padding: 40px 0;
+    }
+}
+
+.error-page {
+
+    &__title {
+        padding: 0;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--stroinova-black);
+        max-width: 334px;
+        margin: 0 auto -24px;
+        z-index: 1;
+        text-align: left;
+
+        span {
+            display: block;
+            text-align: right;
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        .btn__button {
+            min-width: 339px;
+        }
+    }
+
+    @media all and (max-width: 767px) {
+        &__image {
+            margin-bottom: 30px;
+        }
+
+        &__btns {
+            flex-direction: column;
+            gap: 14px;
+
+            .btn__button {
+                min-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

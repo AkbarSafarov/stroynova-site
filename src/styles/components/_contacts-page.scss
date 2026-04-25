@@ -1,0 +1,345 @@
+// ========================================
+// Component — Contacts page
+// ========================================
+
+// ---- Контактные карточки ----
+.section--contacts-info {
+    padding-top: 0;
+    padding-bottom: 22px;
+
+    @media (max-width: 767px) {
+
+    }
+}
+
+.contacts-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 36px;
+    gap: 24px;
+
+    @media (max-width: 1240px) {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    &__card {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+        padding: 9px 35px 9px 17px;
+
+        @media (max-width: 1400px) {
+            padding: 8px 16px;
+        }
+
+        @media (max-width: 767px) {
+            padding: 10px 10px;
+        }
+    }
+
+    &__icon-wrap {
+        flex-shrink: 0;
+        width: 107px;
+        height: 107px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media all and (max-width: 1400px) {
+            width: 90px;
+            height: 90px;
+        }
+    }
+
+    &__body-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-gray-gray-3);
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    &__phones {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    &__phone {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--stroinova-black);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--stroinova-primary-2);
+        }
+
+        @media (max-width: 1400px) {
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--stroinova-black);
+        margin: 0;
+    }
+
+    &__subtext {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-gray-1);
+        margin: 0;
+    }
+
+    &__email {
+        display: block;
+        font-family: var(--font-family);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 143%;
+        color: var(--stroinova-black);
+        text-decoration: none;
+        transition: text-decoration 0.2s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.contacts__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .contacts__social{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        text-decoration: none;
+        transition: opacity 0.2s;
+        background: var(--stroinova-backgroung);
+        border-radius: 50%;
+    }
+
+    @media all and (max-width: 1280px) {
+        display: none;
+    }
+}
+
+// ---- Карта ----
+.section--contacts-map {
+    padding-top: 0;
+    padding-bottom: 35px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 30px;
+    }
+}
+
+.contacts-map {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &__frame {
+        display: block;
+        width: 100%;
+        height: 480px;
+        border: none;
+
+        @media (max-width: 767px) {
+            height: 280px;
+        }
+    }
+
+    &__address {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        align-items: start;
+        gap: 18px;
+        border-radius: 20px;
+        backdrop-filter: blur(9px);
+        background: rgba(255, 255, 255, 0.62);
+        padding: 21px 26px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+
+        svg  {
+            color: #e18411;
+        }
+
+        @media (max-width: 560px) {
+            padding: 8px 10px;
+        }
+    }
+}
+
+// ---- Галерея ----
+.section--contacts-gallery {
+    padding-top: 0;
+    padding-bottom: 50px;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.contacts-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    &__item {
+        border-radius: 20px;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+        display: block;
+        border-radius: 20px;
+        transition: transform 0.35s ease;
+
+        @media (max-width: 767px) {
+            height: 200px;
+        }
+    }
+
+    &__item:hover &__img {
+        transform: scale(1.04);
+    }
+}
+
+// ---- Реквизиты ----
+.section--requisites {
+    padding-top: 0;
+    padding-bottom: 25px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 10px;
+    }
+}
+
+.requisites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+
+}
+
+.requisites-card {
+    background: var(--stroinova-backgroung);
+    border-radius: 20px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    &-col {
+        display: flex;
+        gap: 21px;
+        flex-direction: column;
+        @media (max-width: 900px) {
+            gap: 13px;
+        }
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+    }
+
+    @media (max-width: 767px) {
+
+    }
+
+    &__name {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 144%;
+        color: var(--stroinova-primary-2);
+
+        @media (max-width: 767px) {
+
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item {
+    }
+
+    &__key {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-black);
+
+    }
+
+    &__val {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--stroinova-black);
+        word-break: break-all;
+    }
+}

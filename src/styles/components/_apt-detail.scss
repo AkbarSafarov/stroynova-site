@@ -1,0 +1,844 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Apartment detail page
+// ========================================
+
+// ---- Hero layout ----
+.apt-hero {
+    padding: 0 0 50px;
+
+    &__layout {
+        display: grid;
+        grid-template-columns: 1fr 554px;
+        gap: 43px;
+        align-items: start;
+
+        @media all and (max-width: 1320px) {
+            grid-template-columns: 1fr 450px;
+            gap: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // ---- Viewer (left) ----
+    &__viewer {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 19px 22px;
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+    }
+
+    // ---- Info (right) ----
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 34px;
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-black);
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+    }
+
+    &__action-btn {
+        width: 24px;
+        height: 24px;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .apt-card__fav {
+        position: static;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__subtitle {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        margin-bottom: 16px;
+    }
+
+    &__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    &__badge {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-black);
+        padding: 8px 14px;
+        border-radius: 20px;
+        background: #f2f2f2;
+        white-space: nowrap;
+        border: none;
+
+        &--outline {
+            background: transparent;
+        }
+    }
+
+    // 3-column stats
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: solid #eee;
+        border-width: 1px 0;
+        padding: 16px 0;
+        overflow: hidden;
+        margin-bottom: 16px;
+    }
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__stat-label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+    }
+
+    &__stat-val {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--stroinova-black);
+    }
+
+    &__finish-table {
+        width: 100%;
+        border-radius: 20px;
+        padding: 11px 26px;
+        background: var(--stroinova-backgroung);
+        margin-bottom: 16px;
+
+        div {
+            border-bottom: 1px solid #dbdbdb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 8px 0;
+
+            &:last-child { border-bottom: none; }
+        }
+    }
+
+    &__finish-name {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+    }
+
+    &__finish-price {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--stroinova-primary-2);
+    }
+
+    // Price
+    &__price-wrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    &__price-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 6px;
+        margin-bottom: 5px;
+
+        &--old {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 6px;
+
+            & + .apt-card__price-row {
+                .apt-card__price {
+                    color: var(--stroinova-primary-1);
+                }
+            }
+        }
+    }
+
+    &__price-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        &--right { text-align: right; }
+    }
+
+    &__price--old {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        text-decoration: line-through;
+        color: var(--stroinova-primary-1);
+    }
+
+    &__price {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-primary-1);
+    }
+
+    &__sqm {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--stroinova-black);
+        padding-right: 32px;
+
+        &--old {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 171%;
+            text-decoration: line-through;
+            color: var(--stroinova-black);
+            padding-right: 32px;
+        }
+    }
+
+    // Buttons
+    &__btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding-right: 38px;
+    }
+
+    .btn__button {
+        flex: 0 0 calc(50% - 8px);
+    }
+}
+
+.mobile-block-card {
+    @media all and (min-width: 1201px) {
+        display: none;
+    }
+}
+
+// ---- Plan tabs ----
+.apt-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 12px 13px 38px;
+
+    @media all and (max-width: 1320px) {
+        padding: 12px 15px 12px;
+    }
+
+
+    &__btn {
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
+        padding: 3px 10px 0;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        text-align: center;
+        color: var(--stroinova-black);
+        cursor: pointer;
+        white-space: nowrap;
+        transition: color 0.2s, border-color 0.2s;
+
+        &:hover {
+            color: var(--stroinova-primary-2);
+        }
+
+        &--active {
+            color: var(--stroinova-primary-2);
+            border-bottom-color: var(--stroinova-primary-2);
+            font-weight: 600;
+        }
+    }
+}
+
+// ---- Plan panels ----
+.apt-plan-panel {
+    display: none;
+
+    &--active { display: block; }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: var(--stroinova-white);
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        &--dims::before { border-style: dashed; }
+    }
+}
+
+// ---- "Особенности и преимущества" ----
+.apt-adv {
+    padding-bottom: 65px;
+
+
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--stroinova-black);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 26px;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @media (max-width: 1200px) {
+
+        }
+        @media (max-width: 560px) {
+            gap: 8px;
+        }
+    }
+
+
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    &__item:hover &__img { transform: scale(1.04); }
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 13px;
+        z-index: 2;
+        transition: all .3s;
+        border-radius: 20px;
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-white);
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-white);
+        display: none;
+    }
+
+    &__item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        flex: 0 0 calc(33.33% - 14px);
+
+        picture {
+            height: 100%;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        &:hover {
+            .apt-adv__overlay {
+                background: rgba(0, 0, 0, 0.6);
+            }
+
+            .apt-adv__text {
+                display: block;
+            }
+        }
+
+        &:nth-child(4){
+            flex: 0 0 calc(40% - 10px);
+        }
+
+        &:nth-child(5){
+            flex: 0 0 calc(60% - 10px);
+        }
+
+        @media (max-width: 1200px) {
+            flex: 0 0 calc(50% - 10px);
+
+            &:nth-child(4){
+                flex: 0 0 calc(50% - 10px);
+            }
+
+            &:nth-child(5){
+                flex: none;
+                width: 100%;
+            }
+
+            .apt-adv__text {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 560px) {
+            flex: none !important;
+            width: 100%;
+        }
+    }
+}
+
+// ---- Similar apartments ----
+.apt-similar {
+    padding: 60px 0;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 34px;
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--stroinova-black);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    &__more {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-primary-2);
+        text-decoration: none;
+        padding: 6px 13px;
+        display: inline-block;
+
+        &:hover { color: var(--stroinova-dark, #1d222f); }
+    }
+
+    .apt-grid{
+        margin: 0;
+
+        @media (min-width: 1291px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1024px) {
+            display: flex;
+            gap: 15px;
+            padding: 0 1.375rem;
+            margin: 0 -1.375rem;
+            overflow-x: auto;
+
+            .apt-card {
+                flex: 0 0 270px;
+            }
+
+            .apt-card__project {
+                font-size: 16px;
+            }
+
+            .apt-card__meta {
+                font-size: 14px;
+            }
+
+            .apt-card__price {
+                font-size: 21px;
+            }
+
+            .apt-card__sqm {
+                font-size: 12px;
+            }
+
+            .apt-card__address {
+                font-size: 12px;
+            }
+
+            .btn__button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            padding: 0 0.75rem;
+            margin: 0 -0.75rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 30px 0;
+
+        &__header {
+            margin-bottom: 5px;
+            display: block;
+
+
+        }
+
+        &__title {
+            gap: 9px;
+            align-items: start;
+            font-size: 18px;
+        }
+
+        &__more {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+    }
+}
+
+// ---- Sticky bottom bar ----
+.apt-sticky-bar {
+    padding: 0 0 35px;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 45px;
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+    }
+
+    &__plan {
+        flex: 0 0 134px;
+    }
+
+    &__info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__name {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--stroinova-black);
+        margin-bottom: 8px;
+    }
+
+    &__meta {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--stroinova-gray-1);
+    }
+
+    &__price-block {
+        flex-shrink: 0;
+        padding-right: 22px;
+    }
+
+    &__price {
+        white-space: nowrap;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-primary-1);
+        margin-bottom: 8px;
+    }
+
+    &__mortgage {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--stroinova-black);
+    }
+
+    &__btn {
+
+    }
+
+    @media all and (max-width: 1023px) {
+
+        &__inner {
+            flex-direction: column;
+            gap: 16px;
+            align-items: start;
+        }
+
+        &__plan {
+            flex: none;
+            max-width: 134px;
+        }
+    }
+
+    @media all and (max-width: 767px) {
+
+        &__inner {
+            padding: 16px;
+        }
+
+        &__name {
+            font-size: 18px;
+        }
+
+        &__meta {
+            font-size: 14px;
+        }
+
+        &__price {
+            font-size: 20px;
+        }
+
+        &__mortgage {
+            font-size: 16px;
+        }
+    }
+
+    @media all and (max-width: 480px) {
+        .btn__button {
+            width: 100%;
+        }
+    }
+}
+
+
+@media all and (max-width: 1200px) {
+    .apt-hero__layout {
+        gap: 10px;
+        display: block;
+    }
+
+    .apt-hero__title-row {
+        display: none;
+
+        &.mobile-block-card {
+            display: flex;
+            margin: 0 0 10px;
+        }
+
+        .apt-hero__title {
+            font-size: 18px;
+        }
+    }
+
+    .apt-hero__price-wrap {
+        order: -1;
+        padding-top: 8px;
+    }
+
+    .apt-hero__btns {
+        order: -1;
+        padding: 0;
+        margin-bottom: 16px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .apt-hero {
+        padding-bottom: 30px;
+    }
+
+    .apt-hero__viewer {
+        padding: 0;
+        margin: 0 -0.75rem;
+        border-radius: 0;
+    }
+
+    .tabs-hero {
+        overflow-x: auto;
+    }
+
+    .apt-tabs {
+        padding: 8px 20px 12px;
+    }
+
+    .apt-tabs__btn {
+        padding: 10px 6px;
+        font-size: 14px;
+    }
+
+    .apt-plan-panel {
+        padding: 12px 13px;
+        background: #fff;
+
+        .apt-plan-panel__img {
+            border: 1px solid #D9D9D9;
+        }
+    }
+
+    .apt-hero__price-row {
+        display: block;
+
+        .apt-hero__price {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .apt-hero__sqm {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+
+    .apt-hero__price-row--old {
+        display: block;
+    }
+
+    .apt-hero__btns {
+        flex-direction: column;
+        gap: 8px;
+
+        .btn__button {
+            flex: none;
+            width: 100%;
+        }
+    }
+
+    .apt-hero__subtitle {
+        font-size: 14px;
+    }
+
+    .apt-hero__stats {
+        display: block;
+        padding: 16px 0;
+    }
+
+    .apt-hero__stat{
+        flex-direction: row;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .apt-hero__stat-label {
+        font-size: 14px;
+    }
+
+    .apt-hero__stat-val {
+        font-size: 16px;
+    }
+
+    .apt-hero__finish-table {
+        padding: 11px 16px;
+        margin: 0;
+    }
+
+    .apt-hero__finish-name {
+        font-size: 14px;
+    }
+
+    .apt-hero__finish-price {
+        font-size: 16px;
+    }
+
+    .apt-adv {
+        padding-bottom: 39px;
+    }
+}

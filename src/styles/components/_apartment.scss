@@ -1,0 +1,281 @@
+.apt-card {
+    border: 1px solid var(--stroinova-gray-2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    background: #fff;
+
+    &:hover {
+
+    }
+
+    &--active {
+
+    }
+
+    &__plan {
+        position: relative;
+        aspect-ratio: 2 / 1.8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    &__plan-img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        bottom: 13px;
+        left: 20px;
+        background: linear-gradient(139deg, #e18411 0%, #e13b11 100%);
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 150%;
+        text-align: center;
+        color: var(--stroinova-white);
+        padding: 2px 10px;
+        border-radius: 8px;
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    &__fav {
+        position: absolute;
+        bottom: 4px;
+        right: 12px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #c8c8c8;
+        line-height: 0;
+        transition: all 0.2s;
+        z-index: 2;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='19' viewBox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5768 1.05848C5.47971 -0.875645 9.06437 0.0329926 10.9996 2.23426C12.9349 0.0330519 16.5196 -0.864756 19.4225 1.05848C20.9619 2.08428 21.9297 3.8152 21.9957 5.63172C22.1387 9.77777 18.3672 13.101 12.5944 18.1874L12.4733 18.2948C11.6376 19.0425 10.3509 19.0428 9.51527 18.3055L9.4059 18.2089C3.63305 13.1118 -0.149413 9.78853 0.00452987 5.64246C0.070533 3.81536 1.03759 2.08432 2.5768 1.05848ZM15.9479 2.1366C14.2545 2.1366 12.6046 3.19511 12.0329 4.65906H9.97719C9.3944 3.19511 7.74477 2.1366 6.0514 2.1366C3.85233 2.13666 2.20283 3.73979 2.20277 5.87683C2.20277 8.96496 5.6554 12.0107 10.8893 16.6161L10.9996 16.7225L11.11 16.6161C16.3439 12.0106 19.7965 8.96497 19.7965 5.87683C19.7965 3.73976 18.147 2.13662 15.9479 2.1366Z' fill='black' /%3E%3C/svg%3E");
+
+        &:hover {
+
+        }
+
+        &--saved {
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='19' viewBox='0 0 22 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.57777 1.05871C5.48058 -0.875337 9.06529 0.0324316 11.0006 2.23351C12.9359 0.0323945 16.5206 -0.864667 19.4235 1.05871C20.9629 2.08454 21.9307 3.81541 21.9967 5.63195C22.1397 9.77797 18.3681 13.1013 12.5953 18.1876L12.4743 18.295C11.6386 19.0429 10.3519 19.0421 9.51625 18.3048L9.4059 18.2091C3.63319 13.1121 -0.149388 9.7887 0.0045282 5.64269C0.0705016 3.81549 1.03843 2.08455 2.57777 1.05871Z' fill='%238AAD69' /%3E%3C/svg%3E");
+        }
+    }
+
+    &__body {
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+        padding: 16px 19px 19px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1;
+        align-items: start;
+    }
+
+    &__project {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        color: var(--stroinova-black);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        right: 20px;
+        text-decoration: none;
+        transition: all .3s;
+        z-index: 1;
+
+        &--green { color: var(--stroinova-green, #4a7c59); }
+    }
+
+    &__meta {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--stroinova-gray-2);
+        width: 100%;
+
+        span {
+            color: #9d9d9d;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    &__price-wrap {
+        width: 100%;
+    }
+
+    &__price-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 6px;
+        margin-bottom: 5px;
+
+        &--old {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 6px;
+
+             & + .apt-card__price-row {
+                 .apt-card__price {
+                     color: var(--stroinova-primary-1);
+                 }
+             }
+        }
+    }
+
+    &__price-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        &--right { text-align: right; }
+    }
+
+    &__price--old {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        text-decoration: line-through;
+        color: var(--stroinova-primary-2);
+    }
+
+    &__price {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: var(--stroinova-primary-2);
+    }
+
+    &__sqm {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-gray-gray-3);
+
+        &--old {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            text-decoration: line-through;
+            color: var(--stroinova-primary-2);
+        }
+    }
+
+    &__finish {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-gray-gray-3);
+        padding: 3px 19px;
+        border-radius: 33px;
+        background: var(--stroinova-white);
+    }
+
+    &__address {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: var(--stroinova-black);
+        margin-top: auto;
+        margin-bottom: 7px;
+
+        svg {
+            color: var(--stroinova-gray-gray-3);
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        &:hover {
+            background: linear-gradient(139deg, #e18411 0%, #e13b11 100%);
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        .apt-card__project {
+            color: var(--stroinova-hover-color);
+        }
+
+        .apt-card__plan-img{
+            filter: blur(4px);
+        }
+
+        .apt-card__btn {
+            background: linear-gradient(139deg, #e18411 0%, #e13b11 100%);
+            color: #fff;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .apt-card__plan {
+        padding: 30px 18px;
+    }
+
+    .apt-card__project {
+        left: 18px;
+        right: 18px;
+
+    }
+
+    .apt-card__badge {
+        left: 18px;
+        bottom: 14px;
+    }
+
+    .apt-card__fav {
+        bottom: 14px;
+        right: 15px;
+    }
+
+    .apt-card__body {
+        padding: 15px 16px 19px;
+    }
+}

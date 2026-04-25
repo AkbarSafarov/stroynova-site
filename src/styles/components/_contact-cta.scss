@@ -1,0 +1,362 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Contact CTA ("Остались вопросы?")
+// ========================================
+
+.section--contact-cta {
+    padding: 25px 0 32px;
+
+    @media all and (max-width: 1200px) {
+        padding: 20px 0 45px;
+    }
+    @media all and (max-width: 639px) {
+        padding: 16px 0 32px;
+    }
+
+}
+
+.contact-cta {
+    position: relative;
+    min-height: 340px;
+    border-radius: 20px;
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+        z-index: 0;
+        border-radius: 20px;
+    }
+
+    &__layout {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        padding: 82px 52px 100px;
+        position: relative;
+        z-index: 1;
+
+        @media all and (max-width: 1200px) {
+            padding: 44px 50px 58px;
+            display: block;
+        }
+
+        @media (max-width: 639px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+            padding: 15px 16px 28px;
+        }
+    }
+
+    &__left {
+        flex-shrink: 0;
+        min-width: 240px;
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        line-height: 121%;
+        color: var(--stroinova-white);
+        font-size: clamp(36px, 4vw, 48px);
+        margin-bottom: 16px;
+    }
+
+    &__subtitle {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--stroinova-white);
+    }
+
+    &__form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 0 0 785px;
+    }
+
+    &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 17px;
+
+        @media (max-width: 639px) {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--stroinova-gray-1);
+    }
+
+    &__input {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+        color: var(--stroinova-black);
+        outline: none;
+        transition: background 0.2s;
+        width: 100%;
+        background: none;
+
+        &::-webkit-input-placeholder {
+            color: var(--stroinova-black);
+        }
+
+        &-wrap {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.55);
+            border-radius: 8px;
+            padding: 11px 22px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+
+    &__checkbox-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+        flex: 1;
+        min-width: 200px;
+        position: relative;
+        padding-left: 40px;
+
+        i {
+            position: absolute;
+            top: 0;
+            left: 7px;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid #cacaca;
+            transition: all .3s;
+            background-position: 70% 50%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__checkbox {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked + i {
+            border-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.39912 0.2825L3.70959 4.9125L1.72439 2.9525C1.32937 2.5625 0.691275 2.5625 0.296261 2.9525C-0.0987536 3.3425 -0.0987536 3.9725 0.296261 4.3625L3.00059 7.0325C3.19303 7.2225 3.44625 7.3225 3.71972 7.3225C3.99319 7.3225 4.2464 7.2125 4.43885 7.0325L9.83737 1.7025C10.2324 1.3125 10.2324 0.6825 9.83737 0.2925C9.44236 -0.0975 8.80426 -0.0975 8.40925 0.2925L8.39912 0.2825Z' fill='white' /%3E%3C/svg%3E");
+        }
+    }
+
+    &__checkbox-text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--stroinova-white);
+        max-width: 340px;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    &__social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.2s;
+
+        svg use {
+            transition: all .3s;
+        }
+
+        &:hover {
+            svg use {
+                color: #638E39;
+            }
+        }
+    }
+
+    &__submit {
+        flex-shrink: 0;
+        padding: 14px 36px;
+        font-size: 16px;
+    }
+
+    &__field {
+        &.is-invalid {
+            .contact-cta__input {
+                color: #f00;
+
+                &::-webkit-input-placeholder {
+                    color: #f00;
+                }
+                &-wrap {
+                    backdrop-filter: blur(8px);
+                    background: var(--stroinova-white);
+                    box-shadow: inset 0 0 0 1px #e18011;
+                }
+            }
+        }
+    }
+
+    &__error {
+        display: inline-block;
+        background: rgba(243, 35, 35, 0.87);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--stroinova-white);
+        padding: 2px 10px;
+        border-radius: 20px;
+        white-space: nowrap;
+        position: absolute;
+        top: -24px;
+        left: 0;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    &__input-wrap {
+        position: relative;
+
+        .contact-cta__label {
+            display: block;
+        }
+    }
+
+    &__checkbox-wrap {
+        &.is-invalid {
+
+            .contact-cta__checkbox-text {
+                color: #fca5a5;
+            }
+
+            .contact-cta__checkbox {
+                outline: 2px solid #e13b11;
+                border-radius: 2px;
+            }
+        }
+
+        .contact-cta__error {
+            position: static;
+            display: block;
+            margin-top: 4px;
+            border-radius: 20px;
+        }
+    }
+
+    @media all and (max-width: 1200px) {
+        &__left {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 36px;
+            line-height: 117%;
+            margin-bottom: 7px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            line-height: 130%;
+            margin-bottom: 34px;
+        }
+
+        &__form {
+            gap: 28px;
+        }
+    }
+
+    @media all and (max-width: 630px) {
+        &__left {
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 36px;
+            line-height: 117%;
+            margin-bottom: 5px;
+
+            br {
+                display: block;
+            }
+        }
+
+        &__subtitle {
+            font-size: 14px;
+            line-height: 130%;
+            margin-bottom: 30px;
+        }
+
+        &__form {
+            gap: 8px;
+        }
+
+        &__row {
+            flex-direction: column;
+            align-items: start;
+            gap: 8px;
+        }
+
+        &__checkbox-wrap {
+            width: 100%;
+
+            .contact-cta__checkbox-text {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        &__submit {
+            padding: 12px 30px;
+            width: 100%;
+        }
+
+        &__socials {
+            order: 1;
+        }
+    }
+}

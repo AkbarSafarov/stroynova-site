@@ -1,0 +1,290 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Layout — Header
+// ========================================
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: $z-sticky;
+    background-color: $color-bg;
+
+    &__inner {
+        @include container;
+        display: flex;
+        align-items: center;
+        gap: 58px;
+        padding-top: 23px;
+        padding-bottom: 15px;
+
+        @media all and (max-width: 959px){
+            padding: 5px 12px 10px;
+
+
+            .header__contacts {
+                margin-bottom: 9px;
+            }
+        }
+    }
+
+    &__right {
+        flex: 1 1 auto;
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $spacing-4;
+        margin-bottom: $spacing-4;
+
+        @include respond-below(xl) {
+            justify-content: end;
+        }
+
+        @include respond-below(lg) {
+            justify-content: center;
+        }
+    }
+
+    &__address {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 7px 12px 8px 12px;
+        background: var(--stroinova-backgroung);
+        border-radius: 80px;
+
+        span {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 171%;
+            color: var(--stroinova-black);
+        }
+
+        svg {
+            fill: none;
+        }
+
+        @include respond-below(xl) {
+            display: none;
+        }
+    }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+        gap: $spacing-4;
+
+        &-number {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 130%;
+            color: var(--stroinova-black);
+
+            a {
+                color: var(--stroinova-black);
+                text-decoration: none;
+            }
+        }
+
+        svg {
+            fill: none;
+        }
+
+        @include respond-below(lg) {
+            gap: 5px;
+
+            svg {
+                flex: 0 0 14px;
+                width: 14px;
+                height: 14px;
+            }
+
+            &-number {
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 171%;
+                color: var(--stroinova-black);
+            }
+        }
+    }
+
+    &__panel {
+        display: flex;
+        padding: 10px 13px 10px 7px;
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+        align-items: center;
+        gap: 10px;
+
+        @include respond-below(lg) {
+            padding: 8px 8px 8px 17px;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        max-width: 322px;
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        &-mobile {
+            display: none;
+            flex: 0 0 150px;
+            text-decoration: none;
+        }
+
+        @include respond-below(lg) {
+            display: none;
+
+            &-mobile {
+                display: block;
+
+                svg {
+                    height: auto;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        @include respond-below(lg) {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        @include respond-to('lg') {
+            display: flex;
+            align-items: center;
+            gap: $spacing-8;
+            flex: 1 1 auto;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap:10px;
+
+        @include respond-below(lg) {
+            gap: 12px;
+        }
+    }
+
+    &__favorite {
+        flex: 0 0 41px;
+        border-radius: 50%;
+        height: 41px;
+        background: var(--stroinova-primary-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        padding: 1px 0 0 1px;
+
+        svg {
+            color: #fff;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        @include respond-below(lg) {
+            flex: 0 0 26px;
+            height: 26px;
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    &__profile {
+        flex: 0 0 41px;
+        border-radius: 50%;
+        height: 41px;
+        background: var(--stroinova-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        padding: 0;
+
+        svg {
+            fill: none;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        @include respond-below(lg) {
+            flex: 0 0 26px;
+            height: 26px;
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    &__burger {
+        flex: 0 0 34px;
+        height: 34px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        border-radius: 50%;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        .close-icon {
+            display: none;
+            color: #fff;
+        }
+
+        &.is-open,
+        &[aria-expanded="true"]{
+            background: var(--stroinova-primary-2);
+
+            svg {
+                display: none;
+            }
+
+            .close-icon {
+                display: block;
+            }
+        }
+
+        @include respond-to('lg') {
+            display: none;
+        }
+    }
+}

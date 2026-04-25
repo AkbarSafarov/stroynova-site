@@ -1,0 +1,244 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Promos Slider (Акции/Скидки)
+// ========================================
+
+.section--promos {
+    padding: 30px 0 60px;
+
+    @media all and (max-width: 767px) {
+        padding: 16px 0 32px;
+    }
+
+    .promos-slider {
+        @media all and (max-width: 639px) {
+            margin-right: -0.75rem;
+        }
+    }
+}
+
+// ---- Header ----
+.promos {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        gap: 19px;
+
+        @media all and (max-width: 639px){
+            margin-bottom: 16px;
+        }
+    }
+
+    &__header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @media all and (max-width: 639px) {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-primary-1);
+        white-space: nowrap;
+
+        @media all and (max-width: 639px) {
+            font-size: 20px;
+        }
+    }
+
+    &__more {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-primary-2);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: opacity 0.25s;
+
+        &:hover {
+            opacity: 0.75;
+            color: var(--stroinova-primary-2);
+        }
+
+        @media all and (max-width: 639px){
+            font-size: 12px;
+        }
+    }
+}
+
+// ---- Pagination ----
+.swiper-pagination-promos {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    width: auto !important;
+
+    @media all and (max-width: 639px) {
+        display: none !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 6px;
+        height: 6px;
+        background: var(--stroinova-gray-2);
+        border-radius: 50px;
+        opacity: 1;
+        margin: 0 !important;
+        transition: width 0.3s, background 0.3s;
+        cursor: pointer;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 30px;
+        background: var(--stroinova-primary-2);
+    }
+}
+
+// ---- Slider ----
+.promos-slider {
+    overflow: visible;
+
+    @media all and (max-width: 767px) {
+        overflow: hidden;
+    }
+}
+
+// ---- Promo Card ----
+.promo-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 520px;
+    background: var(--stroinova-gray-2);
+    display: block;
+
+    @media all and (max-width: 1280px) {
+        height: 420px;
+    }
+
+    @media all and (max-width: 767px) {
+        height: 300px;
+    }
+
+    &__img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s;
+    }
+
+    &:hover &__img {
+        transform: scale(1.04);
+    }
+
+    // Градиент снизу (обычный вариант)
+    //&::after {
+    //    content: '';
+    //    position: absolute;
+    //    inset: 0;
+    //    background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+    //    border-radius: inherit;
+    //}
+
+    // Центрированный вариант — другой оверлей
+    //&--center::after {
+    //    background: rgba(0, 0, 0, 0.42);
+    //}
+
+    &__body {
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__body--center {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    // Бейдж с датой
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--stroinova-primary-1);
+        color: #fff;
+        border-radius: 20px;
+        font-family: var(--font-family);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 14px;
+        align-self: flex-start;
+        margin: 22px 27px;
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        @media all and (max-width: 639px) {
+            margin: 15px;
+        }
+    }
+
+    // Нижний блок (обычный)
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+        padding: 60px 27px 26px;
+        background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+
+        @media all and (max-width: 639px) {
+            padding: 30px 15px 15px;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        line-height: 150%;
+        color: var(--stroinova-white);
+        font-size: clamp(18px, 2vw, 24px);
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-white);
+
+        @media all and (max-width: 639px){
+            font-size: 12px;
+        }
+    }
+
+    &__btn {
+        display: none;
+    }
+
+    &:hover {
+
+        .promo-card__btn {
+            display: inline-flex;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Новости — Строй Нова" %}
+{% set description = "Актуальные новости компании Строй Нова: сдача объектов, акции, изменения в законодательстве." %}
+{% set canonical = "https://stroynova.ru/news/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Новости</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">Новости</h1>
+</div>
+
+<!-- ГЛАВНАЯ НОВОСТЬ -->
+<section class="section section--news-hero" aria-label="Главная новость">
+    <div class="container">
+        <div class="news-hero">
+            <div class="news-hero__image">
+                <img
+                    src="/assets/images/news1.jpg"
+                    alt="Началось строительство нового жилого комплекса"
+                    class="news-hero__img"
+                    loading="eager"
+                    width="930"
+                    height="500"
+                />
+            </div>
+            <div class="news-hero__content">
+                <h2 class="news-hero__title">Началось строительство нового жилого комплекса</h2>
+                <div class="news-hero__meta">
+                    <span class="news-hero__date">
+                        <svg width="14" height="14" aria-hidden="true" focusable="false">
+                            <use href="#calendar" />
+                        </svg>
+                        31.12.2025
+                    </span>
+                </div>
+                <p class="news-hero__text">Компания «Стройнова» приступила к возведению современного. В проектах применяются энергоэффективные материалы и системы ...</p>
+                <div class="tags-link">
+                    <a href="">#кладовые</a><a href="">#ипотека</a>
+                </div>
+                <a href="/news-item/" class="btn__button btn_border border_orange news-hero__btn">Читать все новости</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ФИЛЬТР ПО ТЕГАМ -->
+<div class="catalog-tags news-tags" aria-label="Категории новостей">
+    <div class="container">
+        <div class="catalog-tags__inner">
+            <a href="#" class="catalog-tag catalog-tag--active">#все новости</a>
+            <a href="#" class="catalog-tag">#редакторы</a>
+            <a href="#" class="catalog-tag">#рекомендации</a>
+            <a href="#" class="catalog-tag">#распродажи</a>
+            <a href="#" class="catalog-tag">#редакторы</a>
+            <a href="#" class="catalog-tag">#рекомендации</a>
+            <a href="#" class="catalog-tag">#распродажи</a>
+            <a href="#" class="catalog-tag">#возможности</a>
+        </div>
+    </div>
+</div>
+
+<!-- СОРТИРОВКА -->
+<div class="container">
+    <div class="catalog-sort news-sort" id="news-sort-dropdown">
+        <span class="catalog-sort__label">Сортировать по :</span>
+        <div class="catalog-sort__dropdown">
+            <button class="catalog-sort__trigger" type="button" aria-expanded="false" aria-haspopup="listbox">
+                <span class="catalog-sort__current">По возрастанию цены</span>
+                <svg class="catalog-sort__chevron" width="12" height="12" aria-hidden="true">
+                    <use href="#arrow-down-icon" />
+                </svg>
+            </button>
+            <ul class="catalog-sort__panel" role="listbox" aria-label="Сортировка новостей">
+                <li class="catalog-sort__option is-active" data-value="asc" role="option" aria-selected="true">По возрастанию цены</li>
+                <li class="catalog-sort__option" data-value="desc" role="option" aria-selected="false">По убыванию цены</li>
+                <li class="catalog-sort__option" data-value="new" role="option" aria-selected="false">Сначала новые</li>
+                <li class="catalog-sort__option" data-value="old" role="option" aria-selected="false">Сначала старые</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- СЕТКА НОВОСТЕЙ -->
+<section class="section section--news-grid" aria-label="Список новостей">
+    <div class="container">
+        <div class="news-page-grid">
+
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+            {% include "blocks/news-item.njk" %}
+
+        </div>
+
+        {% include "blocks/pagination-btn.njk" %}
+    </div>
+</section>
+
+{% include "blocks/form-bottom.njk" %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Страница не найдена — Строй Нова" %}
+{% set description = "Запрашиваемая страница не существует." %}
+{% set robots = "noindex, nofollow" %}
+
+{% block content %}
+<section class="section section-page__error" aria-labelledby="error-heading">
+    <div class="container">
+        <div class="error-page">
+            <h1 id="error-heading" class="error-page__title">что то пошло не так, <span>страница не найдена.</span></h1>
+            <div class="error-page__image">
+                <img src="/assets/images/image-404.png" alt="" aria-hidden="true">
+            </div>
+            <div class="error-page__btns">
+                <a href="/" class="btn__button btn_orange">Вернуться на главную</a>
+                <a href="/" class="btn__button btn_border border_green">Перейти в проекты</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

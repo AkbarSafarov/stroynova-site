@@ -1,0 +1,93 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Наши проекты — Строй Нова" %}
+{% set description = "Каталог жилых проектов от Строй Нова. Современные жилые комплексы в Костроме." %}
+{% set canonical = "https://stroynova.ru/catalog/" %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroynova.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Наши проекты", "item": "https://stroynova.ru/catalog/" }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Подобрать квартиру</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">Наши проекты</h1>
+</div>
+<!-- Маркеры карты (данные) -->
+<script type="application/json" id="catalog-map-data">
+    [
+        {"coords": [40.920, 57.760], "type": "built",    "title": "ЖК Войкова 22",  "url": "/projects/voykov22/"},
+        {"coords": [40.942, 57.775], "type": "building", "title": "ЖК Ленин-Град",  "url": "/projects/leningrad/"},
+        {"coords": [40.910, 57.755], "type": "built",    "title": "ЖК Свердлова",   "url": "/projects/sverdlova/"},
+        {"coords": [40.955, 57.782], "type": "building", "title": "ЖК Северный",    "url": "/projects/severny/"},
+        {"coords": [40.932, 57.770], "type": "built",    "title": "ЖК Центральный", "url": "/projects/centralny/"}
+    ]
+</script>
+<!-- КАРТА -->
+<section class="catalog-map-section" aria-label="Карта проектов">
+    <div class="container">
+        <div class="catalog-map-wrap" id="catalog-map-wrap">
+            <div class="catalog-map__legend">
+                <span class="catalog-map__legend-item catalog-map__legend-item--built">Построены</span>
+                <span class="catalog-map__legend-item catalog-map__legend-item--building">Строятся</span>
+            </div>
+            <button class="catalog-map__toggle btn__button btn_border" id="catalog-map-toggle" type="button">Свернуть карту</button>
+            <div class="catalog-map__container" id="catalog-map"></div>
+        </div>
+    </div>
+
+</section>
+
+{% include "blocks/sort.njk" %}
+
+<!-- СЕТКА КАРТОЧЕК -->
+<div class="container">
+    <div class="catalog-grid">
+
+        {% include "blocks/proj-card.njk" %}
+        {% include "blocks/proj-card.njk" %}
+        {% include "blocks/proj-card.njk" %}
+        {% include "blocks/proj-card.njk" %}
+        {% include "blocks/proj-card.njk" %}
+        {% include "blocks/proj-card.njk" %}
+
+
+    </div>
+
+    <!-- Показать еще -->
+    <div class="catalog-more">
+        <button class="catalog-more__btn" type="button">
+            Показать еще
+            <svg width="14" height="14" aria-hidden="true"><use href="#arrow-down-icon"/></svg>
+        </button>
+    </div>
+</div>
+
+{% include "blocks/seo-text.njk" %}
+
+{% include "blocks/faq-form.njk" %}
+
+{% include "blocks/tags.njk" %}
+
+{% include "blocks/form-bottom.njk" %}
+
+{% endblock %}

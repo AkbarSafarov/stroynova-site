@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ description | default('Строй Нова — строительная компания') }}" />
+    <meta name="robots" content="{{ robots | default('index, follow') }}" />
+    <link rel="canonical" href="{{ canonical | default('https://stroynova.ru/') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ title | default('Строй Нова') }}" />
+    <meta property="og:description" content="{{ description | default('Строй Нова — строительная компания') }}" />
+    <meta property="og:url" content="{{ canonical | default('https://stroynova.ru/') }}" />
+    <meta property="og:image" content="https://stroynova.ru/og-image.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ title | default('Строй Нова') }}" />
+    <meta name="twitter:description" content="{{ description | default('Строй Нова — строительная компания') }}" />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{{ title | default('Строй Нова') }}</title>
+    {% block head %}{% endblock %}
+    {% block schema %}{% endblock %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Строй Нова",
+      "url": "https://stroynova.ru/",
+      "logo": "https://stroynova.ru/favicon.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Кострома",
+        "addressRegion": "Костромская область",
+        "addressCountry": "RU"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "availableLanguage": "Russian"
+      }
+    }
+    </script>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Перейти к содержимому</a>
+{% include "partials/header.njk" %}
+<main id="main-content">
+    {% block content %}{% endblock %}
+</main>
+{% include "partials/footer.njk" %}
+<div id="live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<div id="modal-book" class="modal-form" role="dialog" aria-modal="true" aria-labelledby="modal-book-title" aria-hidden="true">
+    <div class="modal-form__overlay"></div>
+    <div class="modal-form__card">
+        <button class="modal-form__close" type="button" aria-label="Закрыть">
+            <svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#closesquare" /></svg>
+        </button>
+        <div class="modal-form__layout">
+            <img class="modal-form__img" src="/assets/images/form-modal.jpg" alt="" aria-hidden="true" loading="lazy">
+            <div class="modal-form__content">
+                <h2 id="modal-book-title" class="modal-form__title">Забронировать</h2>
+                <p id="modal-book-subtitle" class="modal-form__subtitle"></p>
+                <form class="modal-form__form" novalidate>
+                    <div class="modal-form__field">
+                        <div class="modal-form__input-wrap">
+                            <label for="book-name" class="modal-form__label">Ваше имя</label>
+                            <input id="book-name" name="name" type="text" class="modal-form__input" placeholder="Введите имя" autocomplete="given-name">
+                        </div>
+                    </div>
+                    <div class="modal-form__field">
+                        <div class="modal-form__input-wrap">
+                            <label for="book-phone" class="modal-form__label">Телефон</label>
+                            <input id="book-phone" name="phone" type="tel" class="modal-form__input" placeholder="+7(___)-___-__-__" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="modal-form__field">
+                        <div class="modal-form__input-wrap">
+                            <label for="book-comment" class="modal-form__label">Комментарий</label>
+                            <textarea id="book-comment" name="comment" class="modal-form__input modal-form__textarea" placeholder="Ваш комментарий" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label class="modal-form__checkbox-wrap">
+                        <input type="checkbox" name="consent" class="modal-form__checkbox">
+                        <i></i>
+                        <span class="modal-form__checkbox-text">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</span>
+                    </label>
+                    <button type="submit" class="btn__button btn_orange modal-form__submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal: Получить консультацию -->
+<div id="modal-consult" class="modal-form" role="dialog" aria-modal="true" aria-labelledby="modal-consult-title" aria-hidden="true">
+    <div class="modal-form__overlay"></div>
+    <div class="modal-form__card">
+        <button class="modal-form__close" type="button" aria-label="Закрыть">
+            <svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#closesquare" /></svg>
+        </button>
+        <div class="modal-form__layout">
+            <img class="modal-form__img" src="/assets/images/form-modal2.jpg" alt="" aria-hidden="true" loading="lazy">
+            <div class="modal-form__content">
+                <h2 id="modal-consult-title" class="modal-form__title">Получить консультацию</h2>
+                <form class="modal-form__form" novalidate>
+                    <div class="modal-form__field">
+                        <div class="modal-form__input-wrap">
+                            <label for="consult-name" class="modal-form__label">Ваше имя</label>
+                            <input id="consult-name" name="name" type="text" class="modal-form__input" placeholder="Введите имя" autocomplete="given-name">
+                        </div>
+                    </div>
+                    <div class="modal-form__field">
+                        <div class="modal-form__input-wrap">
+                            <label for="consult-phone" class="modal-form__label">Телефон</label>
+                            <input id="consult-phone" name="phone" type="tel" class="modal-form__input" placeholder="+7(___)-___-__-__" autocomplete="tel">
+                        </div>
+                    </div>
+                    <label class="modal-form__checkbox-wrap">
+                        <input type="checkbox" name="consent" class="modal-form__checkbox">
+                        <i></i>
+                        <span class="modal-form__checkbox-text">Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</span>
+                    </label>
+                    <button type="submit" class="btn__button btn_orange modal-form__submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="/main.js"></script>
+</body>
+
+</html>

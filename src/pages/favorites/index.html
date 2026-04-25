@@ -1,0 +1,44 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Избранное — Строй Нова" %}
+{% set description = "Сохранённые квартиры и проекты. Сравнивайте и выбирайте лучший вариант." %}
+{% set robots = "noindex, nofollow" %}
+{% set canonical = "https://stroynova.ru/favorites/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Избранное</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container" aria-labelledby="favorites-heading">
+    <h1 id="favorites-heading" class="h1-title">Избранное</h1>
+</div>
+
+{% include "blocks/sort.njk" %}
+
+<div class="container">
+    <div class="apt-grid">
+
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+        {% include "blocks/apartment-fav.njk" %}
+
+    </div>
+
+</div>
+
+{% include "blocks/form-bottom.njk" %}
+
+{% endblock %}

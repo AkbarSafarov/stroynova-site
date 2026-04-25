@@ -1,0 +1,262 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Purchase Methods (tabs)
+// ========================================
+
+.section--purchase {
+    padding-bottom: 76px;
+
+    @media all and (max-width: 1280px) {
+        padding-bottom: 55px;
+    }
+
+    @media all and (max-width: 767px) {
+        padding-bottom: 32px;
+    }
+}
+
+.purchase {
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-primary-1);
+        margin-bottom: 32px;
+
+        @media all and (max-width: 767px) {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 130%;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__layout {
+        display: grid;
+        grid-template-columns: 1fr 334px;
+        gap: 24px;
+        border: 1px solid var(--stroinova-gray-2);
+        border-radius: 20px;
+
+        &-inner {
+            display: flex;
+            padding: 40px 30px;
+        }
+
+        @media all and (max-width: 1280px) {
+            display: block;
+            border: none;
+
+            &-inner {
+                border: 1px solid var(--stroinova-gray-2);
+                border-radius: 20px;
+                margin-bottom: 22px;
+            }
+        }
+
+        @media all and (max-width: 1024px) {
+
+        }
+
+        @media all and (max-width: 767px) {
+            &-inner {
+                padding: 24px 20px;
+                margin-bottom: 0px;
+                display: block;
+            }
+        }
+    }
+
+
+
+    // ---- Левый сайдбар ----
+    &__nav {
+        flex: 0 0 300px;
+        padding-left: 0;
+        border-right: 1px solid var(--stroinova-gray-2);
+
+        @media all and (max-width: 1280px) {
+            flex: 0 0 265px;
+        }
+
+        @media all and (max-width: 767px) {
+            padding: 0 0 22px;
+            border: none;
+            border-bottom: 1px solid var(--stroinova-gray-2);
+        }
+    }
+
+    &__nav-label {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-gray-gray-3);
+        padding: 4px 0 22px;
+
+        @media all and (max-width: 767px) {
+            padding: 0 0 6px;
+            font-size: 14px;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+
+        @media all and (max-width: 1024px) {
+
+        }
+    }
+
+    &__nav-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        padding: 8px 0;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        cursor: pointer;
+        transition: color 0.25s, background 0.25s;
+
+        &:hover {
+            color: var(--stroinova-primary-1);
+        }
+
+        &--active {
+            color: var(--stroinova-primary-1);
+        }
+
+        @media all and (max-width: 767px) {
+            padding: 4px 0;
+            font-size: 14px;
+        }
+    }
+
+    // ---- Центральный контент ----
+    &__content {
+        min-height: 220px;
+        padding: 6px 0 0 50px;
+
+        @media all and (max-width: 767px) {
+            min-height: 0;
+            padding: 22px 0 0;
+        }
+    }
+
+    &__tab {
+        display: none;
+        flex-direction: column;
+        gap: 19px;
+        align-items: start;
+
+        &--active {
+            display: flex;
+        }
+
+        @media all and (max-width: 767px) {
+            gap: 8px;
+
+            .btn__button {
+                margin-top: 18px;
+                padding: 7px 20px;
+                font-size: 14px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__tab-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        line-height: 130%;
+        color: var(--stroinova-black);
+        font-size: clamp(20px, 2vw, 20px);
+        margin-bottom: 20px;
+
+        sup {
+            font-size: 0.6em;
+        }
+
+        @media all and (max-width: 767px) {
+            margin: 0;
+        }
+    }
+
+    &__tab-text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+    }
+
+    &__tab-note {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-primary-2);
+    }
+
+
+
+    // ---- Правая карточка РАССРОЧКА ----
+    &__promo {
+        background: linear-gradient(139deg, #e18411 0%, #e13b11 100%);
+        border-radius: 20px;
+        padding: 40px 38px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        color: #fff;
+
+        @media all and (max-width: 1280px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 36px;
+            padding: 25px 34px;
+        }
+
+        @media all and (max-width: 1024px) {
+
+        }
+
+        @media all and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__promo-title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        line-height: 117%;
+        color: var(--stroinova-white);
+        font-size: clamp(24px, 4vw, 36px);
+
+        @media all and (max-width: 1280px) {
+            font-size: 24px;
+        }
+    }
+
+    &__promo-text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-white);
+        margin-bottom: 17px;
+
+        @media all and (max-width: 1280px) {
+            margin: 0;
+        }
+    }
+
+
+}

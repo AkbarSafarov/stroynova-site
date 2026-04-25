@@ -1,0 +1,159 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Navigation
+// ========================================
+
+.nav {
+    &__list { display: flex; align-items: center; flex-wrap: nowrap; }
+    &__item { position: relative; flex-shrink: 0; }
+
+    &__item--more { position: relative; }
+
+    &__more {
+        @include button-reset;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all $transition-base;
+        white-space: nowrap;
+
+        svg { fill: none; }
+
+        &:hover,
+        &[aria-expanded='true'] {
+            color: $color-primary;
+            background: #fff;
+        }
+    }
+
+    &__overflow {
+        list-style: none;
+        margin: 0;
+        padding: $spacing-2;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        background: $color-bg;
+        border-radius: $radius-lg;
+        box-shadow: $shadow-md;
+        border: 1px solid $color-border;
+        min-width: 200px;
+        z-index: $z-dropdown;
+
+        .nav__item {
+            display: block;
+        }
+    }
+
+    &__link {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        padding: 10px 16px;
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: all $transition-base;
+
+        svg {
+            path {
+
+                transition: all $transition-base;
+            }
+        }
+
+        &:hover, &[aria-current='page'] {
+            color: $color-primary;
+            background: #fff;
+
+            svg {
+                path {
+                    fill: $color-primary !important;
+                }
+            }
+        }
+    }
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 98px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--stroinova-backgroung);
+    z-index: $z-modal;
+    transform: translateX(-100%);
+    transition: transform $transition-base;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+
+    &.is-open { transform: translateX(0);
+        left: 10px; }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 16px 21px;
+        flex: 1;
+    }
+
+    &__item {
+        border-bottom: 1px solid var(--stroinova-gray-2);
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 13px 6px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        svg {
+            fill: none;
+            color: var(--stroinova-gray-1);
+        }
+
+        &:hover,
+        &[aria-current='page'] {
+            color: var(--stroinova-primary-2);
+
+            svg { opacity: 1; color: var(--stroinova-primary-2); }
+        }
+    }
+
+    // CTA footer
+    &__footer {
+        padding: 0 16px 32px;
+    }
+
+    &__cta {
+        width: 100%;
+        text-align: center;
+        border-radius: 100px;
+    }
+}

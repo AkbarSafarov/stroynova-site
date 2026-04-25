@@ -1,0 +1,1575 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Страница проекта — Строй Нова" %}
+{% set description = "Подробная информация о жилом комплексе: планировки, инфраструктура, ход строительства." %}
+{% set canonical = "https://stroynova.ru/projects/" %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroynova.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Страница проекта", "item": "https://stroynova.ru/projects/" }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Страница проекта</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="section section--hero" aria-labelledby="hero-heading">
+    <div class="container">
+        <div class="arrow-swiper">
+            <div class="arrow-btn arrow--prev">
+                <svg width="17" height="17" aria-hidden="true" focusable="false">
+                    <use href="#arrow-w-left" />
+                </svg>
+            </div>
+            <div class="arrow-btn arrow--next">
+                <svg width="17" height="17" aria-hidden="true" focusable="false">
+                    <use href="#arrow-w-right" />
+                </svg>
+            </div>
+        </div>
+        <div class="swiper hero-slider inner-hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="/assets/images/main-image.jpg" type="image/jpeg" />
+                        <source srcset="/assets/images/main-image.jpg" type="image/jpeg" />
+                        <img
+                            src="/assets/images/main-image.jpg"
+                            alt="Современный жилой комплекс от Строй Нова"
+                            width="1417"
+                            height="712"
+                            loading="eager"
+                        />
+                    </picture>
+                    <div class="inner">
+                        <div class="name">Жилой многоквартирный дом на ул.<br>Войкова 22</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="btn__button btn_orange">Выбрать квартиру</a>
+                        </div>
+                        <div class="bottom-block">
+                            <div class="address-block">
+                                <div class="address-block__icon">
+                                    <svg width="24" height="24" aria-hidden="true" focusable="false">
+                                        <use href="#location" />
+                                    </svg>
+                                </div>
+                                <div class="address-block__text">МЦД-2 Перерва 5 мин</div>
+                            </div>
+                            <div class="price-block">от 13 млн ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="/assets/images/main-image.jpg" type="image/jpeg" />
+                        <source srcset="/assets/images/main-image.jpg" type="image/jpeg" />
+                        <img
+                            src="/assets/images/main-image.jpg"
+                            alt="Современный жилой комплекс от Строй Нова"
+                            width="1417"
+                            height="712"
+                            loading="eager"
+                        />
+                    </picture>
+                    <div class="inner">
+                        <div class="name">Жилой многоквартирный дом на ул.<br>Войкова 22</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="btn__button btn_orange">Выбрать квартиру</a>
+                        </div>
+                        <div class="bottom-block">
+                            <div class="address-block">
+                                <div class="address-block__icon">
+                                    <svg width="24" height="24" aria-hidden="true" focusable="false">
+                                        <use href="#location" />
+                                    </svg>
+                                </div>
+                                <div class="address-block__text">МЦД-2 Перерва 5 мин</div>
+                            </div>
+                            <div class="price-block">от 13 млн ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination-custom"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ANCHOR MENU -->
+<section class="section section--anchor-menu" aria-labelledby="anchor-menu">
+    <div class="container">
+        <div class="anchor-menu">
+            <ul class="anchor-menu__inner">
+                <li><a href="#about-project" class="active">О проекте</a></li>
+                <li><a href="#project-advantages">Особенности</a></li>
+                <li><a href="#gen-plan">Выбор квартиры</a></li>
+                <li><a href="#project-plans">Тип планировок</a></li>
+                <li><a href="javascript:void(0);">Кладовые</a></li>
+                <li><a href="#project-steps">Ход строительства</a></li>
+                <li><a href="#purchase">Способы покупки</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT PROJECT -->
+<section class="section section--about-project" aria-labelledby="about-heading" id="about-project">
+    <div class="container">
+        <div class="about-project">
+            <div class="about-project__left">
+                <div class="about-project__header">
+                    <div class="about-project__header-icon">
+                        <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                            <use href="#heading-icon" />
+                        </svg>
+                        <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                            <use href="#heading-icon-mobile" />
+                        </svg>
+                    </div>
+                    <h2 class="about-project__title">О проекте</h2>
+                </div>
+                <div class="about-project__text">
+                    <p>Это современный жилой дом комфорт-класса, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна, застеклённые лоджии, кладовые помещения и автономная котельная, что обеспечивает энергоэффективность и комфорт проживания в любое время года.</p>
+                    <p>Территория дома спроектирована с учётом современных требований к безопасности и удобству: предусмотрена просторная парковка, видеодомофон, высокоскоростной интернет. Проект ориентирован на создание спокойной и функциональной жилой среды, подходящей как для семейного проживания, так и для индивидуального образа жизни, с акцентом на практичность, качество строительства и долгосрочную надёжность.  </p>
+                </div>
+                <div class="about-project__btn">
+                    <a href="#">Больше о проекте</a>
+                </div>
+            </div>
+            <div class="about-project__right">
+                <div class="about-project__images">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source media="(min-width: 1280px)" srcset="/assets/images/project-image.png">
+                                    <source media="(min-width: 640px)" srcset="/assets/images/project-image-tablet.png">
+                                    <source media="(max-width: 639px)" srcset="/assets/images/project-image-mobile.png">
+                                    <img src="/assets/images/project-image.png" alt="project-image">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source media="(min-width: 1280px)" srcset="/assets/images/project-image.png">
+                                    <source media="(min-width: 640px)" srcset="/assets/images/project-image-tablet.png">
+                                    <source media="(max-width: 639px)" srcset="/assets/images/project-image-mobile.png">
+                                    <img src="/assets/images/project-image.png" alt="project-image2">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination-custom"></div>
+                    </div>
+                </div>
+                <div class="about-project__params">
+                    <div class="about-project__params-item">
+                        <div class="item-title">Стоимость</div>
+                        <div class="item-value">от 3.78 млн ₽</div>
+                    </div>
+                    <div class="about-project__params-item">
+                        <div class="item-title">Район</div>
+                        <div class="item-value">Бывалово</div>
+                    </div>
+                    <div class="about-project__params-item">
+                        <div class="item-title">Срок ввода</div>
+                        <div class="item-value">III квартал 2029</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GEN PLAN -->
+<section class="section section--gen-plan" aria-labelledby="gen-plan-heading" id="gen-plan">
+    <div class="container">
+        <div class="gen-plan-block">
+            <div class="gen-plan-block__header">
+                <div class="gen-plan-block__title">
+                    <div class="gen-plan-block__title-icon">
+                        <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                            <use href="#heading-icon" />
+                        </svg>
+                        <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                            <use href="#heading-icon-mobile" />
+                        </svg>
+                    </div>
+                    <h2>Генплан</h2>
+                </div>
+                <div class="gen-plan-block__header-btns">
+                    <a href="#" class="btn__button btn_green">Выбрать квартиру</a>
+                    <a href="#" class="btn__button btn_orange">Экскурсия в ЖК</a>
+                </div>
+            </div>
+            <div class="gen-plan-block__body">
+                <div class="gen-plan-block__address">
+                    <div class="gen-plan-block__address-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#location" />
+                        </svg>
+                    </div>
+                    <div class="gen-plan-block__address-text">МЦД-3 Перерва 15 мин</div>
+                </div>
+                <div class="gen-plan-block__image">
+                    <picture>
+                        <source media="(min-width: 1280px)" srcset="/assets/images/project-plan-image.png">
+                        <source media="(min-width: 640px)" srcset="/assets/images/project-plan-image-tablet.png">
+                        <source media="(max-width: 639px)" srcset="/assets/images/project-plan-image-mobile.png">
+                        <img src="/assets/images/project-plan-image.png" alt="project-plan-image">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT ADVANTAGES -->
+<section class="section section--project-advantages" aria-labelledby="advantages-heading" id="project-advantages">
+    <div class="container">
+        <div class="project-advantages">
+            <div class="project-advantages__title">
+                <div class="project-advantages__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                <h2>Особенности и преимущества проекта</h2>
+            </div>
+            <div class="project-advantages__tabs">
+                <div class="project-advantages__tabs-titles">
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);" class="active">Парки</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Архитектура</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Инфраструктура</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Квартиры</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Отделка</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Лобби</a>
+                    </div>
+                    <div class="project-advantages__tabs-title">
+                        <a href="javascript:void(0);">Дворы</a>
+                    </div>
+                </div>
+                <div class="project-advantages__tabs-bodys">
+                    <div class="project-advantages__tabs-body active">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Это современный жилой дом комфорт-класса</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-advantages__tabs-body">
+                        <div class="tab-body-inner">
+                            <div class="tab-body-inner__left">
+                                <div class="tab-body-inner__text">
+                                    <p><b>Текст текст текст</b>, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна</p>
+                                    <ul>
+                                        <li>автономная котельная;</li>
+                                        <li>большая застеклённая лоджия;</li>
+                                        <li>просторная парковка;</li>
+                                        <li>видеодомофон;</li>
+                                        <li>высокоскоростной интернет;</li>
+                                        <li>кладовые помещения;</li>
+                                        <li>панорамные окна</li>
+                                    </ul>
+                                    <p>Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и Территория дома спроектирована с учётом современных требований к безопасности и</p>
+                                </div>
+                                <div class="project-advantages__more-text">
+                                    <a href="javascript:void(0);" data-text="Скрыть" data-text2="Читать больше">Читать больше</a>
+                                </div>
+                            </div>
+                            <div class="tab-body-inner__right">
+                                <div class="tab-body-inner__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/assets/images/advantage-slider-image.jpg" alt="advantage-slider-image">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination-custom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Выберите планировку -->
+<section class="section section--project-plans" aria-labelledby="project-plans" id="project-plans">
+    <div class="container">
+        <div class="project-plans">
+            <div class="project-plans__title">
+                <div class="project-plans__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                <h2>Выберите планировку</h2>
+            </div>
+            <div class="apt-filter apt-filter__inner">
+                <div class="apt-filter__row">
+
+                    <div class="apt-filter__field apt-filter__field--floors">
+                        <span class="apt-filter__label">Площадь, м²</span>
+                        <div class="apt-filter__range-row">
+                            <span class="apt-filter__range-edge"><output id="floors-min-val">30</output></span>
+                            <span class="apt-filter__range-edge">170</span>
+                            <input
+                                class="apt-filter__range"
+                                type="range"
+                                id="filter-floors"
+                                name="floors"
+                                min="30"
+                                max="170"
+                                value="0"
+                                aria-label="Площадь"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="apt-filter__field apt-filter__field--rooms">
+                        <div class="rooms-picker" role="group" aria-label="Количество комнат">
+                            <button class="rooms-picker__btn" type="button">Студия</button>
+                            <button class="rooms-picker__btn" type="button">1</button>
+                            <button class="rooms-picker__btn" type="button">2</button>
+                            <button class="rooms-picker__btn rooms-picker__btn--active" type="button" aria-pressed="true">3</button>
+                            <button class="rooms-picker__btn" type="button">4+</button>
+                        </div>
+                    </div>
+
+                    <div class="apt-filter__field apt-filter__field--price">
+                        <label class="apt-filter__label" for="filter-price">Задайте стоимость, ₽</label>
+                        <div class="apt-filter__range-row">
+                            <span class="apt-filter__range-edge"><output id="price-output">12</output></span>
+                            <input
+                                class="apt-filter__range"
+                                type="range"
+                                id="filter-price"
+                                name="price"
+                                min="50000"
+                                max="30000000"
+                                value="100000"
+                                step="1000"
+                                aria-label="Максимальная стоимость"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="apt-filter__action">
+                        <button class="btn__button btn_orange apt-filter__submit" type="button">Показать 120 вариантов</button>
+                        <button class="apt-filter__reset" type="button" aria-label="Очистить фильтры">
+                            <svg width="12" height="12" aria-hidden="true" focusable="false">
+                                <use href="#close" />
+                            </svg>
+                            Очистить
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="project-plans__body">
+                <div class="project-plans__tabs">
+                    <div class="project-plans__tabs-titles">
+                        <div class="titles-inner">
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);" class="active">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">60 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">42 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">55 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">60 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">30 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="project-plans__tabs-title">
+                                <a href="javascript:void(0);">
+                                    <span class="image">
+                                        <img src="/assets/images/project-plan.png" alt="project-plan">
+                                    </span>
+                                    <span class="text-wrap">
+                                        <span class="text">50 м2</span>
+                                        <span class="price">от 3.78 млн ₽</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-plans__tabs-bodys">
+                        <div class="project-plans__tabs-body active">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">64,5 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 3.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-plans__tabs-body">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия 2</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">42 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 1.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-plans__tabs-body">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия 3</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">55 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 2.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-plans__tabs-body">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия 4</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">64,5 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 3.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-plans__tabs-body">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия 5</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">64,5 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 3.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-plans__tabs-body">
+                            <div class="tab-inner">
+                                <div class="tab-inner__left">
+                                    <div class="image">
+                                        <a href="/assets/images/project-plan.png" data-pswp-width="0" data-pswp-height="0" class="pswp-item">
+                                            <img src="/assets/images/project-plan.png" alt="project-plan">
+                                        </a>
+                                        <div class="zoom-btn">
+                                            <a href="javascript:void(0);" class="zoom-trigger">
+                                                <svg width="28" height="28" aria-hidden="true" focusable="false" class="mobile-icon">
+                                                    <use href="#zoom-icon" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-inner__right">
+                                    <div class="tab-inner__title">Студия 6</div>
+                                    <div class="tab-inner__params">
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Проект</div>
+                                            <div class="tab-inner__params-value">Октябрьский</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Площадь</div>
+                                            <div class="tab-inner__params-value">64,5 м2</div>
+                                        </div>
+                                        <div class="tab-inner__params-item">
+                                            <div class="tab-inner__params-title">Стоимость</div>
+                                            <div class="tab-inner__params-value">от 3.78 млн ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner__btn">
+                                        <a href="#" class="btn__button btn_orange plans-show-btn">Показать 2 квартиры</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "blocks/form-block.njk" %}
+
+<!-- PROJECT STEPS -->
+<section class="section section--project-steps" aria-labelledby="project-steps" id="project-steps">
+    <div class="container">
+        <div class="project-steps">
+            <div class="project-steps__title">
+                <div class="project-steps__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                <h2>Ход строительства</h2>
+            </div>
+            <div class="project-steps__tabs">
+                <div class="project-steps__tabs-titles">
+                    <div class="project-steps__tabs-years">
+                        <div class="custom-select">
+                            <div class="custom-select__text">
+                                <span>2026</span>
+                                <svg width="18" height="18" aria-hidden="true" focusable="false">
+                                    <use href="#arrow-down-select" />
+                                </svg>
+                            </div>
+                            <div class="custom-select__dropdown">
+                                <div class="custom-select__dropdown-inner">
+                                    <div class="custom-select__item">
+                                        <a href="javascript:void(0);">2025</a>
+                                    </div>
+                                    <div class="custom-select__item">
+                                        <a href="javascript:void(0);" class="selected">2026</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-steps__tabs-title" data-year="2025">
+                        <a href="javascript:void(0);">Декабрь</a>
+                    </div>
+                    <div class="project-steps__tabs-title" data-year="2025">
+                        <a href="javascript:void(0);">Ноябрь</a>
+                    </div>
+                    <div class="project-steps__tabs-title visible" data-year="2026">
+                        <a href="javascript:void(0);" class="active">Март</a>
+                    </div>
+                    <div class="project-steps__tabs-title visible" data-year="2026">
+                        <a href="javascript:void(0);">Февраль</a>
+                    </div>
+                    <div class="project-steps__tabs-title visible" data-year="2026">
+                        <a href="javascript:void(0);">Январь</a>
+                    </div>
+                </div>
+                <div class="project-steps__tabs-bodys">
+                    <div class="project-steps__tabs-body active" data-year="2026" data-tab="Март">
+                        <div class="project-steps__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps3.png" alt="project-steps3">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps4.png" alt="project-steps4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps5.png" alt="project-steps5">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps6.png" alt="project-steps6">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow-swiper">
+                                <div class="arrow-btn arrow--prev">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-left" />
+                                    </svg>
+                                </div>
+                                <div class="arrow-btn arrow--next">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-right" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-steps__tabs-body" data-year="2026" data-tab="Февраль">
+                        <div class="project-steps__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps3.png" alt="project-steps3">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps4.png" alt="project-steps4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps5.png" alt="project-steps5">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps6.png" alt="project-steps6">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow-swiper">
+                                <div class="arrow-btn arrow--prev">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-left" />
+                                    </svg>
+                                </div>
+                                <div class="arrow-btn arrow--next">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-right" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-steps__tabs-body" data-year="2026" data-tab="Январь">
+                        <div class="project-steps__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps3.png" alt="project-steps3">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps4.png" alt="project-steps4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps5.png" alt="project-steps5">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps6.png" alt="project-steps6">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow-swiper">
+                                <div class="arrow-btn arrow--prev">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-left" />
+                                    </svg>
+                                </div>
+                                <div class="arrow-btn arrow--next">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-right" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-steps__tabs-body" data-year="2025" data-tab="Декабрь">
+                        <div class="project-steps__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps3.png" alt="project-steps3">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps4.png" alt="project-steps4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps5.png" alt="project-steps5">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps6.png" alt="project-steps6">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow-swiper">
+                                <div class="arrow-btn arrow--prev">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-left" />
+                                    </svg>
+                                </div>
+                                <div class="arrow-btn arrow--next">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-right" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-steps__tabs-body" data-year="2025" data-tab="Ноябрь">
+                        <div class="project-steps__slider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps3.png" alt="project-steps3">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps4.png" alt="project-steps4">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps5.png" alt="project-steps5">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps6.png" alt="project-steps6">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps1.png" alt="project-steps1">
+                                    </div>
+                                    <div class="image">
+                                        <img src="/assets/images/project-steps2.png" alt="project-steps2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arrow-swiper">
+                                <div class="arrow-btn arrow--prev">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-left" />
+                                    </svg>
+                                </div>
+                                <div class="arrow-btn arrow--next">
+                                    <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                        <use href="#arrow-w-right" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DOCUMENTS BLOCK -->
+<section class="section section--documents-block" aria-labelledby="documents-heading" id="documents-block">
+    <div class="container">
+        <div class="documents-block">
+            <div class="documents-block__header">
+                <h2 class="documents-block__title">Документы</h2>
+                <div class="documents-block__more-btn">
+                    <a href="javascript:void(0);" class="active">
+                        <span>Список документов</span>
+                        <svg width="18" height="18" aria-hidden="true" focusable="false">
+                            <use href="#docs-arrow" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="documents-block__body active">
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="documents-block__item">
+                    <div class="documents-block__item-icon">
+                        <svg width="24" height="24" aria-hidden="true" focusable="false">
+                            <use href="#document-icon" />
+                        </svg>
+                    </div>
+                    <div class="documents-block__item-body">
+                        <div class="documents-block__item-title">Название документа</div>
+                        <div class="documents-block__item-bottom">
+                            <a href="#">
+                                <span class="documents-block__item-info">PDF, 0.4 мб</span>
+                                <span class="documents-block__item-download">
+                                    <svg width="20" height="20" aria-hidden="true" focusable="false">
+                                        <use href="#download-document" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="documents-block__mobile-more">
+                <a href="javascript:void(0);" data-text="Скрыть" data-text2="Показать еще">Показать еще</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "blocks/purchase.njk" %}
+
+{% include "blocks/calc-projects.njk" %}
+
+<section class="section section--sales-office" aria-labelledby="sales-office-heading">
+    <div class="container">
+        <div class="sales-office">
+            <div class="sales-office__title">
+                <div class="sales-office__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                <h2>Офис продаж</h2>
+            </div>
+            <div class="sales-office__body">
+                <div class="sales-office__image">
+                    <img src="/assets/images/office-image.png" alt="office-image">
+                </div>
+                <div class="sales-office__map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae6952f87005d8347187e7bc78b52ba2eab5935e084a4f95e4ee0f48ff6296bc3&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+                <div class="sales-office__contacts">
+                    <div class="sales-office__contacts-item">
+                        <div class="sales-office__contacts-phones">
+                            <div class="sales-office__contacts-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.2037 12.25L13.6637 11.96C13.0537 11.89 12.4537 12.1 12.0237 12.53L10.1837 14.37C7.35367 12.93 5.03367 10.62 3.59367 7.78L5.44367 5.93C5.87367 5.5 6.08367 4.9 6.01367 4.29L5.72367 1.77C5.60367 0.76 4.75367 0 3.73367 0H2.00367C0.873674 0 -0.0663265 0.94 0.00367348 2.07C0.533673 10.61 7.36367 17.43 15.8937 17.96C17.0237 18.03 17.9637 17.09 17.9637 15.96V14.23C17.9737 13.22 17.2137 12.37 16.2037 12.25Z" fill="url(#paint0_linear_4038_17180)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_4038_17180" x1="1.45494" y1="0.854873" x2="14.9435" y2="18.9521" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E18411" />
+                                        <stop offset="1" stop-color="#E13B11" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="sales-office__contacts-body">
+                                <div class="sales-office__phones">
+                                    <div>
+                                        <a href="tel:+7 (4942) 54-22-22">+7 (4942) 54-22-22</a>
+                                    </div>
+                                    <div>
+                                        <a href="tel:+7 (4942) 300-600">+7 (4942) 300-600</a>
+                                    </div>
+                                </div>
+                                <div class="sales-office__mail">
+                                    <div>
+                                        <a href="mailto:stroynowa@mail.ru">stroynowa@mail.ru</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sales-office__contacts-item">
+                        <div class="sales-office__contacts-schedule">
+                            <div class="sales-office__contacts-icon">
+                                <svg width="24" height="24" aria-hidden="true" focusable="false">
+                                    <use href="#office-clock-icon" />
+                                </svg>
+                            </div>
+                            <div class="sales-office__contacts-body">
+                                <b>9:00 - 18:00 обед с 13:00 - 14:00,</b>
+                                <p>Выходные:<br>суббота, воскресенье</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sales-office__contacts-item">
+                        <div class="sales-office__contacts-address">
+                            <div class="sales-office__contacts-icon">
+                                <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.31776C0 3.71789 3.84388 0 8.49345 0C13.1561 0 17 3.71789 17 8.31776C17 10.6357 16.157 12.7876 14.7695 14.6116C13.2388 16.6235 11.3522 18.3765 9.22854 19.7524C8.74251 20.0704 8.30387 20.0944 7.77045 19.7524C5.63474 18.3765 3.74809 16.6235 2.2305 14.6116C0.841983 12.7876 0 10.6357 0 8.31776ZM5.69423 8.57675C5.69423 10.1177 6.95166 11.3297 8.49345 11.3297C10.0362 11.3297 11.3058 10.1177 11.3058 8.57675C11.3058 7.0478 10.0362 5.77683 8.49345 5.77683C6.95166 5.77683 5.69423 7.0478 5.69423 8.57675Z" fill="url(#paint0_linear_4038_21588)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_4038_21588" x1="1.37688" y1="0.95178" x2="16.9135" y2="18.6699" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E18411" />
+                                        <stop offset="1" stop-color="#E13B11" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="sales-office__contacts-body">г. Кострома, ул. Свердлова, д. 41Б, помещ. 3, ком. 9</div>
+                        </div>
+                        <div class="sales-office__contacts-socials">
+                            <div>
+                                <a href="#">
+                                    <svg width="36" height="36" aria-hidden="true" focusable="false">
+                                        <use href="#telegram_ico" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <svg width="36" height="36" aria-hidden="true" focusable="false">
+                                        <use href="#vk_ico" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <svg width="36" height="36" aria-hidden="true" focusable="false">
+                                        <use href="#whatsapp_ico" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "blocks/news.njk" %}
+
+<!-- ПРОЕКТЫ -->
+<section class="section promo-projects" aria-labelledby="similar-projects-heading">
+    <div class="container">
+        <div class="promo-projects__header">
+            <h2 id="promo-projects-heading" class="promo-projects__title">
+                <div class="project-plans__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                Похожие проекты
+            </h2>
+        </div>
+        <div class="proj-cards-grid">
+
+            {% include "blocks/proj-card.njk" %}
+            {% include "blocks/proj-card.njk" %}
+            {% include "blocks/proj-card.njk" %}
+
+        </div>
+    </div>
+</section>
+
+{% include "blocks/form-bottom.njk" %}
+
+<div class="plans-popup" id="plans-popup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="plans-popup-title">
+    <div class="plans-popup__overlay"></div>
+    <div class="plans-popup__container">
+        <div class="plans-popup__card">
+            <button class="plans-popup__close" type="button" aria-label="Закрыть">
+                <svg width="18" height="18" aria-hidden="true" focusable="false">
+                    <use href="#close" />
+                </svg>
+            </button>
+            <h3 class="plans-popup__title" id="plans-popup-title">
+                <span class="plans-popup__title-decor" aria-hidden="true"></span>
+                Планировка: <span class="plans-popup__title-text">Студия, 25,14 м²</span>
+            </h3>
+            <div class="plans-popup__list">
+                <div class="plans-popup__apt">
+                    <div class="plans-popup__apt-img">
+                        <img src="/assets/images/apart.png" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <div class="plans-popup__apt-info">
+                        <div class="plans-popup__apt-name">Студия, 25,14 м²</div>
+                        <div class="plans-popup__apt-badge">Предчистовая отделка</div>
+                    </div>
+                    <div class="plans-popup__apt-details">
+                        <div>1 корпус</div>
+                        <div>секция 5.1</div>
+                        <div>9/26 этаж</div>
+                        <div>номер: 4</div>
+                    </div>
+                    <div class="plans-popup__apt-price">
+                        <div class="plans-popup__apt-price-label">Стоимость</div>
+                        <div class="plans-popup__apt-price-val">17 550 452 ₽</div>
+                    </div>
+                </div>
+                <div class="plans-popup__apt">
+                    <div class="plans-popup__apt-img">
+                        <img src="/assets/images/apart.png" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <div class="plans-popup__apt-info">
+                        <div class="plans-popup__apt-name">Студия, 25,14 м²</div>
+                        <div class="plans-popup__apt-badge">Предчистовая отделка</div>
+                    </div>
+                    <div class="plans-popup__apt-details">
+                        <div>1 корпус</div>
+                        <div>секция 5.1</div>
+                        <div>10/26 этаж</div>
+                        <div>номер: 5</div>
+                    </div>
+                    <div class="plans-popup__apt-price">
+                        <div class="plans-popup__apt-price-label">Стоимость</div>
+                        <div class="plans-popup__apt-price-val">17 550 452 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

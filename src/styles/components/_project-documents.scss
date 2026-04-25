@@ -1,0 +1,198 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Project documents
+// ========================================
+
+.section--documents-block {
+    padding-block: 0;
+    margin-bottom: 41px;
+
+    @media all and (max-width: 767px) {
+        margin-bottom: 32px;
+    }
+}
+
+.documents-block {
+    padding: 34px 30px 40px;
+    border-radius: 20px;
+    background: var(--stroinova-backgroung);
+
+    @include respond-below('sm') {
+        padding: 20px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 13px;
+        margin-bottom: 33px;
+
+        @include respond-below('sm') {
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+    }
+
+    &__title {
+
+        @include respond-below('md') {
+            font-size: 18px;
+            line-height: 133%;
+        }
+    }
+
+    &__more-btn {
+
+        @include respond-below('sm') {
+            display: none;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 163%;
+            color: var(--stroinova-gray-gray-3);
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: var(--stroinova-primary-2);
+            }
+
+            &.active {
+
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
+            svg {
+                fill: none;
+
+                path {
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+    }
+
+    &__body {
+        display: none;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+
+        @include respond-below('xl') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include respond-below('sm') {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        &.active {
+            display: grid;
+        }
+    }
+
+    &__item {
+        border-radius: 20px;
+        background: var(--stroinova-white);
+        padding: 16px;
+        display: flex;
+        gap: 8px;
+
+        @include respond-below('sm') {
+            display: none;
+            padding: 11px 12px;
+
+            &:nth-child(-n+3) {
+                display: flex;
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        &-icon {
+            font-size: 0;
+            line-height: normal;
+
+            svg {
+                color: var(--stroinova-primary-2);
+            }
+        }
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-title {
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 133%;
+            color: var(--stroinova-black);
+
+            @include respond-below('sm') {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 143%;
+            }
+        }
+
+        &-bottom {
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-family: var(--second-family);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 130%;
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: var(--stroinova-gray-gray-3);
+                transition: all 0.3s ease;
+
+                @include respond-below('sm') {
+                    font-size: 12px;
+                    line-height: 150%;
+                }
+
+                &:hover {
+                    color: var(--stroinova-primary-2);
+                }
+            }
+        }
+    }
+
+    &__mobile-more {
+        display: none;
+        margin-top: 16px;
+
+        @include respond-below('md') {
+            display: block;
+        }
+        a {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: var(--stroinova-gray-gray-3);
+        }
+    }
+}

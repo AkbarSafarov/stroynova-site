@@ -1,0 +1,289 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Квартира № 34 — Строй Нова" %}
+{% set description = "Студия 64,5 м², 6 этаж, корпус 1,2. Цена 9 200 400 ₽. Застройщик Строй Нова, Кострома." %}
+{% set canonical = "https://stroynova.ru/apartments/34/" %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Квартира № 34 — Студия 64,5 м²",
+  "description": "Студия 64,5 м², 6 этаж, корпус 1,2. Застройщик Строй Нова, Кострома.",
+  "url": "https://stroynova.ru/apartments/34/",
+  "image": "https://stroynova.ru/assets/images/apart.png",
+  "brand": {
+    "@type": "Organization",
+    "name": "Строй Нова"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "9200400",
+    "priceCurrency": "RUB",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Строй Нова",
+      "url": "https://stroynova.ru/"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroynova.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Каталог квартир", "item": "https://stroynova.ru/apartments/" },
+    { "@type": "ListItem", "position": 3, "name": "Квартира № 34", "item": "https://stroynova.ru/apartments/34/" }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item"><a href="/apartments/" class="breadcrumb__link">Каталог квартир</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Квартира № 34</li>
+        </ol>
+    </div>
+</nav>
+
+<section class="apt-hero" aria-labelledby="apt-title">
+    <div class="container">
+        <div class="apt-hero__layout">
+            <div class="apt-hero__title-row mobile-block-card">
+                <div class="apt-hero__title">Квартира № 34</div>
+                <div class="apt-hero__actions">
+                    <button class="apt-hero__action-btn" type="button" aria-label="Поделиться">
+                        <svg width="18" height="18" aria-hidden="true"><use href="#share_24px"/></svg>
+                    </button>
+                    <button class="apt-card__fav apt-hero__action-btn" type="button" aria-label="В избранное"></button>
+                </div>
+            </div>
+            <!-- Левая колонка: планировка + табы -->
+            <div class="apt-hero__viewer">
+                <div class="tabs-hero">
+                    <nav class="apt-tabs" aria-label="Виды планировки">
+                        <button class="apt-tabs__btn apt-tabs__btn--active" type="button" data-plan-tab="layout">Планировка</button>
+                        <button class="apt-tabs__btn" type="button" data-plan-tab="dims">С размерами</button>
+                        <button class="apt-tabs__btn" type="button" data-plan-tab="floor">На этаже</button>
+                        <button class="apt-tabs__btn" type="button" data-plan-tab="genplan">На генплане</button>
+                        <button class="apt-tabs__btn" type="button" data-plan-tab="view">Вид из окна</button>
+                    </nav>
+                </div>
+                <div class="apt-plan-panel apt-plan-panel--active" id="plan-layout">
+                    <div class="apt-plan-panel__img">
+                        <img src="/assets/images/apt.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+                <div class="apt-plan-panel" id="plan-dims">
+                    <div class="apt-plan-panel__img">
+                        <img src="/assets/images/advantage-slider-image.jpg" alt="" aria-hidden="true">
+                    </div>
+                </div>
+                <div class="apt-plan-panel" id="plan-floor">
+                    <div class="apt-plan-panel__img">
+                        <img src="/assets/images/project-steps2.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+                <div class="apt-plan-panel" id="plan-genplan">
+                    <div class="apt-plan-panel__img">
+                        <img src="/assets/images/project-steps3.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+                <div class="apt-plan-panel" id="plan-view">
+                    <div class="apt-plan-panel__img">
+                        <img src="/assets/images/project-steps4.png" alt="" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка: информация -->
+            <div class="apt-hero__info">
+                <div class="apt-hero__title-row">
+                    <h1 id="apt-title" class="apt-hero__title">Квартира № 34</h1>
+                    <div class="apt-hero__actions">
+                        <button class="apt-hero__action-btn" type="button" aria-label="Поделиться">
+                            <svg width="18" height="18" aria-hidden="true"><use href="#share_24px"/></svg>
+                        </button>
+                        <button class="apt-card__fav apt-hero__action-btn" type="button" aria-label="В избранное"></button>
+                    </div>
+                </div>
+
+                <p class="apt-hero__subtitle">1,2 корпус, 3 секция, 6 этаж</p>
+
+                <div class="apt-hero__badges">
+                    <span class="apt-hero__badge">4к 2026</span>
+                    <span class="apt-hero__badge">Без отделки</span>
+                    <span class="apt-hero__badge">Купи сейчас - плати потом</span>
+                </div>
+
+                <!-- Характеристики -->
+                <div class="apt-hero__stats">
+                    <div class="apt-hero__stat">
+                        <span class="apt-hero__stat-label">Общая площадь</span>
+                        <span class="apt-hero__stat-val">64,5 М2</span>
+                    </div>
+                    <div class="apt-hero__stat">
+                        <span class="apt-hero__stat-label">Площадь кухни</span>
+                        <span class="apt-hero__stat-val">64,5 М2</span>
+                    </div>
+                    <div class="apt-hero__stat">
+                        <span class="apt-hero__stat-label">Жилая площадь</span>
+                        <span class="apt-hero__stat-val">64,5 М2</span>
+                    </div>
+                </div>
+
+                <!-- Отделка + цены -->
+                <div class="apt-hero__finish-table">
+                    <div>
+                        <span class="apt-hero__finish-name">Базовая отделка</span>
+                        <span class="apt-hero__finish-price">3 950 000 ₽</span>
+                    </div>
+                    <div>
+                        <span class="apt-hero__finish-name">Получистовая отделка</span>
+                        <span class="apt-hero__finish-price">3 450 000 ₽</span>
+                    </div>
+                    <div>
+                        <span class="apt-hero__finish-name">Чистовая отделка</span>
+                        <span class="apt-hero__finish-price">2 750 000 ₽</span>
+                    </div>
+                </div>
+
+                <!-- Цена -->
+                <div class="apt-hero__price-wrap">
+                    <div class="apt-hero__price-row--old">
+                        <span class="apt-hero__price--old">17 550 452 ₽</span>
+                        <span class="apt-hero__sqm--old">130 381 ₽ / м²</span>
+                    </div>
+                    <div class="apt-hero__price-row">
+                        <span class="apt-hero__price">17 550 452 ₽</span>
+                        <span class="apt-hero__sqm">130 381 ₽ / м²</span>
+                    </div>
+                </div>
+
+                <!-- Кнопки -->
+                <div class="apt-hero__btns">
+                    <button class="btn__button btn_orange apt-hero__btn--primary" type="button" data-modal-open="book">Забронировать</button>
+                    <button class="btn__button btn_border border_black apt-hero__btn--secondary" type="button" data-modal-open="consult">Консультация</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ОСОБЕННОСТИ И ПРЕИМУЩЕСТВА -->
+<section class="apt-adv section" aria-labelledby="apt-adv-heading">
+    <div class="container">
+        <h2 id="apt-adv-heading" class="apt-adv__title">
+            <div class="project-plans__title-icon">
+                <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </div>
+            Особенности и преимущества проекта
+        </h2>
+        <div class="apt-adv__grid">
+            <div class="apt-adv__item apt-adv__item--1">
+                <img class="apt-adv__img" src="/assets/images/os1.jpg" alt="Преимущество 1" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--2">
+                <img class="apt-adv__img" src="/assets/images/os2.jpg" alt="Преимущество 2" loading="lazy" />
+                <div class="apt-adv__overlay apt-adv__overlay--center">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--3">
+                <img class="apt-adv__img" src="/assets/images/os3.jpg" alt="Преимущество 3" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--4">
+                <img class="apt-adv__img" src="/assets/images/os4.jpg" alt="Преимущество 4" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--5">
+                <img class="apt-adv__img" src="/assets/images/os5.jpg" alt="Преимущество 5" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "blocks/purchase.njk" %}
+
+{% include "blocks/calc.njk" %}
+
+<!-- ПОХОЖИЕ КВАРТИРЫ -->
+<section class="apt-similar section" aria-labelledby="apt-similar-heading">
+    <div class="container">
+        <div class="apt-similar__header">
+            <h2 id="apt-similar-heading" class="apt-similar__title">
+                <div class="project-plans__title-icon">
+                    <svg width="14" height="46" aria-hidden="true" focusable="false" class="desktop-icon">
+                        <use href="#heading-icon" />
+                    </svg>
+                    <svg width="6" height="30" aria-hidden="true" focusable="false" class="mobile-icon">
+                        <use href="#heading-icon-mobile" />
+                    </svg>
+                </div>
+                Квартиры, которые вам нравятся
+            </h2>
+            <a href="/apartments/" class="apt-similar__more">Смотреть ещё</a>
+        </div>
+        <div class="apt-grid">
+            {% include "blocks/apartment.njk" %}
+            {% include "blocks/apartment.njk" %}
+            {% include "blocks/apartment-old-price.njk" %}
+            {% include "blocks/apartment.njk" %}
+        </div>
+    </div>
+</section>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="apt-sticky-bar" id="apt-sticky-bar" aria-label="Информация о квартире">
+    <div class="container">
+        <div class="apt-sticky-bar__inner">
+            <div class="apt-sticky-bar__plan">
+                <img src="/assets/images/apt.png" alt="" aria-hidden="true">
+            </div>
+            <div class="apt-sticky-bar__info">
+                <p class="apt-sticky-bar__name">Квартира с тремя спальнями и гостиной 26м2</p>
+                <p class="apt-sticky-bar__meta">Квартира № 11. Этаж 2 из 18. Площадь 96,36м2</p>
+            </div>
+            <div class="apt-sticky-bar__price-block">
+                <p class="apt-sticky-bar__price">9 200 400 ₽</p>
+                <p class="apt-sticky-bar__mortgage">в ипотеку 40 022 ₽</p>
+            </div>
+            <button class="btn__button btn_orange apt-sticky-bar__btn" type="button" data-modal-open="consult">Получить консультацию</button>
+        </div>
+    </div>
+</div>
+
+{% include "blocks/form-bottom.njk" %}
+
+{% endblock %}

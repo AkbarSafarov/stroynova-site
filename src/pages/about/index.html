@@ -1,0 +1,488 @@
+{% extends "layouts/base.njk" %}
+{% set title = "О компании — Строй Нова" %}
+{% set description = "Строй Нова — надёжный застройщик с многолетним опытом. История компании, миссия, ценности и награды." %}
+{% set canonical = "https://stroynova.ru/about/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">О компании</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">О компании</h1>
+</div>
+
+<!-- HERO: текст + фото -->
+<section class="section section--about-hero" aria-label="О компании">
+    <div class="container">
+        <div class="about-hero">
+            <div class="about-hero__left">
+                <p><strong>Группа компаний «Стройнова» – лидер строительной отрасли России.</strong></p>
+                <p><strong>С гордостью представляем компанию, которая уже три года подряд – с 2022 по 2024 год – удостаивается почётного звания «Надёжный застройщик России». Эта награда – доказательство нашего профессионализма, надёжности и бескомпромиссного подхода к качеству строительства.</strong></p>
+                <ul class="about-hero__list">
+                    <li>автономная котельная;</li>
+                    <li>большая застеклённая лоджия;</li>
+                    <li>просторная парковка;</li>
+                    <li>видеодомофон;</li>
+                </ul>
+                <p>Территория дома спроектирована с учётом современных требований к безопасности и удобству жителей.</p>
+            </div>
+            <div class="about-hero__right">
+                <img
+                    src="/assets/images/ab.jpg"
+                    alt="Строительство ЖК «Патриот» — вид сверху"
+                    class="about-hero__img"
+                    loading="eager"
+                    width="932"
+                    height="501"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- СТАТИСТИКА -->
+<section class="section section--about-stats" aria-label="Показатели компании">
+    <div class="container">
+        <div class="about--stats-row">
+            <div class="about--stat-item">
+                <div class="about--stat__icon">
+                    <img src="/assets/images/ab-icon.png" alt="" aria-hidden="true" width="126" height="119">
+                </div>
+                <div class="about--stat__body">
+                    <span class="about--stat__num">10 лет</span>
+                    <span class="about--stat__label">успешной работы</span>
+                </div>
+            </div>
+            <div class="about--stat-item">
+                <div class="about--stat__icon">
+                    <img src="/assets/images/ab-icon2.png" alt="" aria-hidden="true" width="126" height="119">
+                </div>
+                <div class="about--stat__body">
+                    <span class="about--stat__num">25 000</span>
+                    <span class="about--stat__label">клиентов обслужено</span>
+                </div>
+            </div>
+            <div class="about--stat-item">
+                <div class="about--stat__icon">
+                    <img src="/assets/images/ab-icon3.png" alt="" aria-hidden="true" width="126" height="119">
+                </div>
+                <div class="about--stat__body">
+                    <span class="about--stat__num">500+</span>
+                    <span class="about--stat__label">договоров заключено</span>
+                </div>
+            </div>
+            <div class="about--stat-item">
+                <div class="about--stat__icon">
+                    <img src="/assets/images/ab-icon4.png" alt="" aria-hidden="true" width="126" height="119">
+                </div>
+                <div class="about--stat__body">
+                    <span class="about--stat__num">4.9</span>
+                    <span class="about--stat__label">рейтинг по отзывам</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- МИССИЯ И ЦЕННОСТИ -->
+<section class="section section--about-mission" aria-labelledby="mission-heading">
+    <div class="container">
+        <div class="about-section-title">
+            <div class="about-section-title__icon" aria-hidden="true">
+                <svg width="14" height="46" focusable="false" class="desktop-icon">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg width="6" height="30" focusable="false" class="mobile-icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </div>
+            <h2 id="mission-heading" class="about-section-title__text">Миссия и ценности</h2>
+        </div>
+        <div class="about-mission-text">
+            <p>Molestie at elementum eu facilisis sed. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. Enim blandit volutpat maecenas volutpat blandit. Ut lectus arcu bibendum at. Ultrices tristique nulla aliquet enim tortor. Ut lectus arcu bibendum at. Sagittis eu volutpat odio facilisis mauris sit. Nunc mi ipsum faucibus vitae. Scelerisque eleifend donec pretium vulputate sapien nec. Amet consectetur adipiscing elit duis tristique sollicitudin.</p>
+            <p>Egestas congue quisque egestas diam in arcu. Pulvinar neque laoreet suspendisse interdum consectetur libero id. Aliquam sem et tortor consequat. Ac odio tempor orci dapibus ultrices in iaculis nunc. Mauris ultrices eros in cursus turpis. Sed arcu non odio euismod lacinia. Eu consequat ac felis donec. Hac habitasse platea dictumst quisque sagittis purus sit. Massa tincidunt nunc pulvinar sapien. Nibh tortor id aliquet.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ПРИНЦИПЫ И ПРЕИМУЩЕСТВА -->
+<section class="section section--principles" aria-labelledby="principles-heading">
+    <div class="container">
+        <div class="about-section-title">
+            <div class="about-section-title__icon" aria-hidden="true">
+                <svg width="14" height="46" focusable="false" class="desktop-icon">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg width="6" height="30" focusable="false" class="mobile-icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </div>
+            <h2 id="principles-heading" class="about-section-title__text">Принципы и преимущества</h2>
+        </div>
+        <div class="apt-adv__grid">
+            <div class="apt-adv__item apt-adv__item--1">
+                <img class="apt-adv__img" src="/assets/images/os1.jpg" alt="Преимущество 1" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--2">
+                <img class="apt-adv__img" src="/assets/images/os2.jpg" alt="Преимущество 2" loading="lazy" />
+                <div class="apt-adv__overlay apt-adv__overlay--center">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--3">
+                <img class="apt-adv__img" src="/assets/images/os3.jpg" alt="Преимущество 3" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--4">
+                <img class="apt-adv__img" src="/assets/images/os4.jpg" alt="Преимущество 4" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+            <div class="apt-adv__item apt-adv__item--5">
+                <img class="apt-adv__img" src="/assets/images/os5.jpg" alt="Преимущество 5" loading="lazy" />
+                <div class="apt-adv__overlay">
+                    <span class="apt-adv__label">Текст преимущества</span>
+                    <p class="apt-adv__text">До центра города можно добраться всего за несколько минут. Рядом с комплексом школы, детские сады, магазины и зоны для отдыха. Жилой комплекс сочетает в себе высокое качество строительства.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ГАЛЕРЕЯ -->
+<section class="section section--about-gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+        <div class="about-section-title">
+            <div class="about-section-title__icon" aria-hidden="true">
+                <svg width="14" height="46" focusable="false" class="desktop-icon">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg width="6" height="30" focusable="false" class="mobile-icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </div>
+            <h2 id="gallery-heading" class="about-section-title__text">Галерея</h2>
+        </div>
+    </div>
+    <div class="about-gallery-wrap">
+        <div class="about-gallery-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="about-gallery-slide">
+                        <img src="/assets/images/gal.jpg" alt="Строительная площадка ЖК «Патриот»" class="about-gallery-slide__img" loading="lazy" width="1920" height="976" />
+                        <div class="container">
+                            <div class="about-gallery-slide__overlay">
+                                <p class="about-gallery-slide__text">Группа компаний «Стройнова» – лидер строительной отрасли России
+                                    <br>
+                                    С гордостью представляем компанию, которая уже три года подряд – с  2022 по 2024 год – удостаивается почетного звания «Надежный застройщик  России». Эта награда – доказательство нашего профессионализма,  надежности и бескомпромиссного подхода к качеству  </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="about-gallery-slide">
+                        <img src="/assets/images/os1.jpg" alt="Вид с воздуха на стройплощадку" class="about-gallery-slide__img" loading="lazy" width="1920" height="976" />
+                        <div class="container">
+                            <div class="about-gallery-slide__overlay">
+                                <p class="about-gallery-slide__text">Группа компаний «Стройнова» – лидер строительной отрасли России
+                                    С гордостью представляем компанию, которая уже три года подряд – с  2022 по 2024 год – удостаивается почетного звания «Надежный застройщик  России». Эта награда – доказательство нашего профессионализма,  надежности и бескомпромиссного подхода к качеству  </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="about-gallery-slide">
+                        <img src="/assets/images/os2.jpg" alt="Благоустроенная территория комплекса" class="about-gallery-slide__img" loading="lazy" width="1920" height="976" />
+                        <div class="container">
+                            <div class="about-gallery-slide__overlay">
+                                <p class="about-gallery-slide__text">Просторные дворы, зелёные зоны и современная детская площадка для жизни в гармонии с природой.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="about-gallery-slide">
+                        <img src="/assets/images/os3.jpg" alt="Готовый жилой комплекс" class="about-gallery-slide__img" loading="lazy" width="1920" height="976" />
+                        <div class="container">
+                            <div class="about-gallery-slide__overlay">
+                                <p class="about-gallery-slide__text">Более 10 сданных жилых комплексов, тысячи довольных семей — результат нашей работы.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination-custom about-gallery-pagination container"></div>
+        </div>
+    </div>
+</section>
+
+<!-- НАГРАДЫ И ДОСТИЖЕНИЯ -->
+<section class="section section--awards awards-section" aria-labelledby="awards-heading">
+    <div class="container">
+        <div class="about-section-title">
+            <div class="about-section-title__icon" aria-hidden="true">
+                <svg width="14" height="46" focusable="false" class="desktop-icon">
+                    <use href="#heading-icon" />
+                </svg>
+                <svg width="6" height="30" focusable="false" class="mobile-icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+            </div>
+            <h2 id="awards-heading" class="about-section-title__text">Награды и достижения</h2>
+        </div>
+
+        <!-- Табы по годам -->
+        <div class="awards-years" role="tablist" aria-label="Выбрать год">
+            <button class="awards-year-btn awards-year-btn--active" type="button"
+                    role="tab" aria-selected="true" aria-controls="awards-panel-2025" id="awards-tab-2025"
+                    data-awards-year="2025">2025</button>
+            <button class="awards-year-btn" type="button"
+                    role="tab" aria-selected="false" aria-controls="awards-panel-2024" id="awards-tab-2024"
+                    data-awards-year="2024">2024</button>
+            <button class="awards-year-btn" type="button"
+                    role="tab" aria-selected="false" aria-controls="awards-panel-2023" id="awards-tab-2023"
+                    data-awards-year="2023">2023</button>
+            <button class="awards-year-btn" type="button"
+                    role="tab" aria-selected="false" aria-controls="awards-panel-2022" id="awards-tab-2022"
+                    data-awards-year="2022">2022</button>
+            <button class="awards-year-btn" type="button"
+                    role="tab" aria-selected="false" aria-controls="awards-panel-2021" id="awards-tab-2021"
+                    data-awards-year="2021">2021</button>
+            <button class="awards-year-btn" type="button"
+                    role="tab" aria-selected="false" aria-controls="awards-panel-2020" id="awards-tab-2020"
+                    data-awards-year="2020">2020</button>
+        </div>
+
+        <!-- Панель 2025 -->
+        <div class="awards-tab" id="awards-panel-2025" data-year="2025"
+             role="tabpanel" aria-labelledby="awards-tab-2025">
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>Группа компаний «Стройнова» удостоена звания «Надёжный застройщик России» четвёртый год подряд.</strong></p>
+                    <p>В 2025 году компания также вошла в топ-10 лучших застройщиков Костромской области по версии «Строительного рейтинга». Эта награда — признание нашей приверженности качеству и прозрачности на протяжении всего строительного процесса.</p>
+                    <ul class="about-hero__list">
+                        <li>звание «Надёжный застройщик России»;</li>
+                        <li>топ-10 застройщиков Костромской области;</li>
+                        <li>рейтинг клиентской удовлетворённости 4.9/5.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/yt.jpg" alt="Диплом «Надёжный застройщик России» 2025" loading="lazy" width="910" height="450" /></div>
+                            <div class="swiper-slide"><img src="/assets/images/actsi1.jpg" alt="Сертификат топ-10 застройщиков 2025" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель 2024 -->
+        <div class="awards-tab" id="awards-panel-2024" data-year="2024"
+             role="tabpanel" aria-labelledby="awards-tab-2024" hidden>
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>В 2024 году компания получила звание «Надёжный застройщик России» третий год подряд.</strong></p>
+                    <p>Среди ключевых достижений года — сдача в эксплуатацию двух жилых комплексов в срок и без замечаний. Клиентская оценка качества строительства составила 4.9 из 5 по результатам независимого исследования.</p>
+                    <ul class="about-hero__list">
+                        <li>«Надёжный застройщик России» 2024;</li>
+                        <li>сдача двух ЖК без замечаний;</li>
+                        <li>лучший проект комплексного освоения территории.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/actsi1.jpg" alt="Диплом «Надёжный застройщик России» 2024" loading="lazy" width="910" height="450" /></div>
+                            <div class="swiper-slide"><img src="/assets/images/yt.jpg" alt="Сертификат качества строительства 2024" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель 2023 -->
+        <div class="awards-tab" id="awards-panel-2023" data-year="2023"
+             role="tabpanel" aria-labelledby="awards-tab-2023" hidden>
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>2023 год — год международного признания и отраслевых наград.</strong></p>
+                    <p>Компания получила международный сертификат качества ISO 9001 и региональный диплом «Лучший строительный проект года». Также отмечена за высокие стандарты безопасности на строительных объектах и соблюдение сроков сдачи.</p>
+                    <ul class="about-hero__list">
+                        <li>сертификат ISO 9001;</li>
+                        <li>«Лучший строительный проект года» 2023;</li>
+                        <li>«Надёжный застройщик России» 2023.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/yt.jpg" alt="Сертификат ISO 9001 2023" loading="lazy" width="910" height="450" /></div>
+                            <div class="swiper-slide"><img src="/assets/images/actsi1.jpg" alt="Диплом «Лучший строительный проект года» 2023" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель 2022 -->
+        <div class="awards-tab" id="awards-panel-2022" data-year="2022"
+             role="tabpanel" aria-labelledby="awards-tab-2022" hidden>
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>2022 год — дебютное получение звания «Надёжный застройщик России».</strong></p>
+                    <p>Компания впервые удостоена этой высокой отраслевой награды и диплома за лучший проект комплексного освоения территории. Год отмечен значительным ростом объёмов строительства и расширением команды специалистов.</p>
+                    <ul class="about-hero__list">
+                        <li>первое звание «Надёжный застройщик России»;</li>
+                        <li>лучший проект КОТ в регионе;</li>
+                        <li>рост объёмов строительства на 35%.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/actsi1.jpg" alt="Первый диплом «Надёжный застройщик России» 2022" loading="lazy" width="910" height="450" /></div>
+                            <div class="swiper-slide"><img src="/assets/images/yt.jpg" alt="Диплом за проект КОТ 2022" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель 2021 -->
+        <div class="awards-tab" id="awards-panel-2021" data-year="2021"
+             role="tabpanel" aria-labelledby="awards-tab-2021" hidden>
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>2021 год — старт ключевых проектов и первые отраслевые признания.</strong></p>
+                    <p>Заложен первый камень ЖК «Агашкино Парк». Компания признана лучшей по скорости оформления разрешительной документации в Костромской области, получила диплом участника выставки «СитиСтрой 2021».</p>
+                    <ul class="about-hero__list">
+                        <li>старт строительства ЖК «Агашкино Парк»;</li>
+                        <li>диплом «СитиСтрой 2021»;</li>
+                        <li>лучший застройщик по скорости документооборота.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/yt.jpg" alt="Диплом СитиСтрой 2021" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель 2020 -->
+        <div class="awards-tab" id="awards-panel-2020" data-year="2020"
+             role="tabpanel" aria-labelledby="awards-tab-2020" hidden>
+            <div class="awards-slider-wrap">
+                <div class="awards-card__text">
+                    <p><strong>2020 год — переход на новые правила долевого строительства и укрепление репутации.</strong></p>
+                    <p>Компания первой в регионе успешно прошла проверку по механизму эскроу-счётов. Все начатые проекты завершены в срок, несмотря на сложную эпидемиологическую обстановку. Получен диплом за надёжность работы с дольщиками.</p>
+                    <ul class="about-hero__list">
+                        <li>первый переход на эскроу в регионе;</li>
+                        <li>сдача всех объектов в срок;</li>
+                        <li>диплом за надёжность работы с дольщиками.</li>
+                    </ul>
+                </div>
+                <div class="awards-slider-right">
+                    <div class="arrow-swiper awards-slider-nav">
+                        <button class="arrow-btn arrow--prev" type="button" aria-label="Предыдущая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-left" /></svg>
+                        </button>
+                        <button class="arrow-btn arrow--next" type="button" aria-label="Следующая награда">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false"><use href="#arrow-w-right" /></svg>
+                        </button>
+                    </div>
+                    <div class="awards-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/assets/images/actsi1.jpg" alt="Диплом за надёжность с дольщиками 2020" loading="lazy" width="910" height="450" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include "blocks/form-bottom.njk" %}
+
+<!-- Schema.org Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Строй Нова",
+  "url": "https://stroynova.ru",
+  "logo": "https://stroynova.ru/favicon.svg",
+  "foundingDate": "2015",
+  "award": "Надёжный застройщик России 2022–2024",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+7-000-000-00-00",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,152 @@
+@use "@/styles/abstracts/tokens" as *;
+// ========================================
+// Component — Privacy page
+// ========================================
+
+// ---- Tab navigation ----
+.privacy-tabs {
+
+
+    &__nav {
+        display: flex;
+        padding: 12px 20px;
+        background: var(--stroinova-backgroung);
+        border-radius: 20px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        gap: 4px;
+
+        &::-webkit-scrollbar { display: none; }
+    }
+
+    &__btn {
+        flex-shrink: 0;
+        background: none;
+        border: none;
+        padding: 10px 20px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.2s;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--stroinova-primary-2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        &:hover {
+            color: var(--stroinova-primary-2);
+        }
+
+        &--active {
+            color: var(--stroinova-primary-2);
+            font-weight: 600;
+
+            &::after { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
+            padding: 14px 18px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 767px) {
+            padding: 12px 14px;
+            font-size: 14px;
+        }
+    }
+}
+
+// ---- Tab panels ----
+.privacy-panel {
+    &[hidden] { display: none; }
+}
+
+// ---- Main content area ----
+.privacy-page {
+    padding-top: 36px;
+    padding-bottom: 90px;
+
+    @media (max-width: 767px) {
+        padding-top: 24px;
+        padding-bottom: 48px;
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: clamp(20px, 3vw, 36px);
+        line-height: 117%;
+        color: var(--stroinova-black);
+        margin: 0 0 36px;
+
+        @media (max-width: 767px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 40px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 163%;
+        color: var(--stroinova-black);
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            gap: 16px;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        p {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        li {
+            padding-left: 18px;
+            position: relative;
+
+            &::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                color: var(--stroinova-primary-2);
+                font-size: 18px;
+                line-height: 1.2;
+            }
+        }
+    }
+}

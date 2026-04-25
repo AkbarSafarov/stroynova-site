@@ -1,0 +1,77 @@
+{% extends "layouts/base.njk" %}
+{% set title = "Кладовые в ЖК Агашкино Парк — Строй Нова" %}
+{% set description = "Кладовые помещения в жилом комплексе Агашкино Парк от Строй Нова. Выберите свободную кладовую на интерактивном плане." %}
+{% set canonical = "https://stroynova.ru/storage/" %}
+
+{% block content %}
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+    <div class="container">
+        <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Главная</a><svg width="18" height="18" aria-hidden="true"><use href="#arrow-right-w-icon"></use></svg></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Кладовые</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ЗАГОЛОВОК -->
+<div class="container">
+    <h1 class="h1-title">Кладовые в ЖК Агашкино Парк</h1>
+</div>
+
+<!-- ПЛАН -->
+<section class="storage-section" aria-labelledby="storage-plan-heading">
+    <span id="storage-plan-heading" class="sr-only">Интерактивный план кладовых</span>
+    <div class="container">
+
+        <div class="storage-plan" id="storagePlanRoot">
+
+            <!-- SVG будет вставлен сюда через JS -->
+            <div class="storage-plan__map" id="storagePlanMap" aria-label="План кладовых, нажмите на кладовую для просмотра деталей"></div>
+
+            <!-- Tooltip (следует за курсором) -->
+            <div class="storage-tooltip" id="storagePlanTooltip" role="tooltip" hidden>
+                <div class="storage-tooltip__num"></div>
+                <div class="storage-tooltip__size"></div>
+                <div class="storage-tooltip__status"></div>
+            </div>
+
+            <!-- Popup (появляется при клике) -->
+            <aside class="storage-popup" id="storagePlanPopup" aria-label="Информация о кладовой" hidden>
+                <button class="storage-popup__close" id="storagePlanPopupClose" type="button" aria-label="Закрыть">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                        <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="storage-popup__num"></div>
+                <div class="storage-popup__size"></div>
+                <div class="storage-popup__status"></div>
+                <div class="storage-popup__price"></div>
+                <a href="#form-bottom" class="btn__button btn_green storage-popup__btn">Оставить заявку</a>
+            </aside>
+
+        </div>
+
+        <!-- Легенда -->
+        <div class="storage-legend" aria-label="Обозначения на плане">
+            <div class="storage-legend__item">
+                <span class="storage-legend__dot storage-legend__dot--sold" aria-hidden="true"></span>
+                <span>Продано</span>
+            </div>
+            <div class="storage-legend__item">
+                <span class="storage-legend__dot storage-legend__dot--reserved" aria-hidden="true"></span>
+                <span>Бронь</span>
+            </div>
+            <div class="storage-legend__item">
+                <span class="storage-legend__dot storage-legend__dot--free" aria-hidden="true"></span>
+                <span>Свободно</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% include "blocks/form-bottom.njk" %}
+
+{% endblock %}
