@@ -173,6 +173,7 @@ export default defineConfig({
         privacy: path.resolve(pagesDir, 'privacy/index.html'),
         about: path.resolve(pagesDir, 'about/index.html'),
         contacts: path.resolve(pagesDir, 'contacts/index.html'),
+        'apt-detail': path.resolve(pagesDir, 'apt-detail/index.html'),
       },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
