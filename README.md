@@ -84,6 +84,7 @@ npm run preview
 | Деталь квартиры | `src/pages/apt-detail/index.html` | `dist/apt-detail/` |
 | Кладовые | `src/pages/storage/index.html` | `dist/storage/`    |
 | Способы покупки | `src/pages/purchase/index.html` | `dist/purchase/`   |
+| Акция | `src/pages/promotion/index.html` | `dist/promotion/`  |
 | Акции | `src/pages/promotions/index.html` | `dist/promotions/` |
 | FAQ | `src/pages/faq/index.html` | `dist/faq/`        |
 | Избранное | `src/pages/favorites/index.html` | `dist/favorites/`  |
@@ -94,3 +95,11 @@ npm run preview
 | Контакты | `src/pages/contacts/index.html` | `dist/contacts/`   |
 | Политика конфиденциальности | `src/pages/privacy/index.html` | `dist/privacy/`    |
 | 404 | `src/pages/404/index.html` | `dist/404/`        |
+
+## Добавление новой страницы
+
+1. Создать `src/pages/<name>/index.html`
+2. Добавить запись в `vite.config.js` → `rollupOptions.input`:
+   ```js
+   '<name>': path.resolve(pagesDir, '<name>/index.html'),
+   ```

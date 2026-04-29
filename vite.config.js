@@ -163,6 +163,7 @@ export default defineConfig({
         apartments: path.resolve(pagesDir, 'apartments/index.html'),
         storage: path.resolve(pagesDir, 'storage/index.html'),
         purchase: path.resolve(pagesDir, 'purchase/index.html'),
+        promotion: path.resolve(pagesDir, 'promotion/index.html'),
         promotions: path.resolve(pagesDir, 'promotions/index.html'),
         faq: path.resolve(pagesDir, 'faq/index.html'),
         favorites: path.resolve(pagesDir, 'favorites/index.html'),
