@@ -21,7 +21,10 @@
     // Фоновое изображение
     &__bg {
         position: absolute;
-        inset: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         z-index: 0;
         border-radius: 20px;
         overflow: hidden;
@@ -31,6 +34,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
 
@@ -491,11 +499,15 @@ $donut-c: 326.7; // 2π × 52
     }
 
     &--active {
-        border-color: var(--stroinova-gray-1);
+        border-color: #8AAD69;
+        background: #fff;
+        color: var(--stroinova-black);
     }
 
     &:hover:not(&--active) {
-        border-color: var(--stroinova-gray-1);
+        border-color: #8AAD69;
+        background: #fff;
+        color: var(--stroinova-black);
     }
 }
 

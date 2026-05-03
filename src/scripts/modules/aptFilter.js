@@ -1,35 +1,68 @@
 /**
- * Apt Filter — range sliders + room-type toggle
+ * Apt Filter — dual range sliders + room-type toggle
  */
 import { resetCustomSelect } from './customSelect.js';
+
+const formatPrice = v => Number(v).toLocaleString('ru-RU', { maximumFractionDigits: 0 });
+
+const initDualRange = ({ wrapEl, minInput, maxInput, minOutput, maxOutput, formatter }) => {
+  if (!wrapEl || !minInput || !maxInput) return { reset() {} };
+
+  const update = () => {
+    const min = Number(minInput.min);
+    const max = Number(minInput.max);
+    const minVal = Number(minInput.value);
+    const maxVal = Number(maxInput.value);
+    const minPct = ((minVal - min) / (max - min)) * 100;
+    const maxPct = ((maxVal - min) / (max - min)) * 100;
+    wrapEl.style.setProperty('--range-min-pct', `${minPct}%`);
+    wrapEl.style.setProperty('--range-max-pct', `${maxPct}%`);
+    if (minOutput) minOutput.value = formatter(minVal);
+    if (maxOutput) maxOutput.value = formatter(maxVal);
+  };
+
+  minInput.addEventListener('input', () => {
+    if (Number(minInput.value) > Number(maxInput.value)) minInput.value = maxInput.value;
+    update();
+  });
+
+  maxInput.addEventListener('input', () => {
+    if (Number(maxInput.value) < Number(minInput.value)) maxInput.value = minInput.value;
+    update();
+  });
+
+  update();
+
+  return {
+    reset() {
+      minInput.value = minInput.min;
+      maxInput.value = maxInput.max;
+      update();
+    },
+  };
+};
 
 export const initAptFilter = () => {
   const section = document.querySelector('.apt-filter');
   if (!section) return;
 
-  const updateRange = (input, outputEl, formatter) => {
-    const min = Number(input.min);
-    const max = Number(input.max);
-    const val = Number(input.value);
-    const pct = ((val - min) / (max - min)) * 100;
-    input.style.setProperty('--range-pct', `${pct}%`);
-    if (outputEl) outputEl.value = formatter(val);
-  };
+  const floorsRange = initDualRange({
+    wrapEl: document.getElementById('floors-dual-range'),
+    minInput: document.getElementById('filter-floors-min'),
+    maxInput: document.getElementById('filter-floors-max'),
+    minOutput: document.getElementById('floors-min-val'),
+    maxOutput: document.getElementById('floors-max-val'),
+    formatter: v => String(v),
+  });
 
-  const floorsInput = document.getElementById('filter-floors');
-  const floorsOutput = document.getElementById('floors-min-val');
-  if (floorsInput) {
-    floorsInput.addEventListener('input', () => updateRange(floorsInput, floorsOutput, v => v));
-    updateRange(floorsInput, floorsOutput, v => v);
-  }
-
-  const priceInput = document.getElementById('filter-price');
-  const priceOutput = document.getElementById('price-output');
-  if (priceInput) {
-    const formatPrice = v => Number(v).toLocaleString('ru-RU', { maximumFractionDigits: 1 });
-    priceInput.addEventListener('input', () => updateRange(priceInput, priceOutput, formatPrice));
-    updateRange(priceInput, priceOutput, formatPrice);
-  }
+  const priceRange = initDualRange({
+    wrapEl: document.getElementById('price-dual-range'),
+    minInput: document.getElementById('filter-price-min'),
+    maxInput: document.getElementById('filter-price-max'),
+    minOutput: document.getElementById('price-min-val'),
+    maxOutput: document.getElementById('price-max-val'),
+    formatter: formatPrice,
+  });
 
   section.querySelectorAll('.rooms-picker__btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -42,24 +75,17 @@ export const initAptFilter = () => {
     });
   });
 
-  const resetBtn = section.querySelector('.apt-filter__reset');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      resetCustomSelect(section.querySelector('.c-select[data-name="project"]'));
-
-      if (floorsInput) {
-        floorsInput.value = floorsInput.min;
-        updateRange(floorsInput, floorsOutput, v => v);
-      }
-      if (priceInput) {
-        priceInput.value = priceInput.max;
-        updateRange(priceInput, priceOutput, v => Number(v).toLocaleString('ru-RU', { maximumFractionDigits: 1 }));
-      }
-
-      section.querySelectorAll('.rooms-picker__btn').forEach(b => {
-        b.classList.remove('rooms-picker__btn--active');
-        b.setAttribute('aria-pressed', 'false');
-      });
+  const doReset = () => {
+    resetCustomSelect(section.querySelector('.c-select[data-name="project"]'));
+    floorsRange.reset();
+    priceRange.reset();
+    section.querySelectorAll('.rooms-picker__btn').forEach(b => {
+      b.classList.remove('rooms-picker__btn--active');
+      b.setAttribute('aria-pressed', 'false');
     });
-  }
+  };
+
+  section.querySelectorAll('.apt-filter__reset').forEach(btn => {
+    btn.addEventListener('click', doReset);
+  });
 };

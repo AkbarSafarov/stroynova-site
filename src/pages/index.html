@@ -104,18 +104,12 @@
                 <div class="apt-filter__field apt-filter__field--floors">
                     <span class="apt-filter__label">Этажи</span>
                     <div class="apt-filter__range-row">
-                        <span class="apt-filter__range-edge">от <output id="floors-min-val">0</output></span>
-                        <span class="apt-filter__range-edge">от 16</span>
-                        <input
-                            class="apt-filter__range"
-                            type="range"
-                            id="filter-floors"
-                            name="floors"
-                            min="0"
-                            max="16"
-                            value="0"
-                            aria-label="Минимальный этаж"
-                        />
+                        <span class="apt-filter__range-edge">от <output id="floors-min-val">1</output></span>
+                        <span class="apt-filter__range-edge">до <output id="floors-max-val">16</output></span>
+                    </div>
+                    <div class="apt-filter__dual-range" id="floors-dual-range">
+                        <input class="apt-filter__range" type="range" id="filter-floors-min" name="floors_min" min="1" max="16" value="1" aria-label="Минимальный этаж">
+                        <input class="apt-filter__range" type="range" id="filter-floors-max" name="floors_max" min="1" max="16" value="16" aria-label="Максимальный этаж">
                     </div>
                 </div>
 
@@ -130,20 +124,14 @@
                 </div>
 
                 <div class="apt-filter__field apt-filter__field--price">
-                    <label class="apt-filter__label" for="filter-price">Задайте стоимость, ₽</label>
+                    <span class="apt-filter__label">Стоимость, ₽</span>
                     <div class="apt-filter__range-row">
-                        <span class="apt-filter__range-edge"><output id="price-output">12</output></span>
-                        <input
-                            class="apt-filter__range"
-                            type="range"
-                            id="filter-price"
-                            name="price"
-                            min="50000"
-                            max="30000000"
-                            value="100000"
-                            step="1000"
-                            aria-label="Максимальная стоимость"
-                        />
+                        <span class="apt-filter__range-edge">от <output id="price-min-val">1 000 000</output></span>
+                        <span class="apt-filter__range-edge">до <output id="price-max-val">30 000 000</output></span>
+                    </div>
+                    <div class="apt-filter__dual-range" id="price-dual-range">
+                        <input class="apt-filter__range" type="range" id="filter-price-min" name="price_min" min="1000000" max="30000000" value="1000000" step="100000" aria-label="Минимальная стоимость">
+                        <input class="apt-filter__range" type="range" id="filter-price-max" name="price_max" min="1000000" max="30000000" value="30000000" step="100000" aria-label="Максимальная стоимость">
                     </div>
                 </div>
 

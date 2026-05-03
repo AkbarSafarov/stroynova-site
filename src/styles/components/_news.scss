@@ -84,6 +84,10 @@
     .news-card {
         flex: 0 0 calc(33.33% - 6px);
 
+        picture {
+            height: 100%;
+        }
+
         @media all and (max-width: 767px) {
             display: none;
         }

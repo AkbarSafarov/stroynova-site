@@ -145,12 +145,18 @@
     &__checkbox-wrap {
         display: flex;
         align-items: flex-start;
+        flex-direction: column;
         gap: 10px;
         cursor: pointer;
         flex: 1;
         min-width: 200px;
         position: relative;
         padding-left: 40px;
+        flex-wrap: wrap;
+
+        .contact-cta__error {
+
+        }
 
         i {
             position: absolute;
