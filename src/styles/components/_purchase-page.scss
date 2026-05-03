@@ -203,14 +203,19 @@
 // ---- Text helpers ----
 .pp-text {
     font-family: var(--font-family);
-    font-size: 16px;
-    line-height: 1.65;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
     color: var(--stroinova-black);
     margin: 0 0 20px;
 
     &--muted { color: var(--stroinova-gray-1);
         margin-bottom: 0px; }
     &--sm    { font-size: 13px; margin-top: 10px; color: var(--stroinova-gray-1); }
+
+    @media all and (max-width: 767px) {
+        font-size: 16px;
+    }
 }
 
 
@@ -386,7 +391,7 @@
 // ---- Certificate 2-column layout ----
 .pp-cert-layout {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 580px 1fr;
     gap: 47px;
     padding-bottom: 30px;
 
@@ -414,6 +419,10 @@
         line-height: 130%;
         color: var(--stroinova-black);
         margin: 0;
+
+        @media all and (max-width: 767px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -430,6 +439,7 @@
     font-size: 16px;
     line-height: 163%;
     color: var(--stroinova-black);
+    margin-bottom: 12px;
 }
 
 // ---- Материнский капитал amounts ----
@@ -451,12 +461,16 @@
     border-radius: 20px;
     padding: 24px;
 
+    @media (max-width: 900px) {
+        padding: 16px;
+    }
+
     &__val {
         font-family: var(--font-family);
         font-weight: 700;
         line-height: 150%;
         color: var(--stroinova-primary-1);
-        font-size: clamp(14px, 1.4vw, 24px);
+        font-size: clamp(24px, 1.4vw, 24px);
     }
 
     &__desc {
@@ -511,7 +525,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: 12px 0 0;
+    margin: 0;
 
     @media (max-width: 768px) { grid-template-columns: 1fr; }
 }

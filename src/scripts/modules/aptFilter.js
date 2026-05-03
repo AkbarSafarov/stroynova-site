@@ -76,7 +76,8 @@ export const initAptFilter = () => {
   });
 
   const doReset = () => {
-    resetCustomSelect(section.querySelector('.c-select[data-name="project"]'));
+    const projectSelect = section.querySelector('.c-select[data-name="project"]');
+    if (projectSelect) resetCustomSelect(projectSelect);
     floorsRange.reset();
     priceRange.reset();
     section.querySelectorAll('.rooms-picker__btn').forEach(b => {

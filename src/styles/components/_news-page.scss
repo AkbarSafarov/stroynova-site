@@ -110,6 +110,7 @@
 
         @media (max-width: 767px) {
             font-size: 14px;
+            -webkit-line-clamp: 4;
         }
     }
 
@@ -126,10 +127,18 @@
             color: var(--stroinova-primary-1);
             text-decoration: none;
         }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 
     &__btn {
         margin-top: 14px;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 }
 
@@ -299,9 +308,7 @@
             font-size: 16px;
         }
 
-        .news-card__text {
-            font-size: 12px;
-        }
+
     }
 }
 

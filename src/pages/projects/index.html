@@ -151,6 +151,20 @@
                 <div class="about-project__btn">
                     <a href="#">Больше о проекте</a>
                 </div>
+                <div class="about-project__params">
+                    <div class="about-project__params-item">
+                        <div class="item-title">Стоимость</div>
+                        <div class="item-value">от 3.78 млн ₽</div>
+                    </div>
+                    <div class="about-project__params-item">
+                        <div class="item-title">Район</div>
+                        <div class="item-value">Бывалово</div>
+                    </div>
+                    <div class="about-project__params-item">
+                        <div class="item-title">Срок ввода</div>
+                        <div class="item-value">III квартал 2029</div>
+                    </div>
+                </div>
             </div>
             <div class="about-project__right">
                 <div class="about-project__images">
@@ -173,23 +187,22 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="swiper-pagination-custom"></div>
+
+                    </div>
+                    <div class="arrow-swiper">
+                        <div class="arrow-btn arrow--prev">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                <use href="#arrow-w-left" />
+                            </svg>
+                        </div>
+                        <div class="arrow-btn arrow--next">
+                            <svg width="17" height="17" aria-hidden="true" focusable="false">
+                                <use href="#arrow-w-right" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                <div class="about-project__params">
-                    <div class="about-project__params-item">
-                        <div class="item-title">Стоимость</div>
-                        <div class="item-value">от 3.78 млн ₽</div>
-                    </div>
-                    <div class="about-project__params-item">
-                        <div class="item-title">Район</div>
-                        <div class="item-value">Бывалово</div>
-                    </div>
-                    <div class="about-project__params-item">
-                        <div class="item-title">Срок ввода</div>
-                        <div class="item-value">III квартал 2029</div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -581,13 +594,12 @@
                         </div>
                     </div>
 
-                    <div class="apt-filter__action">
-                        <button class="btn__button btn_orange apt-filter__submit" type="button">Показать 120 вариантов</button>
+                    <div class="apt-filter__action page_inner--filter-btn">
                         <button class="apt-filter__reset" type="button" aria-label="Очистить фильтры">
                             <svg width="12" height="12" aria-hidden="true" focusable="false">
                                 <use href="#close" />
                             </svg>
-                            Очистить
+                            СБРОСИТЬ ФИЛЬТРЫ
                         </button>
                     </div>
 
@@ -1503,14 +1515,35 @@
 
 {% include "blocks/form-bottom.njk" %}
 
+<div class="about-project-popup" id="about-project-popup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="about-project-popup-title">
+    <div class="about-project-popup__overlay"></div>
+    <div class="about-project-popup__sheet">
+        <div class="about-project-popup__header">
+            <div class="about-project-popup__title-row">
+                <svg width="6" height="30" aria-hidden="true" focusable="false" class="about-project-popup__icon">
+                    <use href="#heading-icon-mobile" />
+                </svg>
+                <h2 class="about-project-popup__title" id="about-project-popup-title">О проекте</h2>
+            </div>
+            <button class="about-project-popup__close" type="button" aria-label="Закрыть">
+                <svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#closesquare"></use></svg>
+            </button>
+        </div>
+        <div class="about-project-popup__body">
+            <div class="about-project-popup__text">
+                <p>Это современный жилой дом комфорт-класса, выполненный в формате смарт-квартала. Здание представляет собой одноподъездный 9-этажный дом с продуманными планировками 1-, 2- и 3-комнатных квартир. В проекте предусмотрены панорамные окна, застеклённые лоджии, кладовые помещения и автономная котельная, что обеспечивает энергоэффективность и комфорт проживания в любое время года.</p>
+                <p>Территория дома спроектирована с учётом современных требований к безопасности и удобству: предусмотрена просторная парковка, видеодомофон, высокоскоростной интернет. Проект ориентирован на создание спокойной и функциональной жилой среды, подходящей как для семейного проживания, так и для индивидуального образа жизни, с акцентом на практичность, качество строительства и долгосрочную надёжность.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="plans-popup" id="plans-popup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="plans-popup-title">
     <div class="plans-popup__overlay"></div>
     <div class="plans-popup__container">
         <div class="plans-popup__card">
             <button class="plans-popup__close" type="button" aria-label="Закрыть">
-                <svg width="18" height="18" aria-hidden="true" focusable="false">
-                    <use href="#close" />
-                </svg>
+                <svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#closesquare"></use></svg>
             </button>
             <h3 class="plans-popup__title" id="plans-popup-title">
                 <span class="plans-popup__title-decor" aria-hidden="true"></span>
@@ -1530,6 +1563,44 @@
                         <div>секция 5.1</div>
                         <div>9/26 этаж</div>
                         <div>номер: 4</div>
+                    </div>
+                    <div class="plans-popup__apt-price">
+                        <div class="plans-popup__apt-price-label">Стоимость</div>
+                        <div class="plans-popup__apt-price-val">17 550 452 ₽</div>
+                    </div>
+                </div>
+                <div class="plans-popup__apt">
+                    <div class="plans-popup__apt-img">
+                        <img src="/assets/images/apart.png" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <div class="plans-popup__apt-info">
+                        <div class="plans-popup__apt-name">Студия, 25,14 м²</div>
+                        <div class="plans-popup__apt-badge">Предчистовая отделка</div>
+                    </div>
+                    <div class="plans-popup__apt-details">
+                        <div>1 корпус</div>
+                        <div>секция 5.1</div>
+                        <div>10/26 этаж</div>
+                        <div>номер: 5</div>
+                    </div>
+                    <div class="plans-popup__apt-price">
+                        <div class="plans-popup__apt-price-label">Стоимость</div>
+                        <div class="plans-popup__apt-price-val">17 550 452 ₽</div>
+                    </div>
+                </div>
+                <div class="plans-popup__apt">
+                    <div class="plans-popup__apt-img">
+                        <img src="/assets/images/apart.png" alt="" aria-hidden="true" loading="lazy">
+                    </div>
+                    <div class="plans-popup__apt-info">
+                        <div class="plans-popup__apt-name">Студия, 25,14 м²</div>
+                        <div class="plans-popup__apt-badge">Предчистовая отделка</div>
+                    </div>
+                    <div class="plans-popup__apt-details">
+                        <div>1 корпус</div>
+                        <div>секция 5.1</div>
+                        <div>10/26 этаж</div>
+                        <div>номер: 5</div>
                     </div>
                     <div class="plans-popup__apt-price">
                         <div class="plans-popup__apt-price-label">Стоимость</div>

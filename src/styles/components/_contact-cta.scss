@@ -366,3 +366,17 @@
         }
     }
 }
+
+.section--contact-cta-inner {
+
+    .contact-cta {
+        min-height: 277px;
+    }
+
+    .contact-cta__layout {
+        @media all and (min-width: 1201px) {
+            padding-top: 52px;
+            padding-bottom: 65px;
+        }
+    }
+}

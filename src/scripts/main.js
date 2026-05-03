@@ -35,6 +35,7 @@ import { initAboutCompany } from './modules/aboutCompany.js';
 import { initDocsReadMore } from './modules/docsReadMore.js';
 import { initStoragePlan } from './modules/storagePlan.js';
 import { initPlansPopup } from './modules/plansPopup.js';
+import { initAboutProjectPopup } from './modules/aboutProjectPopup.js';
 import spriteUrl from '../assets/svg/sprite.svg?url';
 
 const init = () => {
@@ -73,6 +74,7 @@ const init = () => {
     initDocsReadMore();
     initStoragePlan();
     initPlansPopup();
+    initAboutProjectPopup();
 };
 
 if (document.readyState === 'loading') {

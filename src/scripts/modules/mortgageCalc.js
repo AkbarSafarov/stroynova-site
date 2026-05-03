@@ -12,6 +12,8 @@ const setRangePct = (input) => {
   input.style.setProperty('--range-pct', `${pct}%`);
 };
 
+const digitsOnly = str => str.replace(/[^\d.]/g, '');
+
 export const initMortgageCalc = () => {
   const section = document.querySelector('.section--mortgage');
   if (!section) return;
@@ -46,7 +48,6 @@ export const initMortgageCalc = () => {
     const r        = annualRate / 100 / 12;
     const n        = term * 12;
 
-    // Аннуитетный платёж
     let monthly = 0;
     if (r === 0) {
       monthly = loan / n;
@@ -55,38 +56,70 @@ export const initMortgageCalc = () => {
       monthly = loan * r * factor / (factor - 1);
     }
 
-    const totalPaid    = monthly * n;
+    const totalPaid     = monthly * n;
     const totalInterest = Math.max(0, totalPaid - loan);
     const requiredIncome = monthly / 0.4;
 
-    // Обновляем значения слайдеров
     el.priceVal.value = fmt(price);
     el.termVal.value  = term;
     el.downVal.value  = fmt(downAmt);
     el.downPct.value  = `${downPct}%`;
     el.rateVal.value  = annualRate;
 
-    // Результаты
     el.monthly.textContent  = `${fmt(monthly)} ₽`;
     el.income.textContent   = `${fmt(requiredIncome)} ₽`;
     el.credit.textContent   = `${fmt(loan)} ₽`;
     el.interest.textContent = `${fmt(totalInterest)} ₽`;
 
-    // Donut-диаграмма: оранжевая дуга = доля кредита
     const creditRatio = loan / (loan + totalInterest) || 0;
     const dash = creditRatio * CIRCUMFERENCE;
     el.arc.style.strokeDasharray = `${dash} ${CIRCUMFERENCE}`;
 
-    // Заливка слайдеров
     [el.price, el.term, el.down, el.rate].forEach(setRangePct);
   };
 
-  // События слайдеров
+  // Generic sync: typed value → range slider (value units match)
+  const bindTextSlider = (textEl, rangeEl) => {
+    if (!textEl) return;
+    textEl.addEventListener('input', () => {
+      textEl.value = digitsOnly(textEl.value);
+    });
+    textEl.addEventListener('change', () => {
+      let val = parseFloat(digitsOnly(textEl.value)) || 0;
+      const min = Number(rangeEl.min);
+      const max = Number(rangeEl.max);
+      if (val < min) val = min;
+      if (val > max) val = max;
+      rangeEl.value = val;
+      calculate();
+    });
+  };
+
+  // Down payment is special: field shows rubles, slider stores % (10–90)
+  if (el.downVal) {
+    el.downVal.addEventListener('input', () => {
+      el.downVal.value = digitsOnly(el.downVal.value);
+    });
+    el.downVal.addEventListener('change', () => {
+      const price = Number(el.price.value);
+      let amt = parseFloat(digitsOnly(el.downVal.value)) || 0;
+      if (price > 0) {
+        let pct = Math.round(amt / price * 100);
+        pct = Math.max(Number(el.down.min), Math.min(Number(el.down.max), pct));
+        el.down.value = pct;
+      }
+      calculate();
+    });
+  }
+
+  bindTextSlider(el.priceVal, el.price);
+  bindTextSlider(el.termVal,  el.term);
+  bindTextSlider(el.rateVal,  el.rate);
+
   [el.price, el.term, el.down, el.rate].forEach(input => {
     input.addEventListener('input', calculate);
   });
 
-  // Вкладки программ — меняют ставку
   section.querySelectorAll('.mort-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       section.querySelectorAll('.mort-tab').forEach(t => t.classList.remove('mort-tab--active'));
@@ -99,6 +132,5 @@ export const initMortgageCalc = () => {
     });
   });
 
-  // Первичный расчёт
   calculate();
 };

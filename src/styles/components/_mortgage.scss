@@ -342,6 +342,16 @@
         line-height: 144%;
         color: var(--stroinova-white);
         margin-bottom: 8px;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        width: 100%;
+        min-width: 0;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__range {
@@ -797,6 +807,10 @@ $donut-c: 326.7; // 2π × 52
         }
     }
 
+    .mort-slider__pct {
+        color: #000000;
+    }
+
     .container__inner{
         background: var(--stroinova-backgroung);
     }
@@ -809,10 +823,17 @@ $donut-c: 326.7; // 2π × 52
         background: #e5e3e2;
         color: var(--stroinova-black);
         border-color: transparent !important;
+
+        &.mort-tab--active {
+            border-color: #8AAD69  !important;
+            background: #fff;
+            color: var(--stroinova-black);
+        }
     }
 
     .mortgage__bottom {
-        margin: -15px -18px;
+        padding: 36px 20px;
+        margin: -15px 0;
         background: linear-gradient(292deg, #8aad69 0.1%, #a6dd63 100%);
     }
 
@@ -823,4 +844,6 @@ $donut-c: 326.7; // 2π × 52
     .mortgage__bottom-big {
         margin-bottom: -35px;
     }
+
+
 }

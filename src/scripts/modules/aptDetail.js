@@ -1,3 +1,11 @@
+/**
+ * Project plans - Выберите планировку
+ */
+
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import PhotoSwipe from 'photoswipe';
+
+
 export const initAptDetail = () => {
 
     const tabBtns  = document.querySelectorAll('[data-plan-tab]');
@@ -48,4 +56,26 @@ export const initAptDetail = () => {
             btn.style.color = isSaved ? 'var(--stroinova-green, #4a7c59)' : '';
         });
     });
+
+    const aptViewer = document.querySelector('.apt-hero__viewer');
+    if(!aptViewer) return;
+
+    aptViewer.querySelectorAll('a[data-pswp-width]').forEach(link => {
+        const img = new Image();
+        img.onload = function() {
+            link.dataset.pswpWidth = this.naturalWidth;
+            link.dataset.pswpHeight = this.naturalHeight;
+        };
+        img.src = link.href;
+    });
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: '.apt-hero__viewer',
+        children: '.pswp-item',
+        secondaryZoomLevel: 'fit',
+        maxZoomLevel: 2,
+        pswpModule: PhotoSwipe,
+    });
+
+    lightbox.init();
 };

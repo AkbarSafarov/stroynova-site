@@ -115,6 +115,10 @@
         &--sold     { background: rgba(#f8a6ae, 0.3);  color: #c0392b; }
         &--reserved { background: rgba(#ffd08a, 0.35); color: #b57a00; }
     }
+
+    @media all and (max-width: 960px) {
+        display: none;
+    }
 }
 
 // ── Legend ────────────────────────────────────────────────────────────────────

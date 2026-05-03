@@ -483,8 +483,22 @@
         @media (max-width: 560px) {
             flex: none !important;
             width: 100%;
+            max-height: 180px;
+            min-height: 180px;
         }
     }
+}
+
+.pswp__item {
+    background: #fff;
+}
+
+.pswp__icn {
+    fill: #000000;
+}
+
+.pswp__counter {
+    color: #000000;
 }
 
 // ---- Similar apartments ----
@@ -596,7 +610,12 @@
 
 // ---- Sticky bottom bar ----
 .apt-sticky-bar {
-    padding: 0 0 35px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--stroinova-backgroung);
+    z-index: 11;
 
     &__inner {
         display: flex;
@@ -604,7 +623,7 @@
         gap: 24px;
         padding: 24px 45px;
         background: var(--stroinova-backgroung);
-        border-radius: 20px;
+        border-radius: 0;
     }
 
     &__plan {
@@ -660,7 +679,8 @@
 
     }
 
-    @media all and (max-width: 1023px) {
+    @media all and (max-width: 1120px) {
+        display: none;
 
         &__inner {
             flex-direction: column;

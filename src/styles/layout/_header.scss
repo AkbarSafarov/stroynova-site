@@ -18,11 +18,11 @@
         padding-bottom: 15px;
 
         @media all and (max-width: 959px){
-            padding: 5px 12px 10px;
+            padding: 5px 12px 5px;
 
 
             .header__contacts {
-                margin-bottom: 9px;
+                display: none;
             }
         }
     }
@@ -237,6 +237,7 @@
 
         svg {
             fill: none;
+            color: #130F26;
         }
 
         &:hover {
@@ -269,6 +270,10 @@
         .close-icon {
             display: none;
             color: #fff;
+        }
+
+        .burger-icon{
+            color: #130F26;
         }
 
         &.is-open,
