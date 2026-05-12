@@ -118,8 +118,9 @@
 
     &__donut {
         position: relative;
-        width: 172px;
-        height: 172px;
+        width: 190px;
+        height: 190px;
+        overflow: visible;
     }
 
     &__summary {
@@ -378,6 +379,7 @@
             background: #fff;
             border: 5px solid var(--stroinova-primary-2);
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         &::-moz-range-thumb {
@@ -387,6 +389,7 @@
             background: #fff;
             border: 5px solid var(--stroinova-primary-2);
             cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
     }
 }
@@ -398,9 +401,13 @@
 $donut-c: 326.7; // 2π × 52
 
 .donut-svg {
-    width: 172px;
-    height: 172px;
+    width: 190px;
+    height: 190px;
     display: block;
+
+    &__shadow {
+        fill: #F3F1F0;
+    }
 
     &__track {
         fill: none;
@@ -414,7 +421,6 @@ $donut-c: 326.7; // 2π × 52
         stroke-width: 14;
         stroke-linecap: round;
         stroke-dasharray: 0 #{$donut-c};
-        transition: stroke-dasharray 0.5s ease;
     }
 }
 

@@ -1,6 +1,6 @@
 
-
 const CIRCUMFERENCE = 2 * Math.PI * 75;
+const DURATION = 500;
 
 const fmt = v => Math.round(v).toLocaleString('ru-RU');
 
@@ -13,6 +13,28 @@ const setRangePct = (input) => {
 };
 
 const digitsOnly = str => str.replace(/[^\d.]/g, '');
+
+const easeInOut = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+const applyRatio = (ratio, arc, shadow) => {
+  arc.style.strokeDasharray = `${ratio * CIRCUMFERENCE} ${CIRCUMFERENCE}`;
+
+  if (!shadow) return;
+  if (ratio <= 0) {
+    shadow.setAttribute('d', 'M 86 86 Z');
+    return;
+  }
+  const cx = 86, cy = 86, r = 90;
+  const start = -Math.PI / 2;
+  const end   = start + ratio * 2 * Math.PI;
+  const x1 = cx + r * Math.cos(start);
+  const y1 = cy + r * Math.sin(start);
+  const x2 = cx + r * Math.cos(end);
+  const y2 = cy + r * Math.sin(end);
+  shadow.setAttribute('d',
+    `M ${cx} ${cy} L ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${ratio > 0.5 ? 1 : 0} 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`
+  );
+};
 
 export const initMortgageCalc = () => {
   const section = document.querySelector('.section--mortgage');
@@ -33,20 +55,46 @@ export const initMortgageCalc = () => {
     credit:   section.querySelector('#apt-legend-credit'),
     interest: section.querySelector('#apt-legend-interest'),
     arc:      section.querySelector('#apt-donut-credit-arc'),
+    shadow:   section.querySelector('#apt-donut-shadow'),
   };
 
   if (!el.price || !el.arc) return;
 
+  let animFrame  = null;
+  let fromRatio  = 0;
+  let curRatio   = 0;
+
+  const animateTo = (target) => {
+    if (animFrame) cancelAnimationFrame(animFrame);
+    const from = curRatio;
+    let startTime = null;
+
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const t     = Math.min((ts - startTime) / DURATION, 1);
+      const ratio = from + (target - from) * easeInOut(t);
+      applyRatio(ratio, el.arc, el.shadow);
+      if (t < 1) {
+        animFrame = requestAnimationFrame(step);
+      } else {
+        curRatio  = target;
+        animFrame = null;
+      }
+    };
+
+    animFrame = requestAnimationFrame(step);
+  };
+
   const calculate = () => {
-    const price    = Number(el.price.value);
-    const term     = Number(el.term.value);
-    const downPct  = Number(el.down.value);
+    const price      = Number(el.price.value);
+    const term       = Number(el.term.value);
+    const downPct    = Number(el.down.value);
     const annualRate = Number(el.rate.value);
 
-    const downAmt  = Math.round(price * downPct / 100);
-    const loan     = price - downAmt;
-    const r        = annualRate / 100 / 12;
-    const n        = term * 12;
+    const downAmt = Math.round(price * downPct / 100);
+    const loan    = price - downAmt;
+    const r       = annualRate / 100 / 12;
+    const n       = term * 12;
 
     let monthly = 0;
     if (r === 0) {
@@ -72,13 +120,11 @@ export const initMortgageCalc = () => {
     el.interest.textContent = `${fmt(totalInterest)} ₽`;
 
     const creditRatio = loan / (loan + totalInterest) || 0;
-    const dash = creditRatio * CIRCUMFERENCE;
-    el.arc.style.strokeDasharray = `${dash} ${CIRCUMFERENCE}`;
+    animateTo(creditRatio);
 
     [el.price, el.term, el.down, el.rate].forEach(setRangePct);
   };
 
-  // Generic sync: typed value → range slider (value units match)
   const bindTextSlider = (textEl, rangeEl) => {
     if (!textEl) return;
     textEl.addEventListener('input', () => {
@@ -95,7 +141,6 @@ export const initMortgageCalc = () => {
     });
   };
 
-  // Down payment is special: field shows rubles, slider stores % (10–90)
   if (el.downVal) {
     el.downVal.addEventListener('input', () => {
       el.downVal.value = digitsOnly(el.downVal.value);
