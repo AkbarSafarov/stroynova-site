@@ -766,6 +766,19 @@ $donut-c: 326.7; // 2π × 52
         padding: 0;
     }
 
+    .mortgage__summary {
+
+        .mortgage__payment {
+            flex: none;
+            width: 100%;
+        }
+
+        .mortgage__payment-val {
+            flex: none;
+            width: 100%;
+        }
+    }
+
     .mortgage__top {
         padding: 24px 20px;
     }
