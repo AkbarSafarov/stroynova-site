@@ -52,7 +52,7 @@
         position: relative;
         z-index: 1;
         width: 100%;
-        max-width: 600px;
+        max-width: 1400px;
         max-height: 85vh;
         background: #fff;
         border-radius: 20px;
@@ -115,8 +115,25 @@
 
     &__body {
         overflow-y: auto;
-        padding: 20px 20px 32px;
-        -webkit-overflow-scrolling: touch;
+        padding: 10px 10px 20px 20px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--stroinova-backgroung);
+            border-radius: 11px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--stroinova-hover-color);
+            border-radius: 11px;
+        }
     }
 
     &__text {
@@ -187,7 +204,6 @@
     border-radius: 20px;
     padding: 41px;
     padding-left: 64px;
-    align-items: start;
 
     @include respond-below('xl') {
         gap: 22px;
@@ -348,6 +364,19 @@
         font-size: 0;
         border-radius: 20px;
         overflow: hidden;
+        height: 100%;
+
+        .swiper {
+            height: 100%;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        picture {
+            height: 100%;
+        }
 
         img {
             border-radius: 20px;
@@ -380,8 +409,8 @@
         }
 
         @include respond-below('md') {
-            margin: 0 0 30px;
-            padding: 0 17px;
+            margin: 0;
+            padding: 27px 0 0;
         }
 
         &-item {

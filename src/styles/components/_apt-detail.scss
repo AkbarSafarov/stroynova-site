@@ -616,18 +616,24 @@
     right: 0;
     background: var(--stroinova-backgroung);
     z-index: 11;
+    transition: all .3s;
+    opacity: 1;
+
+    &--hidden {
+        transform: translateY(100%) !important;
+    }
 
     &__inner {
         display: flex;
         align-items: center;
         gap: 24px;
-        padding: 24px 45px;
+        padding: 16px 0px;
         background: var(--stroinova-backgroung);
         border-radius: 0;
     }
 
     &__plan {
-        flex: 0 0 134px;
+        flex: 0 0 50px;
     }
 
     &__info {
@@ -638,7 +644,7 @@
     &__name {
         font-family: var(--font-family);
         font-weight: 700;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 150%;
         color: var(--stroinova-black);
         margin-bottom: 8px;
@@ -647,7 +653,7 @@
     &__meta {
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 133%;
         color: var(--stroinova-gray-1);
     }
@@ -661,7 +667,7 @@
         white-space: nowrap;
         font-family: var(--font-family);
         font-weight: 700;
-        font-size: 36px;
+        font-size: 30px;
         line-height: 117%;
         color: var(--stroinova-primary-1);
         margin-bottom: 8px;
@@ -670,7 +676,7 @@
     &__mortgage {
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 133%;
         color: var(--stroinova-black);
     }

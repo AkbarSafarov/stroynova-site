@@ -36,16 +36,28 @@ export const initAptDetail = () => {
 
     const stickyBar = document.getElementById('apt-sticky-bar');
     if (stickyBar) {
+        stickyBar.style.transition = 'transform 0.3s ease';
+        stickyBar.style.transform  = 'translateY(100%)';
+
         const heroSection = document.querySelector('.apt-hero');
-        const observer = new IntersectionObserver(
+        const heroObserver = new IntersectionObserver(
             ([entry]) => {
                 stickyBar.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
             },
             { threshold: 0.2 }
         );
-        if (heroSection) observer.observe(heroSection);
-        stickyBar.style.transition = 'transform 0.3s ease';
-        stickyBar.style.transform  = 'translateY(100%)';
+        if (heroSection) heroObserver.observe(heroSection);
+
+        const footer = document.querySelector('.footer');
+        if (footer) {
+            const footerObserver = new IntersectionObserver(
+                ([entry]) => {
+                    stickyBar.classList.toggle('apt-sticky-bar--hidden', entry.isIntersecting);
+                },
+                { threshold: 0 }
+            );
+            footerObserver.observe(footer);
+        }
     }
 
     document.querySelectorAll('.apt-hero__action-btn[aria-label="В избранное"]').forEach(btn => {
@@ -69,13 +81,20 @@ export const initAptDetail = () => {
         img.src = link.href;
     });
 
-    const lightbox = new PhotoSwipeLightbox({
-        gallery: '.apt-hero__viewer',
-        children: '.pswp-item',
-        secondaryZoomLevel: 'fit',
-        maxZoomLevel: 2,
-        pswpModule: PhotoSwipe,
+    aptViewer.querySelectorAll('.apt-plan-panel').forEach(item => {
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: item,
+            children: '.pswp-item',
+            secondaryZoomLevel: 'fit',
+            maxZoomLevel: 2,
+            pswpModule: PhotoSwipe,
+        });
+
+        lightbox.init();
     });
 
-    lightbox.init();
+
+
+
 };

@@ -3,7 +3,7 @@
  * Initialises all modules
  */
 import '../styles/main.scss';
-import { initNavigation, initOverflowNav } from './modules/navigation.js';
+import { initNavigation, initOverflowNav, initHeaderScroll } from './modules/navigation.js';
 import { initLazyImages } from './modules/lazyImages.js';
 import { loadSvgSprite } from './modules/svgSprite.js';
 import { initHeroSlider } from './modules/heroSlider.js';
@@ -42,6 +42,7 @@ const init = () => {
     loadSvgSprite(spriteUrl);
     initNavigation();
     initOverflowNav();
+    initHeaderScroll();
     initLazyImages();
     initHeroSlider();
     initAptFilter();

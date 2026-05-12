@@ -77,8 +77,17 @@
             width: calc(34% - 11px);
             background: var(--stroinova-backgroung);
             border-radius: 20px;
-            padding: 23px 30px;
+            padding: 14px 30px 20px;
             padding-right: 34px;
+
+            h2 {
+                font-family: var(--font-family);
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 133%;
+                color: var(--stroinova-black);
+                margin: 0 0 15px;
+            }
 
             @include respond-below('xl') {
                 width: 100%;
@@ -112,7 +121,7 @@
                 &::-webkit-scrollbar {
                     width: 8px;
 
-                    @include respond-below('xl') {
+                    @include respond-below('md') {
                         height: 8px;
                     }
                 }
@@ -120,11 +129,19 @@
                 &::-webkit-scrollbar-track {
                     background: var(--stroinova-gray-2);
                     border-radius: 15px;
+
+                    @include respond-below('md') {
+                        height: 8px;
+                    }
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background-color: var(--stroinova-primary-1);;    /* цвет бегунка */
+                    background-color: var(--stroinova-primary-1);   /* цвет бегунка */
                     border-radius: 10px;       /* округлось бегунка */
+
+                    @include respond-below('md') {
+                        height: 8px;
+                    }
                 }
             }
         }

@@ -807,12 +807,21 @@ $donut-c: 326.7; // 2π × 52
         }
     }
 
+    .mortgage__bottom-left {
+
+        .mortgage__bottom-big {
+            //margin-left: -6px;
+        }
+    }
+
     .mort-slider__pct {
         color: #000000;
     }
 
     .container__inner{
         background: var(--stroinova-backgroung);
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .mortgage__title {
@@ -831,10 +840,30 @@ $donut-c: 326.7; // 2π × 52
         }
     }
 
+    .contact-cta__checkbox-wrap {
+        margin-top: 2px;
+    }
+
     .mortgage__bottom {
-        padding: 36px 20px;
+        padding: 40px 70px 26px;
         margin: -15px 0;
-        background: linear-gradient(292deg, #8aad69 0.1%, #a6dd63 100%);
+        align-items: start;
+        background: linear-gradient(90deg, #8aad69 0.1%, #a6dd63 100%);
+
+        @media all and (max-width: 1400px) {
+            padding: 36px;
+        }
+
+        @media all and (max-width: 767px) {
+            padding: 36px 20px;
+            gap: 16px;
+        }
+    }
+
+    .mortgage__form {
+        @media all and (max-width: 1400px) {
+            padding-bottom: 0;
+        }
     }
 
     .mort-slider__label {
@@ -842,7 +871,18 @@ $donut-c: 326.7; // 2π × 52
     }
 
     .mortgage__bottom-big {
-        margin-bottom: -35px;
+        margin-bottom: -47px;
+        margin-left: -6px;
+        margin-top: 52px;
+
+        @media all and (max-width: 1400px) {
+            margin-top: 0;
+            margin-bottom: -65px;
+        }
+
+        @media all and (max-width: 767px) {
+            margin-bottom: -31px;
+        }
     }
 
 

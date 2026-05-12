@@ -126,3 +126,15 @@ export const initOverflowNav = () => {
 
   document.fonts.ready.then(update);
 };
+
+export const initHeaderScroll = () => {
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    const toggle = () => {
+        header.classList.toggle('header--scrolled', window.scrollY > 0);
+    };
+
+    toggle();
+    window.addEventListener('scroll', toggle, { passive: true });
+};

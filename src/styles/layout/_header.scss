@@ -16,6 +16,7 @@
         gap: 58px;
         padding-top: 23px;
         padding-bottom: 15px;
+        transition: all .3s;
 
         @media all and (max-width: 959px){
             padding: 5px 12px 5px;
@@ -37,6 +38,9 @@
         justify-content: space-between;
         gap: $spacing-4;
         margin-bottom: $spacing-4;
+        overflow: hidden;
+        height: 40px;
+        transition: all .3s;
 
         @include respond-below(xl) {
             justify-content: end;
@@ -113,6 +117,31 @@
         }
     }
 
+    &__phone--mobile {
+        display: flex;
+        align-items: start;
+        gap: $spacing-4;
+        padding: 0 16px 30px;
+
+        .header__phone-number {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 130%;
+            color: var(--stroinova-black);
+
+            a {
+                color: var(--stroinova-black);
+                text-decoration: none;
+            }
+        }
+
+        svg {
+            fill: none;
+            color: var(--stroinova-black);
+        }
+    }
+
     &__panel {
         display: flex;
         padding: 10px 13px 10px 7px;
@@ -123,7 +152,7 @@
 
         @include respond-below(lg) {
             padding: 8px 8px 8px 17px;
-            flex: 0 0 135px;
+            flex: 0 0 174px;
         }
     }
 
@@ -132,6 +161,7 @@
         align-items: center;
         text-decoration: none;
         max-width: 322px;
+        transition: all .3s;
 
         svg {
             max-width: 100%;
@@ -140,7 +170,7 @@
 
         &-mobile {
             display: none;
-            flex: 0 0 150px;
+            flex: 0 0 132px;
             text-decoration: none;
         }
 
@@ -291,6 +321,63 @@
 
         @include respond-to('lg') {
             display: none;
+        }
+    }
+
+    &__phone--btn {
+        flex: 0 0 41px;
+        border-radius: 50%;
+        height: 41px;
+        background: var(--stroinova-primary-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        padding: 1px 0 0 1px;
+
+        svg {
+            color: #fff;
+            fill: none;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        @media all and (min-width: 960px) {
+            display: none;
+        }
+
+        @include respond-below(lg) {
+            flex: 0 0 26px;
+            height: 26px;
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    &--scrolled {
+        @media all and (min-width: 960px) {
+
+            .header__inner {
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            .header__logo {
+                max-width: 237px;
+            }
+        }
+
+        .header__contacts {
+            height: 0;
+            margin-bottom: 0;
         }
     }
 }
