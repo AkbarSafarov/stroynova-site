@@ -31,6 +31,7 @@
 
         @media (max-width: 900px) {
             max-height: 340px;
+            min-height: 340px;
         }
     }
 
@@ -69,6 +70,10 @@
         color: var(--stroinova-black);
         font-size: clamp(20px, 2.5vw, 36px);
         margin: 0;
+
+        @media (max-width: 900px) {
+            line-height: 131%;
+        }
     }
 
     &__meta {
@@ -110,7 +115,8 @@
 
         @media (max-width: 767px) {
             font-size: 14px;
-            -webkit-line-clamp: 4;
+            line-height: 171%;
+            -webkit-line-clamp: 5;
         }
     }
 
@@ -148,8 +154,8 @@
     margin-bottom: 53px;
 
     @media (max-width: 767px) {
-        margin-bottom: 17px;
-        padding-top: 17px;
+        margin-bottom: 19px;
+        padding-top: 11px;
     }
 
     .catalog-tags__inner {
@@ -183,7 +189,7 @@
     padding-bottom: 24px;
 
     @media (max-width: 767px) {
-        padding-bottom: 33px;
+        padding-bottom: 30px;
     }
 }
 

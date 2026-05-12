@@ -139,10 +139,9 @@
         }
     }
 
-    // ---- Центральный контент ----
     &__content {
         min-height: 220px;
-        padding: 6px 0 0 50px;
+        padding: 6px 0 0 46px;
 
         @media all and (max-width: 767px) {
             min-height: 0;
@@ -153,7 +152,7 @@
     &__tab {
         display: none;
         flex-direction: column;
-        gap: 19px;
+        gap: 18px;
         align-items: start;
 
         &--active {
@@ -178,7 +177,7 @@
         line-height: 130%;
         color: var(--stroinova-black);
         font-size: clamp(20px, 2vw, 20px);
-        margin-bottom: 20px;
+        margin-bottom: 0;
 
         sup {
             font-size: 0.6em;

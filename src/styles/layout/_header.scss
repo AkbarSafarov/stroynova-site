@@ -15,7 +15,7 @@
         align-items: center;
         gap: 58px;
         padding-top: 23px;
-        padding-bottom: 15px;
+        padding-bottom: 12px;
         transition: all .3s;
 
         @media all and (max-width: 959px){
@@ -37,7 +37,7 @@
         align-items: center;
         justify-content: space-between;
         gap: $spacing-4;
-        margin-bottom: $spacing-4;
+        margin-bottom: $spacing-2;
         overflow: hidden;
         height: 40px;
         transition: all .3s;
@@ -144,15 +144,15 @@
 
     &__panel {
         display: flex;
-        padding: 10px 13px 10px 7px;
+        padding: 7px 13px 10px 7px;
         background: var(--stroinova-backgroung);
         border-radius: 20px;
         align-items: center;
         gap: 10px;
 
         @include respond-below(lg) {
-            padding: 8px 8px 8px 17px;
-            flex: 0 0 174px;
+            padding: 6px 8px;
+            flex: 0 0 158px;
         }
     }
 
@@ -191,7 +191,7 @@
     &__bottom {
         @include respond-below(lg) {
             display: flex;
-            gap: 15px;
+            gap: 9px;
             align-items: center;
             justify-content: space-between;
         }
@@ -214,7 +214,7 @@
         gap:10px;
 
         @include respond-below(lg) {
-            gap: 12px;
+            gap: 10px;
         }
     }
 
