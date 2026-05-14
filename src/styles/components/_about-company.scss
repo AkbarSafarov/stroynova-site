@@ -543,3 +543,10 @@
         }
     }
 }
+
+.project-bottom__blocks {
+    @media all and (max-width: 767px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

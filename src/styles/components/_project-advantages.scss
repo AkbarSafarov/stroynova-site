@@ -75,10 +75,14 @@
             @include respond-below('sm') {
                 gap: 8px;
                 margin-bottom: 8px;
+                margin-left: -0.75rem;
+                margin-right: -0.75rem;
+                padding-right: 0.75rem;
+                padding-left: 0.75rem;
             }
 
             &::-webkit-scrollbar {
-                height: 4px;
+                display: none;
             }
 
             &::-webkit-scrollbar-track {
@@ -250,6 +254,7 @@
             img {
                 @include respond-below('sm') {
                     border-radius: 20px;
+                    min-height: 250px;
                 }
             }
 

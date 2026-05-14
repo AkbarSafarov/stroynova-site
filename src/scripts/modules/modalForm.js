@@ -91,19 +91,25 @@ const setupModal = (modal) => {
 export const initModalForm = () => {
     const bookModal    = document.getElementById('modal-book');
     const consultModal = document.getElementById('modal-consult');
+    const excursionModal = document.getElementById('modal-excursion');
+    const writeModal = document.getElementById('modal-write');
 
     const book    = setupModal(bookModal);
     const consult = setupModal(consultModal);
+    const excursion = setupModal(excursionModal);
+    const write = setupModal(writeModal);
 
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-modal-open]');
         if (!btn) return;
 
-        const isBook = btn.dataset.modalOpen === 'book';
-        const instance = isBook ? book : consult;
+        const target = btn.dataset.modalOpen;
+
+        const instances = { book, consult, excursion, write };
+        const instance = instances[target];
         if (!instance) return;
 
-        if (isBook) {
+        if (target === 'book') {
             const subtitleEl = bookModal.querySelector('#modal-book-subtitle');
             const h = document.getElementById('apt-title');
             if (subtitleEl) { subtitleEl.textContent = h ? h.textContent.trim() : ''; }

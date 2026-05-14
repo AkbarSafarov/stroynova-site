@@ -636,7 +636,7 @@ $donut-c: 326.7; // 2π × 52
     }
 
     .mortgage__donut-wrap {
-        flex: 0 0 180px;
+        flex: 0 0 210px;
     }
 
     .donut-legend {
@@ -767,6 +767,7 @@ $donut-c: 326.7; // 2π × 52
     }
 
     .mortgage__summary {
+        display: block;
 
         .mortgage__payment {
             flex: none;
@@ -806,7 +807,7 @@ $donut-c: 326.7; // 2π × 52
     }
 
     .mortgage__bottom {
-        padding: 36px 24px;
+        padding: 36px 24px 80px;
         gap: 20px;
     }
 
@@ -825,8 +826,12 @@ $donut-c: 326.7; // 2π × 52
         line-height: 108%;
         width: auto;
         text-align: center;
-        margin: 0 -24px -47px;
+        margin: 0;
         white-space: nowrap;
+        position: absolute;
+        bottom: -11px;
+        left: -5px;
+        right: 0;
     }
 }
 
@@ -883,6 +888,10 @@ $donut-c: 326.7; // 2π × 52
         backdrop-filter: none;
         border: 1px solid var(--stroinova-gray-2);
 
+        @media all and (max-width: 1010px) {
+            width: 100%;
+        }
+
         .mort-slider__val {
             color: var(--stroinova-primary-1);
         }
@@ -936,7 +945,7 @@ $donut-c: 326.7; // 2π × 52
         }
 
         @media all and (max-width: 767px) {
-            padding: 36px 20px;
+            padding: 36px 20px 80px;
             gap: 16px;
         }
     }
@@ -962,7 +971,14 @@ $donut-c: 326.7; // 2π × 52
         }
 
         @media all and (max-width: 767px) {
-            margin-bottom: -31px;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+            position: absolute;
+            left: -20px;
+            right: -20px;
+            bottom: 0;
         }
     }
 

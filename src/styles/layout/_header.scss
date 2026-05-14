@@ -370,8 +370,20 @@
                 padding-top: 10px;
             }
 
+            .header__nav {
+                flex: 0 0 calc(100% - 150px);
+            }
+
             .header__logo {
                 max-width: 237px;
+            }
+
+            .header__actions {
+                flex: 0 0 143px
+            }
+
+            .header__phone--btn {
+                display: flex;
             }
         }
 
