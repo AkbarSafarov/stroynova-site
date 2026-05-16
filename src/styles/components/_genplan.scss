@@ -135,9 +135,12 @@
     &__image {
         font-size: 0;
         line-height: normal;
+
         img {
             border-radius: 20px;
             width: 100%;
+            min-height: 470px;
+            object-fit: cover;
         }
     }
 }

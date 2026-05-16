@@ -64,6 +64,28 @@ function webpPlugin() {
 }
 
 /**
+ * Конвертирует href="/assets/..." в относительные пути для работы через file://.
+ * Vite обрабатывает img/source src, но <a href> оставляет абсолютным.
+ */
+function fixAbsoluteAssetHrefsPlugin() {
+  return {
+    name: 'fix-absolute-asset-hrefs',
+    apply: 'build',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        // ctx.filename — исходный файл (src/pages/projects/index.html),
+        // считаем глубину относительно pagesDir
+        const rel = path.relative(pagesDir, ctx.filename);
+        const depth = rel.split(/[\\/]/).length - 1;
+        const prefix = depth > 0 ? '../'.repeat(depth) : './';
+        return html.replace(/href="\/assets\//g, `href="${prefix}assets/`);
+      },
+    },
+  };
+}
+
+/**
  * Убирает crossorigin, type="module" и modulepreload — для работы через file://.
  */
 function removeCrossOriginPlugin() {
@@ -132,6 +154,7 @@ export default defineConfig({
     webpPlugin(),
     inlineSvgSpritePlugin(),
     fixImportMetaPlugin(),
+    fixAbsoluteAssetHrefsPlugin(),
     removeCrossOriginPlugin(),
   ],
   css: {
