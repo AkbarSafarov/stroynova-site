@@ -93,11 +93,13 @@ export const initModalForm = () => {
     const consultModal = document.getElementById('modal-consult');
     const excursionModal = document.getElementById('modal-excursion');
     const writeModal = document.getElementById('modal-write');
+    const bookStorageModal = document.getElementById('modal-book-storage');
 
     const book    = setupModal(bookModal);
     const consult = setupModal(consultModal);
     const excursion = setupModal(excursionModal);
     const write = setupModal(writeModal);
+    const bookStorage = setupModal(bookStorageModal);
 
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-modal-open]');
@@ -105,7 +107,7 @@ export const initModalForm = () => {
 
         const target = btn.dataset.modalOpen;
 
-        const instances = { book, consult, excursion, write };
+        const instances = { book, consult, excursion, write, 'book-storage': bookStorage };
         const instance = instances[target];
         if (!instance) return;
 
@@ -113,6 +115,12 @@ export const initModalForm = () => {
             const subtitleEl = bookModal.querySelector('#modal-book-subtitle');
             const h = document.getElementById('apt-title');
             if (subtitleEl) { subtitleEl.textContent = h ? h.textContent.trim() : ''; }
+        }
+
+        if (target === 'book-storage') {
+            const subtitleEl = bookStorageModal?.querySelector('#modal-book-storage-subtitle');
+            const num = btn.closest('.storage-popup')?.querySelector('.storage-popup__num');
+            if (subtitleEl) { subtitleEl.textContent = num ? num.textContent.trim() : ''; }
         }
 
         instance.open();

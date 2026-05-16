@@ -22,14 +22,12 @@
 <div class="container">
     <!-- Hero image -->
     <div class="promo-detail-hero">
-        <img
-            class="promo-detail-hero__img"
-            src="/assets/images/promo2.jpg"
-            alt="Скидки до 200 000Р на квартиры месяца"
-            loading="eager"
-            width="1200"
-            height="450"
-        />
+        <picture>
+            <source media="(min-width: 1280px)" srcset="/assets/images/promo2.jpg">
+            <source media="(min-width: 640px)" srcset="/assets/images/promo2.jpg">
+            <source media="(max-width: 639px)" srcset="/assets/images/promo2-mobile.jpg">
+            <img  src="/assets/images/promo2.jpg" alt="project-image" class="promo-detail-hero__img" width="1200" height="450" loading="eager">
+        </picture>
         <span class="promo-detail-hero__badge">
             <svg width="16" height="16" aria-hidden="true" focusable="false">
                 <use href="#calendar" />

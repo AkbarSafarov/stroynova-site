@@ -283,7 +283,8 @@
 }
 
 @media all and (min-width: 991px) {
-    #modal-book {
+    #modal-book,
+    #modal-book-storage{
         .modal-form__layout {
             min-width: 806px;
         }

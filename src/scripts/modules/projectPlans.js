@@ -14,13 +14,17 @@ export const projectPlansTabs = () => {
 
 
 
-    section.querySelectorAll('a[data-pswp-width]').forEach(link => {
-        const img = new Image();
-        img.onload = function() {
-            link.dataset.pswpWidth = this.naturalWidth;
-            link.dataset.pswpHeight = this.naturalHeight;
+    section.querySelectorAll('a.pswp-item').forEach(link => {
+        const thumbImg = link.querySelector('img');
+        if (!thumbImg) return;
+        const apply = () => {
+            if (thumbImg.naturalWidth > 0) {
+                link.dataset.pswpWidth = thumbImg.naturalWidth;
+                link.dataset.pswpHeight = thumbImg.naturalHeight;
+            }
         };
-        img.src = link.href;
+        if (thumbImg.complete) apply();
+        else thumbImg.addEventListener('load', apply, { once: true });
     });
 
     const lightbox = new PhotoSwipeLightbox({
@@ -29,6 +33,22 @@ export const projectPlansTabs = () => {
         secondaryZoomLevel: 'fit',
         maxZoomLevel: 2,
         pswpModule: PhotoSwipe,
+    });
+
+    lightbox.on('contentLoad', (e) => {
+        const { content } = e;
+        if (content.type !== 'image' || (content.data.w > 0 && content.data.h > 0)) return;
+        e.preventDefault();
+        const img = document.createElement('img');
+        img.className = 'pswp__img';
+        content.element = img;
+        img.onload = () => {
+            content.data.w = img.naturalWidth;
+            content.data.h = img.naturalHeight;
+            content.onLoaded();
+        };
+        img.onerror = () => content.onError();
+        img.src = content.data.src;
     });
 
     lightbox.init();

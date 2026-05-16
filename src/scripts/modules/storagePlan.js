@@ -146,7 +146,7 @@ export const initStoragePlan = () => {
         }
 
         const btnEl = popup.querySelector('.storage-popup__btn');
-        btnEl.hidden = room.status === 'sold';
+        btnEl.hidden = room.status !== 'free';
 
         // Highlight room on plan
         document.querySelectorAll('.storage-room--highlighted').forEach(el =>

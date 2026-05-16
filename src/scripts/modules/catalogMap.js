@@ -20,7 +20,7 @@ const loadYmaps = () => new Promise((resolve, reject) => {
 
     const script = document.createElement('script');
     // Ключ
-    const API_KEY = '';
+    const API_KEY = 'YOUR_API_KEY';
     script.src = `https://api-maps.yandex.ru/v3/?apikey=${API_KEY}&lang=ru_RU`;
     script.onload = () => window.ymaps3.ready.then(() => resolve(window.ymaps3));
     script.onerror = reject;

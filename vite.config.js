@@ -95,7 +95,8 @@ function removeCrossOriginPlugin() {
     transformIndexHtml(html) {
       return html
         .replace(/\s+crossorigin(?:="[^"]*")?/g, '')
-        .replace(/\s+type="module"/g, '')
+        // type="module" даёт defer-поведение; убираем его, но добавляем defer явно
+        .replace(/<script([^>]*)\s+type="module"([^>]*)>/g, '<script$1$2 defer>')
         .replace(/<link[^>]+rel="modulepreload"[^>]*>\s*/g, '');
     },
   };

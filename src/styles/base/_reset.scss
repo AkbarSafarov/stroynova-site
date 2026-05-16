@@ -107,6 +107,8 @@ button {
   cursor: pointer;
 }
 
+[hidden] { display: none !important; }
+
 :focus-visible {
   @include focus-ring;
 }
