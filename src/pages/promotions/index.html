@@ -22,12 +22,17 @@
         <!-- Главная акция (баннер) -->
         <article class="promo-card promo-featured" aria-label="Главная акция">
             <a href="/promotion"></a>
-            <img
-                class="promo-card__img"
-                src="/assets/images/promo1.jpg"
-                alt="Стройнова дарит пространство для жизни — 1 кв.м. в подарок"
-                loading="eager"
-            />
+            <picture>
+                <source media="(min-width: 1280px)" srcset="/assets/images/promo1.jpg">
+                <source media="(min-width: 640px)" srcset="/assets/images/promo1.jpg">
+                <source media="(max-width: 639px)" srcset="/assets/images/promo1-mobile.jpg">
+                <img
+                    class="promo-card__img"
+                    src="/assets/images/promo1.jpg"
+                    alt="Стройнова дарит пространство для жизни — 1 кв.м. в подарок"
+                    loading="eager"
+                />
+            </picture>
             <div class="promo-card__body">
                 <span class="promo-card__badge">
                     <svg width="16" height="16" aria-hidden="true" focusable="false">
