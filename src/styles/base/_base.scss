@@ -127,7 +127,7 @@ img {
     color: var(--stroinova-gray-1);
 
     &__label {
-
+        white-space: nowrap;
     }
 
     &__dropdown {
@@ -148,6 +148,14 @@ img {
         cursor: pointer;
         padding: 0;
         line-height: 1;
+    }
+
+    &__current {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: left;
     }
 
     &__chevron {

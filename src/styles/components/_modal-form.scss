@@ -226,8 +226,7 @@
     }
 
     &__checkbox-wrap {
-        display: flex;
-        align-items: flex-start;
+        display: block;
         gap: 10px;
         cursor: pointer;
         position: relative;
@@ -251,11 +250,15 @@
             background-repeat: no-repeat;
         }
 
+        .modal-form__checkbox-text {
+            width: 100%;
+        }
+
         &.is-invalid i { border-color: #e13b11; }
 
         .modal-form__error {
             position: static;
-            display: block;
+            display: inline-block;
             margin-top: 4px;
         }
     }

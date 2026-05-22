@@ -4,17 +4,13 @@ const DURATION = 500;
 
 const fmt = v => Math.round(v).toLocaleString('ru-RU');
 
-const updateDualRange = (wrapper) => {
-  const inputs = wrapper.querySelectorAll('.mort-slider__range');
-  if (inputs.length < 2) return;
-  const minInput = inputs[0];
-  const maxInput = inputs[1];
-  const min = Number(minInput.min);
-  const max = Number(minInput.max);
-  const minPct = ((Number(minInput.value) - min) / (max - min)) * 100;
-  const maxPct = ((Number(maxInput.value) - min) / (max - min)) * 100;
-  wrapper.style.setProperty('--range-min-pct', `${minPct}%`);
-  wrapper.style.setProperty('--range-max-pct', `${maxPct}%`);
+const updateRange = (wrapper) => {
+  const input = wrapper.querySelector('.mort-slider__range');
+  if (!input) return;
+  const min = Number(input.min);
+  const max = Number(input.max);
+  const pct = ((Number(input.value) - min) / (max - min)) * 100;
+  wrapper.style.setProperty('--range-pct', `${pct}%`);
 };
 
 const digitsOnly = str => str.replace(/[^\d.]/g, '');
@@ -126,7 +122,7 @@ export const initMortgageCalc = () => {
     const creditRatio = loan / (loan + totalInterest) || 0;
     animateTo(creditRatio);
 
-    section.querySelectorAll('.mort-slider__dual-range').forEach(updateDualRange);
+    section.querySelectorAll('.mort-slider__dual-range').forEach(updateRange);
   };
 
   const bindTextSlider = (textEl, rangeEl) => {
@@ -165,21 +161,8 @@ export const initMortgageCalc = () => {
   bindTextSlider(el.termVal,  el.term);
   bindTextSlider(el.rateVal,  el.rate);
 
-  // Dual range — оба ползунка с логикой «от до» как в фильтре
-  section.querySelectorAll('.mort-slider__dual-range').forEach(wrapper => {
-    const inputs = wrapper.querySelectorAll('.mort-slider__range');
-    if (inputs.length < 2) return;
-    const [minInput, maxInput] = inputs;
-
-    minInput.addEventListener('input', () => {
-      if (Number(minInput.value) > Number(maxInput.value)) minInput.value = maxInput.value;
-      calculate();
-    });
-
-    maxInput.addEventListener('input', () => {
-      if (Number(maxInput.value) < Number(minInput.value)) maxInput.value = minInput.value;
-      calculate();
-    });
+  section.querySelectorAll('.mort-slider__range').forEach(input => {
+    input.addEventListener('input', calculate);
   });
 
   section.querySelectorAll('.mort-tab').forEach(tab => {

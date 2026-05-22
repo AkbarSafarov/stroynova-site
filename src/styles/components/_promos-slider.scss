@@ -141,10 +141,6 @@
         transition: transform 0.4s;
     }
 
-    &:hover &__img {
-        transform: scale(1.04);
-    }
-
     // Градиент снизу (обычный вариант)
     //&::after {
     //    content: '';
@@ -205,6 +201,8 @@
         gap: 8px;
         padding: 60px 27px 26px;
         background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+        overflow: hidden;
+        position: relative;
 
         @media all and (max-width: 639px) {
             padding: 30px 15px 15px;
@@ -232,13 +230,20 @@
     }
 
     &__btn {
-        display: none;
+        transition: all .3s;
+        margin-bottom: -100px;
+        margin-top: 20px;
     }
 
     &:hover {
 
+        &__img {
+            transform: scale(1.04);
+        }
+
         .promo-card__btn {
             display: inline-flex;
+            margin: 0;
         }
     }
 }

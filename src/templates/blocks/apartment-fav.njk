@@ -5,7 +5,14 @@
             <img src="/assets/images/apart.png" alt="" aria-hidden="true">
         </div>
         <div class="apt-card__badge">АКЦИЯ -10%</div>
-        <button class="apt-card__fav apt-card__fav--saved" type="button" aria-label="Убрать из избранного"></button>
+        <button class="apt-card__fav apt-card__fav--saved" type="button" aria-label="Убрать из избранного">
+            <svg class="norm" width="24" height="24" aria-hidden="true" focusable="false">
+                <use href="#favorite-icon" />
+            </svg>
+            <svg class="active" width="24" height="24" aria-hidden="true" focusable="false">
+                <use href="#favorite_border_24px" />
+            </svg>
+        </button>
     </div>
     <div class="apt-card__body">
         <p class="apt-card__meta"><strong>Студия</strong> <span>·</span> 25,14 м² <span>·</span> 8 этаж <span>·</span> <strong>Кв. 34</strong></p>

@@ -18,6 +18,7 @@ export const initNavigation = () => {
     mobileNav.classList.add('is-open');
     burger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('is-openMenu');
     releaseFocus = trapFocus(mobileNav);
   };
 
@@ -26,6 +27,7 @@ export const initNavigation = () => {
     mobileNav.setAttribute('inert', '');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+      document.body.classList.remove('is-openMenu');
     releaseFocus?.();
     releaseFocus = null;
     burger.focus();

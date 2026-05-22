@@ -376,8 +376,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: var(--range-min-pct, 0%);
-            right: calc(100% - var(--range-max-pct, 20%));
+            left: 0;
+            right: calc(100% - var(--range-pct, 20%));
             height: 2px;
             background: var(--stroinova-primary-2);
             pointer-events: none;
@@ -404,17 +404,6 @@
                 border: none;
             }
 
-            &:first-child {
-                //z-index: 1;
-
-                &::-webkit-slider-thumb {
-                    //pointer-events: none;
-                }
-
-                &::-moz-range-thumb {
-                    //pointer-events: none;
-                }
-            }
         }
     }
 
