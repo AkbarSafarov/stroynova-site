@@ -1,4 +1,4 @@
-import { applyPhoneMask } from './validateForm.js';
+import { applyPhoneMask, registerSuccessModal, openSuccessModal } from './validateForm.js';
 import { trapFocus } from '../utils/a11y.js';
 
 const RULES = {
@@ -76,11 +76,48 @@ const setupModal = (modal) => {
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправлено!';
-        setTimeout(() => { close(); submitBtn.disabled = false; submitBtn.textContent = 'Отправить'; }, 2000);
+        setTimeout(() => {
+            close();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Отправить';
+            openSuccessModal();
+        }, 1200);
     });
 
     closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') { close(); }
+    });
+
+    return { modal, open, close };
+};
+
+const setupSuccessModal = (modal) => {
+    if (!modal) return null;
+
+    const closeBtn = modal.querySelector('.modal-form__close');
+    const overlay  = modal.querySelector('.modal-form__overlay');
+    const okBtn    = modal.querySelector('.modal-form__ok');
+    const card     = modal.querySelector('.modal-form__card');
+
+    let releaseTrap = null;
+
+    const close = () => {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (releaseTrap) { releaseTrap(); releaseTrap = null; }
+    };
+
+    const open = () => {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => { releaseTrap = trapFocus(card); }, 50);
+    };
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    okBtn.addEventListener('click', close);
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') { close(); }
     });
@@ -94,12 +131,14 @@ export const initModalForm = () => {
     const excursionModal = document.getElementById('modal-excursion');
     const writeModal = document.getElementById('modal-write');
     const bookStorageModal = document.getElementById('modal-book-storage');
+    const successModal = document.getElementById('modal-success');
 
     const book    = setupModal(bookModal);
     const consult = setupModal(consultModal);
     const excursion = setupModal(excursionModal);
     const write = setupModal(writeModal);
     const bookStorage = setupModal(bookStorageModal);
+    registerSuccessModal(setupSuccessModal(successModal));
 
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('[data-modal-open]');

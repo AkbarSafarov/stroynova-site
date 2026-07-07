@@ -17,6 +17,12 @@ const RULES = {
     },
 };
 
+let successModalApi = null;
+
+export const registerSuccessModal = (api) => { successModalApi = api; };
+
+export const openSuccessModal = () => { successModalApi?.open(); };
+
 export const applyPhoneMask = (input) => {
     input.addEventListener('input', () => {
         let digits = input.value.replace(/\D/g, '');
@@ -143,6 +149,7 @@ const setupCtaForm = (form) => {
         const submit = form.querySelector('.contact-cta__submit');
         submit.disabled = true;
         submit.textContent = 'Отправлено!';
+        openSuccessModal();
         setTimeout(() => { form.reset(); submit.disabled = false; submit.textContent = 'Отправить'; }, 3000);
     });
 };
@@ -179,6 +186,7 @@ const setupAskForm = (form) => {
         const submit = form.querySelector('.catalog-ask-form__submit');
         submit.disabled = true;
         submit.textContent = 'Отправлено!';
+        openSuccessModal();
         setTimeout(() => { form.reset(); submit.disabled = false; submit.textContent = 'Отправить'; }, 3000);
     });
 };
@@ -211,6 +219,7 @@ export const initMortgageForm = () => {
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправлено!';
+        openSuccessModal();
         setTimeout(() => {
             phoneInput.value = '';
             consentInput.checked = false;

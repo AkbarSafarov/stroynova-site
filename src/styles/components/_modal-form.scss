@@ -283,6 +283,26 @@
             width: 100%;
         }
     }
+
+    &__text {
+        font-family: var(--font-family);
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--stroinova-black);
+        margin: 0 0 20px;
+
+        &:last-of-type {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__ok {
+        padding: 14px 36px;
+
+        @media (max-width: 640px) {
+            width: 100%;
+        }
+    }
 }
 
 @media all and (min-width: 991px) {
@@ -293,7 +313,8 @@
         }
     }
     #modal-consult,
-    #modal-excursion{
+    #modal-excursion,
+    #modal-success{
         .modal-form__layout {
             min-width: 700px;
             padding: 56px;
@@ -317,7 +338,8 @@
         }
     }
 
-    #modal-consult {
+    #modal-consult,
+    #modal-success {
         .modal-form__layout {
             min-width: 1px;
         }
@@ -344,5 +366,34 @@
 
     .modal-form__subtitle {
         margin-bottom: 10px;
+    }
+}
+
+.modal-form--success {
+
+    .modal-form__content {
+        max-width: 450px;
+        padding: 27px 34px;
+    }
+
+    .modal-form__text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: var(--stroinova-black);
+    }
+
+
+    .modal-form__ok {
+        min-width: 200px;
+    }
+
+    .modal-form__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 117%;
+        color: var(--stroinova-black);
     }
 }
